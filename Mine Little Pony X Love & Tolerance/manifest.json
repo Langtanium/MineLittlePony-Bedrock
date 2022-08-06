@@ -1,0 +1,36 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Makes the MineLP add-on compatible\nwith the Love & Tolerance RP",
+        "name": "MineLP X Love & Tolerance",
+        "uuid": "2f0d2fbc-80dd-4cfd-9bfc-380d10611544",
+        "version": [
+            0,
+            0,
+            5
+        ],
+        "min_engine_version": [
+            1,
+            17,
+            40
+        ]
+    },
+    "modules": [
+        {
+            "description": "Makes the MineLP add-on compatible\nwith the Love & Tolerance RP",
+            "type": "resources",
+            "uuid": "d8a0fee8-53f8-4f88-a0e3-e65eca21f3ee",
+            "version": [
+                0,
+                0,
+                5
+            ]
+        }
+    ],
+    "metadata": {
+        "authors": [
+            "Langtanium"
+        ]
+    },
+    "capabilities": []
+}
