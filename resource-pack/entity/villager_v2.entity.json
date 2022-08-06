@@ -18,12 +18,12 @@
         "base4": "textures/entity/villager2/villager",
         "base5": "textures/entity/villager2/villager",
         "base6": "textures/entity/villager2/villager",
-        "minelp.base": "textures/entity/villager_pony/minelp.pony.villager",
-        "minelp.base2": "textures/entity/villager_pony/minelp.pony.silly",
-        "minelp.base3": "textures/entity/villager_pony/minelp.pony.villager",
-        "minelp.base4": "textures/entity/villager_pony/minelp.pony.silly",
-        "minelp.base5": "textures/entity/villager_pony/minelp.pony.villager",
-        "minelp.base6": "textures/entity/villager_pony/minelp.pony.silly",
+        "minelp.base": "textures/entity/villager_pony/villager_pony",
+        "minelp.base2": "textures/entity/villager_pony/silly_pony",
+        "minelp.base3": "textures/entity/villager_pony/villager_pony",
+        "minelp.base4": "textures/entity/villager_pony/silly_pony",
+        "minelp.base5": "textures/entity/villager_pony/villager_pony",
+        "minelp.base6": "textures/entity/villager_pony/silly_pony",
 
         // Biome Layer
         "desert": "textures/entity/villager2/biomes/biome_desert",
@@ -134,11 +134,13 @@
         "minelp.magic_color_11": "textures/magic/11",
         "minelp.magic_color_12": "textures/magic/12",
         "minelp.magic_color_13": "textures/magic/13",
-        "minelp.magic_color_14": "textures/magic/14"
+        "minelp.magic_color_14": "textures/magic/14",
+        "saddlebags": "textures/models/saddlebags"
       },
       "geometry": {
         "default": "geometry.villager_v2",
-        "minelp.default": "geometry.minelp.pony"
+        "minelp.default": "geometry.minelp.pony",
+        "saddlebags": "geometry.saddlebags"
       },
       "scripts": {
         "scale": "0.9375",
@@ -156,8 +158,10 @@
           "variable.minelp.muzzle_type = 2;",
           "variable.minelp.zebra_mane = 0;",
           "variable.minelp.magic_color = 0;",
+          "variable.minelp.magic_colour = math.random_integer(1, 14);",
           "variable.minelp.handedness = 0;",
           "variable.minelp.tail_length = 1;",
+          "variable.minelp.has_saddlebags = 1;",
           "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
           "variable.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
           "variable.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
@@ -203,6 +207,7 @@
 		{ "controller.render.villager_pony_base": "(variable.minelp_ispony ?? 0.0) == 1.0" },
 		{ "controller.render.villager_pony_job": "(variable.minelp_ispony ?? 0.0) == 1.0" },
         { "controller.render.villager_pony_masked": "(variable.minelp_ispony ?? 0.0) == 1.0" },
+        { "controller.render.villager.saddlebags": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.has_saddlebags == 1" },
         { "controller.render.villager_pony_level": "(variable.minelp_ispony ?? 0.0) == 1.0" },
 		{ "controller.render.minelp.pony.magic": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type >= 1.0" }
       ],

@@ -13,8 +13,8 @@
             "textures": {
                 "default": "textures/entity/steve",
                 "cape": "textures/entity/cape_invisible",
-                "minelp.default": "textures/entity/minelp.pony.steve",
-                "minelp.seapony": "textures/entity/player_seapony/minelp.seapony",
+                "minelp.default": "textures/entity/steve.pony",
+                "minelp.seapony": "textures/entity/player_seapony/seapony",
                 "minelp.magic_color_0":  "textures/magic/0",
                 "minelp.magic_color_1":  "textures/magic/1",
                 "minelp.magic_color_2":  "textures/magic/2",
@@ -29,18 +29,31 @@
                 "minelp.magic_color_11": "textures/magic/11",
                 "minelp.magic_color_12": "textures/magic/12",
                 "minelp.magic_color_13": "textures/magic/13",
-                "minelp.magic_color_14": "textures/magic/14"
+                "minelp.magic_color_14": "textures/magic/14",
+                "witch_hat": "textures/entity/witch",
+                "muffin_hat": "textures/models/muffin",
+                "stetson": "textures/models/stetson",
+                "antlers": "textures/models/antlers",
+                "saddlebags": "textures/models/saddlebags",
+                "crown": "textures/models/crown"
             },
             "geometry": {
                 "default": "geometry.humanoid.custom",
                 "minelp.default": "geometry.minelp.pony.player",
 				"minelp.hold.magic": "geometry.minelp.pony.magic.hold",
 				"minelp.hold": "geometry.minelp.pony.hold",
+				"witch_hat": "geometry.witch_hat",
+				"muffin_hat": "geometry.muffin",
+				"stetson": "geometry.stetson",
+				"antlers": "geometry.antlers",
+				"saddlebags": "geometry.saddlebags",
+				"crown": "geometry.crown",
                 "cape": "geometry.cape"
             },
             "scripts": {
                 "variables": {
-                  "variable.minelp_ispony": "public"
+                  "variable.minelp_ispony": "public",
+                  "variable.minelp_iskirin": "public"
                 },
                 "scale": "0.9375",
                 "initialize": [
@@ -53,23 +66,31 @@
                     "variable.hand_bob = 0.0;"
                 ],
                 "pre_animation": [
-                    "variable.minelp_ispony = 1;",
-					"variable.minelp_isseapony = 1;",
-					"variable.minelp_iszebra = 0;",
-					"variable.minelp_seapony_texture = variable.minelp_isseapony == 1 && query.is_in_water;",
-                    "variable.minelp.horn_type = 1;",
-                    "variable.minelp.wing_type = 1;",
-                    "variable.minelp.ear_type = 0;",
-                    "variable.minelp.muzzle_type = 2;",
-                    "variable.minelp.has_witch_hat = 0;",
+                
+                    //Only edit these variables ——————
+					"variable.minelp_race = 7;",
+					"variable.minelp_isseapony = 0;",
+					"variable.minelp.muzzle_type = 2;",
+					"variable.minelp.magic_color = 13;",
+					"variable.minelp.arm_leg_thickness = 0;",
+					"variable.minelp.tail_length = 1;",
+					"variable.minelp.has_witch_hat = 0;",
                     "variable.minelp.has_muffin_hat = 0;",
                     "variable.minelp.has_stetson = 0;",
                     "variable.minelp.has_antlers = 0;",
-                    "variable.minelp.has_saddlebags = 0;",
-                    "variable.minelp.magic_color = 13;",
+                    "variable.minelp.has_saddlebags = 1;",
+                    "variable.minelp.has_crown = 0;",
+                    //————————————————————
+                    
+                    "variable.minelp_ispony = variable.minelp_race != 0;",
+					"variable.minelp_iskirin = variable.minelp_race == 8;",
+					"variable.minelp_iszebra = variable.minelp_race == 2;",
+					"variable.minelp_seapony_texture = variable.minelp_isseapony == 1 && query.is_in_water;",
+                    "variable.minelp.horn_type = (variable.minelp_race == 7 || variable.minelp_race == 8 || variable.minelp_race == 9 || variable.minelp_race == 10 || variable.minelp_race == 11);",
+                    "variable.minelp.wing_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 6 || variable.minelp_race == 9 || variable.minelp_race == 10 || variable.minelp_race == 11) + (variable.minelp_race == 4) + 2 * (variable.minelp_race == 10 || variable.minelp_race == 11);",
+                    "variable.minelp.ear_type = (variable.minelp_race == 4) + 2 * (variable.minelp_race == 8) + 3 * (variable.minelp_race == 10);",
                     "variable.minelp.handedness = 0;",
-					"variable.minelp.tail_length = 1;",
-					"variable.minelp.arm_leg_thickness = 0;",
+                    "variable.minelp.tail_type = variable.minelp_race == 8;",
                     "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
                     "variable.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
                     "variable.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
@@ -93,20 +114,24 @@
                     "root",
                     "show_movement.tail",
                     "bob.tail",
+                    { "lion_tail": "variable.minelp.tail_type == 1" },
+                    { "kirin": "variable.minelp_iskirin == 1" },
 					{ "long_neck": "variable.minelp_iszebra == 1"},
-					{ "seapony": "variable.minelp_isseapony == 1 && query.is_in_water" },
+					{ "seapony": "variable.minelp_isseapony == 1 && query.is_in_water && variable.minelp_ispony == 1" },
                     { "shield.left": "variable.minelp_ispony == 1 && query.get_equipped_item_name('off_hand') == 'shield' && variable.minelp.horn_type == 0" },
                     { "show_movement.legs": "(variable.minelp.wing_type == 0 && variable.minelp_ispony == 1) || (query.is_on_ground * variable.minelp_ispony == 1)" },
                     { "show_movement.arms": "(variable.minelp.wing_type == 0 && variable.minelp_ispony == 1 && !variable.is_first_person) || (query.is_on_ground * variable.minelp_ispony == 1 && !variable.is_first_person)" },
                     { "bob.inverted": "!variable.is_first_person  && (variable.minelp_ispony ?? 0.0) == 1.0 && query.is_on_screen" },
                     { "pony.sneak": "!variable.is_first_person  && (variable.minelp_ispony ?? 0.0) == 1.0 && query.is_sneaking && !query.is_in_water" },
-					{ "flying": "!variable.is_first_person  && (variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.wing_type == 1 && !query.is_on_ground && !query.is_in_water" },
+					{ "flying": "!variable.is_first_person  && (variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.wing_type == 1 && !query.is_on_ground && !query.is_in_water && query.is_on_screen" },
 					{ "fly_move.controller": "!variable.is_first_person  && (variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.wing_type == 1 && !query.is_in_water" },
 					{ "swim.head": "!variable.is_first_person  && (variable.minelp_ispony ?? 0.0) == 1.0 && query.is_swimming" },
 					{ "magic.hold": "variable.is_first_person && variable.minelp.horn_type > 0  && variable.minelp_ispony == 1.0" }
                 ]
             },
             "animations": {
+				"lion_tail": "animation.player.lion_tail",
+				"kirin": "animation.player.kirin",
 				"long_neck": "animation.minelp.pony.long_neck",
 				"seapony": "animation.player.seapony",
                 "pony.sneak": "animation.player.pony.sneaking",
@@ -182,12 +207,18 @@
                 { "controller.render.player.third_person": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) != 1.0 || query.is_emoting" },
                 { "controller.render.player.map": "variable.map_face_icon" },
                 { "controller.render.minelp.pony.player": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && !query.is_emoting" },
-                { "controller.render.minelp.pony.magic": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type >= 1.0 && !query.is_emoting" },
+                { "controller.render.witch_hat": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && !query.is_emoting && variable.minelp.has_witch_hat == 1" },
+                { "controller.render.muffin_hat": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && !query.is_emoting && variable.minelp.has_muffin_hat == 1" },
+                { "controller.render.stetson": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && !query.is_emoting && variable.minelp.has_stetson == 1" },
+                { "controller.render.antlers": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && !query.is_emoting && variable.minelp.has_antlers == 1" },
+                { "controller.render.player.saddlebags": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && !query.is_emoting && variable.minelp.has_saddlebags == 1" },
+                { "controller.render.crown": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && !query.is_emoting && variable.minelp.has_crown == 1" },
                 { "controller.render.minelp.pony.first_person": "variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type == 0" },
 				{ "controller.render.minelp.pony.magic.hold": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type > 0 && !query.is_emoting" },
 				{ "controller.render.minelp.pony.magic_first": "variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0  && variable.minelp.horn_type > 0" },
 				{ "controller.render.minelp.pony.hold": "!variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type == 0 && !query.is_emoting" },
-				{ "controller.render.minelp.pony.hold_first": "variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0  && variable.minelp.horn_type == 0" }
+				{ "controller.render.minelp.pony.hold_first": "variable.is_first_person && (variable.minelp_ispony ?? 0.0) == 1.0  && variable.minelp.horn_type == 0" },
+				{ "controller.render.minelp.pony.magic": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type >= 1.0 && !query.is_emoting" }
             ],
             "enable_attachables": true
         }

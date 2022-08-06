@@ -11,7 +11,7 @@
       },
       "textures": {
         "default": "textures/entity/witch",
-        "minelp.default": "textures/entity/minelp.pony.witch",
+        "minelp.default": "textures/entity/witch_pony",
         "minelp.magic_color_0":  "textures/magic/0",
         "minelp.magic_color_1":  "textures/magic/1",
         "minelp.magic_color_2":  "textures/magic/2",
@@ -26,11 +26,13 @@
         "minelp.magic_color_11": "textures/magic/11",
         "minelp.magic_color_12": "textures/magic/12",
         "minelp.magic_color_13": "textures/magic/13",
-        "minelp.magic_color_14": "textures/magic/14"
+        "minelp.magic_color_14": "textures/magic/14",
+        "witch_hat": "textures/entity/witch"
       },
       "geometry": {
         "default": "geometry.villager.witch.v1.8",
-        "minelp.default": "geometry.minelp.pony"
+        "minelp.default": "geometry.minelp.pony",
+        "witch_hat": "geometry.witch_hat"
       },
       "scripts": {
         "scale": "0.9375",
@@ -47,6 +49,7 @@
           "variable.minelp.ear_type = 0;",
           "variable.minelp.muzzle_type = 2;",
           "variable.minelp.zebra_mane = 1;",
+          "variable.minelp.has_witch_hat = 0;",
           "variable.minelp.magic_color = 0;",
           "variable.minelp.handedness = 0;",
           "variable.minelp.tail_length = 0.75;",
@@ -80,6 +83,7 @@
       "render_controllers": [
         { "controller.render.witch": "(variable.minelp_ispony ?? 0.0) == 0.0" },
         { "controller.render.minelp.pony": "(variable.minelp_ispony ?? 0.0) == 1.0" },
+        { "controller.render.witch_hat": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.has_witch_hat == 1" },
         { "controller.render.minelp.pony.magic": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type >= 1.0" }
       ],
       "spawn_egg": {

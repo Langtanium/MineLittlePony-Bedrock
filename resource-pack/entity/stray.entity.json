@@ -14,8 +14,8 @@
             "textures": {
                 "default": "textures/entity/skeleton/stray",
                 "overlay": "textures/entity/skeleton/stray_overlay",
-                "minelp.default": "textures/entity/skeleton/minelp.pony.stray",
-                "minelp.overlay": "textures/entity/skeleton/minelp.pony.stray.overlay",
+                "minelp.default": "textures/entity/skeleton/stray_pony",
+                "minelp.overlay": "textures/entity/skeleton/stray_pony_overlay",
                 "minelp.magic_color_0":  "textures/magic/0",
                 "minelp.magic_color_1":  "textures/magic/1",
                 "minelp.magic_color_2":  "textures/magic/2",

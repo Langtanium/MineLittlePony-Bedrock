@@ -11,12 +11,12 @@
       "textures": {
         "default": "textures/entity/vex/vex",
         "charging": "textures/entity/vex/vex_charging",
-        "minelp.default": "textures/entity/illager/minelp.pony.vex",
-        "minelp.charging": "textures/entity/illager/minelp.pony.vex_charging"
+        "minelp.default": "textures/entity/illager/vex_pony",
+        "minelp.charging": "textures/entity/illager/vex_charging_pony"
       },
       "geometry": {
         "default": "geometry.vex.v1.8",
-        "minelp.default": "geometry.minelp.pony.vex"
+        "minelp.default": "geometry.minelp.pony.breezie"
       },
       "scripts": {
         "variables": {

@@ -10,7 +10,7 @@
       },
       "textures": {
         "default": "textures/entity/piglin/zombie_piglin",
-        "minelp.default": "textures/entity/piglin/minelp.pony.zombie_piglin"
+        "minelp.default": "textures/entity/piglin/zombified_piglin_pony"
       },
       "geometry": {
         "default": "geometry.piglin",

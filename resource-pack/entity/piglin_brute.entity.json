@@ -9,7 +9,7 @@
       },
       "textures": {
         "default": "textures/entity/piglin/piglin_brute",
-        "minelp.default": "textures/entity/piglin/minelp.pony.piglin_brute"
+        "minelp.default": "textures/entity/piglin/piglin_brute_pony"
       },
       "geometry": {
         "default": "geometry.piglin",

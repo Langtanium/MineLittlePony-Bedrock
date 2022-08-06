@@ -12,7 +12,7 @@
       },
       "textures": {
         "default": "textures/entity/zombie_villager2/zombie-villager",
-        "minelp.default": "textures/entity/zombie_villager/minelp.pony.zombie_villager",
+        "minelp.default": "textures/entity/zombie_villager/zombie_villager_pony",
 
         // Biome Layer
         "desert": "textures/entity/zombie_villager2/biomes/biome-desert-zombie",

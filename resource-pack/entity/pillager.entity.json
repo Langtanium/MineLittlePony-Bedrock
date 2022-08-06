@@ -10,7 +10,7 @@
       },
       "textures": {
         "default": "textures/entity/pillager",
-        "minelp.default": "textures/entity/illager/minelp.pony.pillager",
+        "minelp.default": "textures/entity/illager/pillager_pony",
         "minelp.magic_color_0":  "textures/magic/0",
         "minelp.magic_color_1":  "textures/magic/1",
         "minelp.magic_color_2":  "textures/magic/2",

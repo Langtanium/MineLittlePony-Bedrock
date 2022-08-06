@@ -19,7 +19,7 @@
       },
       "geometry": {
         "default": "geometry.strider",
-		"minelp.default": "geometry.minelp.pony.strider"
+		"minelp.default": "geometry.minelp.pony.parasprite"
       },
       "spawn_egg": {
         "base_color": "#9c3436",

@@ -11,7 +11,7 @@
       },
       "textures": {
         "default": "textures/entity/illager/evoker",
-        "minelp.default": "textures/entity/illager/minelp.pony.evoker",
+        "minelp.default": "textures/entity/illager/evoker_pony",
         "minelp.magic_color_0":  "textures/magic/0",
         "minelp.magic_color_1":  "textures/magic/1",
         "minelp.magic_color_2":  "textures/magic/2",

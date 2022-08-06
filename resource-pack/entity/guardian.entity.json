@@ -14,7 +14,7 @@
         "default": "textures/entity/guardian",
         "elder": "textures/entity/guardian_elder",
         "beam": "textures/entity/guardian_beam", 
-        "minelp.default": "textures/entity/minelp.seapony",
+        "minelp.default": "textures/entity/seapony",
         "minelp.magic_color_0":  "textures/magic/0",
         "minelp.magic_color_1":  "textures/magic/1",
         "minelp.magic_color_2":  "textures/magic/2",

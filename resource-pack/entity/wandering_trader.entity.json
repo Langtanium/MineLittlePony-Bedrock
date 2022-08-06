@@ -10,7 +10,7 @@
       },
       "textures": {
         "default": "textures/entity/wandering_trader",
-        "minelp.default": "textures/entity/minelp.pony.wandering_trader",
+        "minelp.default": "textures/entity/wandering_trader_pony",
         "minelp.magic_color_0":  "textures/magic/0",
         "minelp.magic_color_1":  "textures/magic/1",
         "minelp.magic_color_2":  "textures/magic/2",
@@ -81,8 +81,7 @@
       },
       "render_controllers": [
         { "controller.render.wandering_trader": "(variable.minelp_ispony ?? 0.0) != 1.0" },
-        { "controller.render.minelp.pony": "(variable.minelp_ispony ?? 0.0) == 1.0" },
-        { "controller.render.minelp.pony.magic": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp.horn_type >= 1.0" }
+        { "controller.render.minelp.pony": "(variable.minelp_ispony ?? 0.0) == 1.0" }
       ],
       "spawn_egg": {
         "texture": "spawn_egg_wandering_trader"

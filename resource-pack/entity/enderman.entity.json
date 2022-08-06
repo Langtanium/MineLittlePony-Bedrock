@@ -12,8 +12,8 @@
       },
       "textures": {
         "default": "textures/entity/enderman/enderman",
-        "minelp.default": "textures/entity/enderman/minelp.pony.enderman",
-        "minelp.eyes": "textures/entity/enderman/minelp.pony.enderman_eyes",
+        "minelp.default": "textures/entity/enderman/enderman_pony",
+        "minelp.eyes": "textures/entity/enderman/enderman_pony_eyes",
         "minelp.magic_color_0":  "textures/magic/0",
         "minelp.magic_color_1":  "textures/magic/1",
         "minelp.magic_color_2":  "textures/magic/2",

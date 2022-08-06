@@ -5,10 +5,10 @@
       "identifier": "minecraft:skull",
       "textures": {
         "default": "textures/entity/steve",
-        "steve": "textures/entity/steve",
-        "skeleton": "textures/entity/skulls/skeleton",
-        "wither": "textures/entity/skulls/wither_skeleton",
-        "zombie": "textures/entity/skulls/zombie",
+        "steve": "textures/entity/steve_pony",
+        "skeleton": "textures/entity/skulls/skeleton_pony",
+        "wither": "textures/entity/skulls/skeleton_wither_pony",
+        "zombie": "textures/entity/skulls/zombie_pony",
         "creeper": "textures/entity/skulls/creeper",
         "dragon": "textures/entity/dragon/dragon"
       },
