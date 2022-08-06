@@ -17,6 +17,7 @@
             "geometry": {
                 "default": "geometry.player.armor.chestplate",
                 "minelp.default": "geometry.minelp.pony.armor.chestplate",
+                "minelp.kirin": "geometry.minelp.pony.armor.chestplate.kirin",
                 "minelp.layer2": "geometry.minelp.pony.armor.chestplate.layer2"
             },
             "scripts": {
@@ -25,6 +26,7 @@
             "render_controllers": [
                 { "controller.render.armor": "context.owning_entity -> variable.minelp_ispony != 1.0" },
                 { "controller.render.minelp.pony.armor": "context.owning_entity -> variable.minelp_ispony == 1.0" },
+                { "controller.render.minelp.pony.armor.kirin": "context.owning_entity -> variable.minelp_iskirin == 1.0" },
                 { "controller.render.minelp.pony.armor.layer2": "context.owning_entity -> variable.minelp_ispony == 1.0" }
             ]
         }

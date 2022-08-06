@@ -10,7 +10,8 @@
             "textures": {
                 "default": "textures/models/armor/leather_1",
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "minelp.default": "textures/models/armor/leather_layer_outer_pony"
+                "minelp.default": "textures/models/armor/leather_layer_outer_pony",
+                "minelp.layer1": "textures/models/armor/leather_layer_outer_overlay_pony"
             },
             "geometry": {
                 "default": "geometry.humanoid.armor.boots",
@@ -18,7 +19,8 @@
             },
             "render_controllers": [
                 { "controller.render.armor": "context.owning_entity -> variable.minelp_ispony != 1.0" },
-                { "controller.render.minelp.pony.armor": "context.owning_entity -> variable.minelp_ispony == 1.0" }
+                { "controller.render.minelp.pony.armor": "context.owning_entity -> variable.minelp_ispony == 1.0" },
+                { "controller.render.minelp.pony.armor.layer1": "context.owning_entity -> variable.minelp_ispony == 1.0" }
             ]
         }
     }
