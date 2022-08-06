@@ -29,6 +29,41 @@
             ],
             "textures": [ "Texture.minelp.default" ]
         },
+        "controller.render.witch_hat": {
+            "geometry": "Geometry.witch_hat",
+            "materials": [
+                { "*": "Material.minelp.default" }
+            ],
+            "textures": [ "Texture.witch_hat" ]
+        },
+        "controller.render.muffin_hat": {
+            "geometry": "Geometry.muffin_hat",
+            "materials": [
+                { "*": "Material.minelp.default" }
+            ],
+            "textures": [ "Texture.muffin_hat" ]
+        },
+        "controller.render.stetson": {
+            "geometry": "Geometry.stetson",
+            "materials": [
+                { "*": "Material.minelp.default" }
+            ],
+            "textures": [ "Texture.stetson" ]
+        },
+        "controller.render.antlers": {
+            "geometry": "Geometry.antlers",
+            "materials": [
+                { "*": "Material.minelp.default" }
+            ],
+            "textures": [ "Texture.antlers" ]
+        },
+        "controller.render.crown": {
+            "geometry": "Geometry.crown",
+            "materials": [
+                { "*": "Material.minelp.default" }
+            ],
+            "textures": [ "Texture.crown" ]
+        },
         "controller.render.minelp.pony.stray_clothes": {
             "geometry": "Geometry.minelp.overlay",
             "part_visibility": [

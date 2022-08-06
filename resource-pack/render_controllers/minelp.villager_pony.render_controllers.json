@@ -190,6 +190,36 @@
         "Array.professions[variable.profession_index]"
       ]
     },
+    "controller.render.villager.saddlebags": {
+      "arrays": {
+        "textures": {
+          "Array.professions": [
+            "Texture.minelp.unskilled",
+            "Texture.minelp.farmer",
+            "Texture.minelp.fisherman",
+            "Texture.minelp.shepherd",
+            "Texture.minelp.fletcher",
+            "Texture.minelp.librarian",
+            "Texture.minelp.cartographer",
+            "Texture.minelp.cleric",
+            "Texture.minelp.armorer",
+            "Texture.minelp.weapon_smith",
+            "Texture.minelp.tool_smith",
+            "Texture.minelp.butcher",
+            "Texture.minelp.leatherworker",
+            "Texture.minelp.stonemason",
+            "Texture.minelp.nitwit"
+          ]
+        }
+      },
+      "geometry": "Geometry.saddlebags",
+      "materials": [
+        { "*": "Material.minelp.default" }
+      ],
+      "textures": [
+        "Array.professions[variable.profession_index]"
+      ]
+    },
     "controller.render.villager_pony_level": {
       "arrays": {
         "textures": {
