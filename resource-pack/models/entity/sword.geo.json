@@ -19,7 +19,7 @@
 							"texture": "default",
 							"position": [0, -12, -3],
 							"rotation": [0, 45, 90],
-							"local_pivot": [-3, 0, 3]
+							"local_pivot": [-4, 0, 4]
 						}
 					]
 				}

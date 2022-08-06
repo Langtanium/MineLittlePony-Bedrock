@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.magic.crossbow_pulling0",
+				"identifier": "geometry.item.magic",
 				"texture_width": 16,
 				"texture_height": 16,
 				"visible_bounds_width": 1,
@@ -12,32 +12,32 @@
 			},
 			"bones": [
 				{
-					"name": "rightitem",
+					"name": "rightItem",
 					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "magicInner",
-					"parent": "rightitem",
+					"parent": "rightItem",
 					"pivot": [0, 0, 0],
 					"texture_meshes": [
 						{
-							"texture": "crossbow_pulling_0",
-							"position": [0, 15.7, -4.25],
-							"rotation": [90, 0, -49],
-							"scale": [1.0625, 1.5, 1.0625]
+							"texture": "default",
+							"position": [-0.2, -12.2, -3.2],
+							"local_pivot": [4, -11, 10],
+							"scale": [0.825, 1.2, 0.825]
 						}
 					]
 				},
 				{
 					"name": "magicOuter",
-					"parent": "rightitem",
+					"parent": "rightItem",
 					"pivot": [0, 0, 0],
 					"texture_meshes": [
 						{
-							"texture": "crossbow_pulling_0",
-							"position": [0, 16.4, -4.5],
-							"rotation": [90, 0, -49],
-							"scale": [1.125, 2, 1.125]
+							"texture": "default",
+							"position": [-0.4, -12.4, -3.4],
+							"local_pivot": [4, -11, 10],
+							"scale": [0.85, 1.6, 0.85]
 						}
 					]
 				}
