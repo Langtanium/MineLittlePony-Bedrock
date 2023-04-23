@@ -1,0 +1,9 @@
+{
+	"resource_pack_name": "Mine Little Pony",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"minelp_options": {
+			"textures": "textures/items/pony"
+		}
+	}
+}

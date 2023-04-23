@@ -1,0 +1,147 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:player",
+            "materials": {
+                "default": "entity_alphatest",
+                "cape": "entity_alphatest",
+                "animated": "player_animated",
+                "spectator": "player_spectator",
+                "minelp_default": "entity_alphatest",
+                "minelp_spectator": "player_spectator",
+                "minelp_magic": "pony_magic"
+            },
+            "textures": {
+                "default": "textures/entity/steve",
+                "cape": "textures/entity/cape_invisible"
+            },
+            "geometry": {
+                "default": "geometry.humanoid.custom",
+                "cape": "geometry.cape",
+				"minelp_earth_pony": "geometry.minelp.pony.earth_pony",
+				"minelp_pegasus": "geometry.minelp.pony.pegasus",
+				"minelp_unicorn": "geometry.minelp.pony.unicorn",
+				"minelp_alicorn": "geometry.minelp.pony.alicorn",
+				"minelp_changeling": "geometry.minelp.pony.changeling",
+				"minelp_zebra": "geometry.minelp.pony.zebra",
+				"minelp_reformed_changeling": "geometry.minelp.pony.reformed_changeling",
+				"minelp_gryphon": "geometry.minelp.pony.gryphon",
+				"minelp_hippogrif": "geometry.minelp.pony.hippogriff",
+				"minelp_kirin": "geometry.minelp.pony.kirin",
+				"minelp_batpony": "geometry.minelp.pony.batpony",
+				"minelp_seapony": "geometry.minelp.pony.seapony.tail",
+                "minelp_default": "geometry.minelp.pony.player"
+            },
+            "scripts": {
+                "variables": {
+                    "variable.minelp_ispony": "public",
+                    "variable.minelp_race": "public"
+                },
+                "scale": "0.9375",
+                "initialize": [
+                    "variable.minelp_is_pony = 1;",
+                    "variable.minelp_is_seapony = 0;",
+					"variable.minelp_race = 1;"
+                    "variable.minelp_handedness = 0;",
+                    "variable.minelp_horn_type = 0;",
+                    "variable.minelp_muzzle_type = 1;",
+                    "variable.minelp_tail_length = 4;",
+					"variable.minelp_size = 2;",
+					"variable.minelp_has_wings = 0;"
+                ],
+                "pre_animation": [
+                    "variable.minelp_is_pony = q.property('property:is_pony');",
+                    "variable.minelp_is_seapony = q.property('property:is_seapony');",
+                    "variable.minelp_race = variable.minelp_race;",
+                    "variable.minelp_handedness = 0;",
+                    "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
+                    "variable.minelp_muzzle_type = q.property('property:muzzle_type');",
+                    "variable.minelp_tail_length = q.property('property:tail_length');",
+					"variable.minelp_size = q.property('property:pony_size');"
+					"variable.minelp_has_wings = (variable.minelp_race == 2 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 8 || variable.minelp_race == 9);"
+                    "variable.helmet_layer_visible = 1.0;",
+                    "variable.leg_layer_visible = 1.0;",
+                    "variable.boot_layer_visible = 1.0;",
+                    "variable.chest_layer_visible = 1.0;",
+                    "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+                    "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+                    "variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);",
+                    "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
+                    "variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
+                    "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;"
+                ],
+                "animate": [
+                    // Minelp //
+                    { "long_neck": "variable.minelp_race == 6" },
+                    // Original //
+                    "root"
+                ]
+            },
+            "animations": {
+                // Minelp //
+                "long_neck": "animation.minelp.pony.long_neck",
+                // Original Animations //
+                "root": "controller.animation.pony.root",
+                "base_controller": "controller.animation.pony.base",
+                "hudplayer": "controller.animation.pony.hudplayer",
+                "humanoid_base_pose": "animation.humanoid.base_pose",
+                "look_at_target": "controller.animation.humanoid.look_at_target",
+                "look_at_target_ui": "animation.pony.look_at_target.ui",
+                "look_at_target_default": "animation.humanoid.look_at_target.default",
+                "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+                "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+                "look_at_target_inverted": "animation.pony.look_at_target.inverted",
+                "cape": "animation.pony.cape",
+                "move.arms": "animation.pony.move.arms",
+                "move.legs": "animation.pony.move.legs",
+                "swimming": "animation.pony.swim",
+                "swimming.legs": "animation.pony.swim.legs",
+                "riding.arms": "animation.pony.riding.arms",
+                "riding.legs": "animation.pony.riding.legs",
+                "holding": "animation.pony.holding",
+                "brandish_spear": "animation.humanoid.brandish_spear",
+                "holding_spyglass": "animation.humanoid.holding_spyglass",
+                "charging": "animation.humanoid.charging",
+                "attack.positions": "animation.pony.attack.positions",
+                "attack.rotations": "animation.pony.attack.rotations",
+                "sneaking": "animation.pony.sneaking",
+                "bob": "animation.pony.bob",
+                "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+                "bow_and_arrow": "animation.humanoid.bow_and_arrow",
+                "use_item_progress": "animation.humanoid.use_item_progress",
+                "skeleton_attack": "animation.skeleton.attack",
+                "sleeping": "animation.pony.sleeping",
+                "first_person_base_pose": "animation.pony.first_person.base_pose",
+                "first_person_empty_hand": "animation.pony.first_person.empty_hand",
+                "first_person_swap_item": "animation.pony.first_person.swap_item",
+                "first_person_shield_block": "animation.pony.first_person.shield_block",
+                "first_person_attack_controller": "controller.animation.pony.first_person_attack",
+                "first_person_attack_rotation": "animation.pony.first_person.attack_rotation",
+                "first_person_vr_attack_rotation": "animation.pony.first_person.vr_attack_rotation",
+                "first_person_walk": "animation.pony.first_person.walk",
+                "first_person_map_controller": "controller.animation.pony.first_person_map",
+                "first_person_map_hold": "animation.pony.first_person.map_hold",
+                "first_person_map_hold_attack": "animation.pony.first_person.map_hold_attack",
+                "first_person_map_hold_off_hand": "animation.pony.first_person.map_hold_off_hand",
+                "first_person_map_hold_main_hand": "animation.pony.first_person.map_hold_main_hand",
+                "first_person_crossbow_equipped": "animation.pony.first_person.crossbow_equipped",
+                "third_person_crossbow_equipped": "animation.pony.crossbow_equipped",
+                "third_person_bow_equipped": "animation.pony.bow_equipped",
+                "crossbow_hold": "animation.pony.crossbow_hold",
+                "crossbow_controller": "controller.animation.pony.crossbow",
+                "shield_block_main_hand": "animation.pony.shield_block_main_hand",
+                "shield_block_off_hand": "animation.pony.shield_block_off_hand",
+                "blink": "controller.animation.persona.blink"
+            },
+            "render_controllers": [
+                { "controller.render.pony.first_person_spectator": "variable.is_first_person && query.is_spectator" },
+                { "controller.render.pony.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator" },
+                { "controller.render.pony.first_person": "variable.is_first_person && !query.is_spectator" },
+                { "controller.render.pony.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator" },
+                { "controller.render.pony.map": "variable.map_face_icon" }
+            ],
+            "enable_attachables": true
+        }
+    }
+}

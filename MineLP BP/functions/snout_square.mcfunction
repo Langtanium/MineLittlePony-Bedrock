@@ -1,0 +1,1 @@
+event entity @s minelp:snout_square
