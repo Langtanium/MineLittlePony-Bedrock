@@ -102,6 +102,7 @@
 
     "component_groups": {
       "minelp:winged": {
+        /*
         "minecraft:can_fly": {
         },
         "minecraft:jump.static": {
@@ -133,8 +134,10 @@
             }
           ]
         }
+        */
       },
       "minelp:seapony": {
+        /*
         "minecraft:breathable": {
           "total_supply": 15,
           "suffocate_time": -1,
@@ -146,8 +149,12 @@
         "minecraft:underwater_movement": {
           "value": 0.2
         }
+        */
       },
       "minelp:foal": {
+        "minecraft:type_family": {
+          "family": [ "player", "foal" ]
+        },
         "minecraft:is_baby": {},
         "minecraft:scale": {
           "value": 0.5
@@ -265,6 +272,7 @@
         "allow_name_tag_renaming": false
       },
       "minecraft:physics": {
+        "push_towards_closest_space": true
       },
       "minecraft:pushable": {
         "is_pushable": false,
