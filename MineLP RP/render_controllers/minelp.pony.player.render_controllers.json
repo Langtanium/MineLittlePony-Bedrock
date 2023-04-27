@@ -1,7 +1,7 @@
 {
     "format_version": "1.8.0",
     "render_controllers": {
-        "controller.render.minelp.pony.player": {
+        "controller.render.pony.third_person": {
             "arrays": {
               "textures": {
                 "Array.skins": [
@@ -98,7 +98,25 @@
             ]
         },
         "controller.render.pony.third_person_spectator": {
-          "geometry": "Geometry.minelp.default",
+          "arrays": {
+            "geometries": {
+                "Array.race": [
+                  "Geometry.default",
+                  "Geometry.minelp_earth_pony",
+                  "Geometry.minelp_pegasus",
+                  "Geometry.minelp_unicorn",
+                  "Geometry.minelp_alicorn",
+                  "Geometry.minelp_changeling",
+                  "Geometry.minelp_zebra",
+                  "Geometry.minelp_reformed_changeling",
+                  "Geometry.minelp_gryphon",
+                  "Geometry.minelp_hippogriff",
+                  "Geometry.minelp_kirin",
+				  "Geometry.minelp_batpony"
+                ]
+            }
+          },
+          "geometry": "Array.race[variable.minelp_race]",
           "materials": [ { "*": "Material.minelp_spectator" } ],
           "textures": [ "Texture.default" ],
           "part_visibility": [
@@ -107,6 +125,7 @@
             { "hat": true },
             { "snoutMale": "variable.minelp_muzzle_type == 1" },
             { "snoutFemale": "variable.minelp_muzzle_type == 2" },
+            { "snoutGryphon": true },
             { "horn": true },
             { "bristles": true },
             { "bristles2": true },
