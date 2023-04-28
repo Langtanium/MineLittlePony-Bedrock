@@ -5,13 +5,13 @@
 			"loop": true,
 			"bones": {
 				"leftArm": {
-					"position": [-3, -10, 0]
+					"position": [-3, -10, 1]
 				},
 				"leftItem": {
 					"position": [-1, -1, 0]
 				},
 				"rightArm": {
-					"position": [3, -10, 0]
+					"position": [3, -10, 1]
 				},
 				"rightSleeve": {
 					"position": [0, 0, 0]

@@ -34,7 +34,7 @@
                 ],
                 "pre_animation": [
                     "variable.minelp_is_pony = q.property('property:is_pony');",
-                    "variable.minelp_race = variable.minelp_race;",
+                    "variable.minelp_race = q.property('property:race');",
                     "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
                     "variable.is_holding_right = query.is_item_equipped('main_hand');",
                     "variable.is_holding_left = query.is_item_equipped('off_hand');",

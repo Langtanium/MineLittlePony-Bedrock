@@ -24,7 +24,7 @@
           "type": "int",
           "default": 1,
           "client_sync": true
-        }
+        },
         "property:muzzle_type": {
           "range": [
             0,

@@ -27,7 +27,7 @@
 				"minelp_zebra": "geometry.minelp.pony.zebra",
 				"minelp_reformed_changeling": "geometry.minelp.pony.reformed_changeling",
 				"minelp_gryphon": "geometry.minelp.pony.gryphon",
-				"minelp_hippogrif": "geometry.minelp.pony.hippogriff",
+				"minelp_hippogriff": "geometry.minelp.pony.hippogriff",
 				"minelp_kirin": "geometry.minelp.pony.kirin",
 				"minelp_batpony": "geometry.minelp.pony.batpony",
 				"minelp_seapony": "geometry.minelp.pony.seapony.tail",
@@ -42,7 +42,7 @@
                 "initialize": [
                     "variable.minelp_is_pony = 1;",
                     "variable.minelp_is_seapony = 0;",
-					"variable.minelp_race = 1;"
+					"variable.minelp_race = 1;",
                     "variable.minelp_handedness = 0;",
                     "variable.minelp_horn_type = 0;",
                     "variable.minelp_muzzle_type = 1;",
@@ -53,13 +53,14 @@
                 "pre_animation": [
                     "variable.minelp_is_pony = q.property('property:is_pony');",
                     "variable.minelp_is_seapony = q.property('property:is_seapony');",
-                    "variable.minelp_race = variable.minelp_race;",
+                    "variable.minelp_race = q.property('property:race');",
                     "variable.minelp_handedness = 0;",
                     "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
                     "variable.minelp_muzzle_type = q.property('property:muzzle_type');",
                     "variable.minelp_tail_length = q.property('property:tail_length');",
-					"variable.minelp_size = q.property('property:pony_size');"
-					"variable.minelp_has_wings = (variable.minelp_race == 2 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 8 || variable.minelp_race == 9);"
+					"variable.minelp_size = q.property('property:pony_size');",
+					"variable.minelp_has_wings = (variable.minelp_race == 2 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 8 || variable.minelp_race == 9);",
+					"variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
                     "variable.helmet_layer_visible = 1.0;",
                     "variable.leg_layer_visible = 1.0;",
                     "variable.boot_layer_visible = 1.0;",
@@ -87,9 +88,13 @@
                 "arm_fix": "animation.humanoid.arm_fix",
                 "arm_fix_magic": "animation.humanoid.arm_fix.magic",
                 "default": "controller.animation.minelp.pony.default",
+                "default.arms": "controller.animation.minelp.pony.default.arms",
                 "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
+                "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
                 "show_movement.legs": "animation.minelp.pony.show_movement.legs",
                 "show_movement.tail": "animation.minelp.pony.show_movement.tail",
+                "show_attack.leftArm": "animation.minelp.pony.show_attack.leftArm",
+                "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
                 "bob.tail": "animation.minelp.pony.bob.tail",
                 "big_head": "animation.minelp.pony.big_head",
                 // Original Animations //
@@ -152,7 +157,7 @@
                 { "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator" },
                 { "controller.render.pony.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator && (variable.minelp_is_pony ?? 0.0) == 1.0" },
                 { "controller.render.player.map": "variable.map_face_icon" },
-                { "controller.render.minelp.pony.magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" }
+                { "controller.render.minelp.pony.player.magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" }
             ],
             "enable_attachables": true
         }
