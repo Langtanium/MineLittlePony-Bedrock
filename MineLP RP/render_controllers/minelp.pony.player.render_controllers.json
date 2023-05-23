@@ -72,7 +72,8 @@
 				{ "flare_x": "variable.minelp_is_seapony == 0 || !query.is_in_water" },
 				{ "flare_z": "variable.minelp_is_seapony == 0 || !query.is_in_water" },
                 { "hornGlow": false },
-                { "rightItemMagic": false }
+                { "rightItemMagic": false },
+                { "leftItemMagic": false }
             ],
             "materials": [
                 { "*": "Material.minelp.default" }

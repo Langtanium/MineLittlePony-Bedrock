@@ -84,6 +84,8 @@
             },
             "animations": {
                 // Minelp //
+				"pony_sleeping": "animation.player.sleeping.pony",
+				"pony_sneaking": "animation.player.pony.sneaking",
                 "long_neck": "animation.minelp.pony.long_neck",
                 "arm_fix": "animation.humanoid.arm_fix",
                 "arm_fix_magic": "animation.humanoid.arm_fix.magic",
