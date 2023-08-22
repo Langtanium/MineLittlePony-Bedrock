@@ -1,0 +1,75 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.minelp.pony.correct": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, 6]
+				},
+				"body": {
+					"position": [0, -8, 0]
+				},
+				"head": {
+					"position": [0, 8, -7]
+				},
+				"leftLeg": {
+					"position": [0, 1, 4]
+				},
+				"rightLeg": {
+					"position": [0, 1, 4]
+				},
+				"cape": {
+					"position": [0, 4, -6]
+				},
+				"leftArm": {
+					"position": [-3, -1, -5]
+				},
+				"leftItem": {
+					"position": [0, -3, 0]
+				},
+				"rightArm": {
+					"position": [3, -1, -5]
+				},
+				"rightItem": {
+					"position": [0, -3, 0]
+				}
+			}
+		},
+		"animation.minelp.pony.correct_magic": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, 6]
+				},
+				"body": {
+					"position": [0, -8, 0]
+				},
+				"head": {
+					"position": [0, 8, -7]
+				},
+				"leftLeg": {
+					"position": [0, 1, 4]
+				},
+				"rightLeg": {
+					"position": [0, 1, 4]
+				},
+				"cape": {
+					"position": [0, 4, -6]
+				},
+				"leftArm": {
+					"position": [2, 0, -6]
+				},
+				"leftItem": {
+					"position": [-1, 7, 0]
+				},
+				"rightArm": {
+					"position": [-2, 0, -6]
+				},
+				"rightItem": {
+					"position": [1, 7, 0]
+				}
+			}
+		}
+	}
+}
