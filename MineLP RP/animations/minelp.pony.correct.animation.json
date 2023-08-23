@@ -58,16 +58,18 @@
 					"position": [0, 4, -6]
 				},
 				"leftArm": {
-					"position": [2, 0, -6]
-				},
-				"leftItem": {
-					"position": [-1, 7, 0]
+					"position": [-3, -1, -6]
 				},
 				"rightArm": {
-					"position": [-2, 0, -6]
+					"position": [3, -1, -6]
 				},
 				"rightItem": {
-					"position": [1, 7, 0]
+					"rotation": ["variable.movement_leg_angle", 0, 0],
+					"position": [-5, 11, "-7+variable.movement_leg_angle"]
+				},
+				"leftItem": {
+					"rotation": ["-variable.movement_leg_angle", 0, 0],
+					"position": [5, 11, "-7-variable.movement_leg_angle"]
 				}
 			}
 		}
