@@ -577,7 +577,12 @@
 					"name": "tailBody",
 					"parent": "tail",
 					"pivot": [0, 32, 8],
-					"rotation": [60, 0, 0],
+					"rotation": [60, 0, 0]
+				},
+				{
+					"name": "tail1",
+					"parent": "tailBody",
+					"pivot": [0, 0, 0],
 					"cubes": [
 						{
 							"origin": [-2, 30, 6],
@@ -613,7 +618,7 @@
 				},
 				{
 					"name": "tail3",
-					"parent": "tail2",
+					"parent": "tailBody",
 					"pivot": [0, 8, 0],
 					"cubes": [
 						{
@@ -631,7 +636,7 @@
 				},
 				{
 					"name": "tail4",
-					"parent": "tail3",
+					"parent": "tailBody",
 					"pivot": [0, 8, 0],
 					"cubes": [
 						{

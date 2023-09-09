@@ -1,0 +1,65 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.minelp.pony.tail.bumpy": {
+			"loop": true,
+			"bones": {
+				"tail2": {
+					"position": [0.2, 0, -1.5],
+					"scale": [1.2, 1, 1.5]
+				},
+				"tail3": {
+					"position": [0, 0, -1.2],
+					"scale": [1.1, 1, 1.4]
+				},
+				"tail4": {
+					"position": [-0.4, 0, -0.2],
+					"scale": [0.9, 1, 0.85]
+				}
+			}
+		},
+		"animation.minelp.pony.tail.swirly": {
+			"loop": true,
+			"bones": {
+				"tail2": {
+					"position": [0, 0, 1.5],
+					"scale": 1
+				},
+				"tail3": {
+					"position": [0, 0, 0.4],
+					"scale": [1, 1, 1.35]
+				},
+				"tail4": {
+					"position": [0, 0, 0.6],
+					"scale": [1, 1, 1.35]
+				},
+				"tail1": {
+					"scale": [1, 1, 0.9]
+				}
+			}
+		},
+		"animation.minelp.pony.tail.spiky": {
+			"loop": true,
+			"bones": {
+				"tail2": {
+					"position": [1, 0, 1.5],
+					"scale": 1
+				},
+				"tail3": {
+					"rotation": [0, -5, 0],
+					"position": [0.8, 0, 0.2],
+					"scale": [1, 1, 1.35]
+				},
+				"tail4": {
+					"position": [1, 0, 0.1],
+					"scale": [1, 1, 1.35]
+				},
+				"tail1": {
+					"rotation": [0, -10, 0],
+					"position": [-0.1, 0, 0],
+					"scale": [1, 1, 0.9]
+				}
+			}
+		}
+	}
+}

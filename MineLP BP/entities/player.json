@@ -7,8 +7,8 @@
       "is_summonable": false,
       "is_experimental": false,
       "properties": {
-		"property:race": {
-        	"range": [
+        "property:race": {
+            "range": [
             0,
             11
           ],
@@ -101,64 +101,13 @@
     },
 
     "component_groups": {
-      "minelp:winged": {
-        /*
-        "minecraft:can_fly": {
-        },
-        "minecraft:jump.static": {
-        },
-        "minecraft:movement.fly": {
-        },
-        "minecraft:game_event_movement_tracking": {
-          "emit_flap": true
-        },
-        "minecraft:environment_sensor": {
-          "triggers": [
-            {
-              "event": "minelp:fly"
-            }
-          ]
-        },
-        "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "on_damage": {
-                "filters": {
-                  "test": "has_damage",
-                  "subject": "self",
-                  "operator": "==",
-                  "value": "fall"
-                }
-              },
-              "deals_damage": false
-            }
-          ]
-        }
-        */
-      },
       "minelp:seapony": {
-        /*
-        "minecraft:breathable": {
-          "total_supply": 15,
-          "suffocate_time": -1,
-          "inhale_time": 3.75,
-          "breathes_water": true,
-          "breathes_air": true,
-          "generates_bubbles": false
-        },
-        "minecraft:underwater_movement": {
-          "value": 0.2
-        }
-        */
       },
       "minelp:foal": {
         "minecraft:type_family": {
           "family": [ "player", "foal" ]
         },
-        "minecraft:is_baby": {},
-        "minecraft:scale": {
-          "value": 0.5
-        }
+        "minecraft:is_baby": {}
       },
       "minelp:yearling": {},
       "minelp:lanky": {},
@@ -202,6 +151,30 @@
     },
 
     "components": {
+      "minecraft:npc": {
+        "npc_data": {
+          "portrait_offsets": {
+            "translate": [0, -50, 0]
+          }
+        }
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
       "minecraft:experience_reward": {
         "on_death": "Math.Min(query.player_level * 7, 100)"
       },
@@ -327,6 +300,11 @@
     },
 
     "events": {
+      "minelp:options_popup": {
+        "run_command": {
+          "command": "dialogue open @s @s options"
+        }
+      },
       "minelp:set_human": {
         "sequence": [
           {
@@ -337,18 +315,6 @@
           {
             "set_property": {
               "property:race": 0
-            }
-          },
-          {
-            "run_command": {
-              "command": "ability @s mayfly false"
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:winged"
-              ]
             }
           }
         ]
@@ -376,11 +342,6 @@
       "minelp:set_earth_pony": {
         "sequence": [
           {
-            "run_command": {
-              "command": "ability @s mayfly false"
-            }
-          },
-          {
             "set_property": {
               "property:is_pony": 1
             }
@@ -388,13 +349,6 @@
           {
             "set_property": {
               "property:race": 1
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:winged"
-              ]
             }
           }
         ]
@@ -410,23 +364,11 @@
             "set_property": {
               "property:race": 2
             }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minelp:winged"
-              ]
-            }
           }
         ]
       },
       "minelp:set_unicorn": {
         "sequence": [
-          {
-            "run_command": {
-              "command": "ability @s mayfly false"
-            }
-          },
           {
             "set_property": {
               "property:is_pony": 1
@@ -435,13 +377,6 @@
           {
             "set_property": {
               "property:race": 3
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:winged"
-              ]
             }
           }
         ]
@@ -457,13 +392,6 @@
             "set_property": {
               "property:race": 4
             }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minelp:winged"
-              ]
-            }
           }
         ]
       },
@@ -478,23 +406,11 @@
             "set_property": {
              "property:race": 5
             }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minelp:winged"
-              ]
-            }
           }
         ]
       },
       "minelp:set_zebra": {
         "sequence": [
-		  {
-            "run_command": {
-              "command": "ability @s mayfly false"
-            }
-          },
           {
             "set_property": {
               "property:is_pony": 1
@@ -503,13 +419,6 @@
           {
             "set_property": {
               "property:race": 6
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:winged"
-              ]
             }
           }
         ]
@@ -525,17 +434,10 @@
             "set_property": {
               "property:race": 7
             }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minelp:winged"
-              ]
-            }
           }
         ]
       },
-	  "minelp:set_gryphon": {
+      "minelp:set_gryphon": {
         "sequence": [
           {
             "set_property": {
@@ -548,15 +450,13 @@
             }
           },
           {
-            "add": {
-              "component_groups": [
-                "minelp:winged"
-              ]
+            "set_property": {
+              "property:tail_shape": 0
             }
           }
         ]
       },
-	  "minelp:set_hippogriff": {
+      "minelp:set_hippogriff": {
         "sequence": [
           {
             "set_property": {
@@ -567,23 +467,11 @@
             "set_property": {
               "property:race": 9
             }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minelp:winged"
-              ]
-            }
           }
         ]
       },
       "minelp:set_kirin": {
         "sequence": [
-          {
-            "run_command": {
-              "command": "ability @s mayfly false"
-            }
-          },
           {
             "set_property": {
               "property:is_pony": 1
@@ -592,13 +480,6 @@
           {
             "set_property": {
               "property:race": 10
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:winged"
-              ]
             }
           }
         ]
@@ -614,61 +495,74 @@
             "set_property": {
               "property:race": 11
             }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minelp:winged"
-              ]
-            }
           }
         ]
       },
       "minelp:tail_stub": {
         "set_property": {
-          "property:tail_length": "0"
+          "property:tail_length": 0
         }
       },
       "minelp:tail_quarter": {
         "set_property": {
-          "property:tail_length": "1"
+          "property:tail_length": 1
         }
       },
       "minelp:tail_half": {
         "set_property": {
-          "property:tail_length": "2"
+          "property:tail_length": 2
         }
       },
       "minelp:tail_three_quarters": {
         "set_property": {
-          "property:tail_length": "3"
+          "property:tail_length": 3
         }
       },
       "minelp:tail_full": {
         "set_property": {
-          "property:tail_length": "4"
+          "property:tail_length": 4
+        }
+      },
+	  "minelp:tail_straight": {
+        "set_property": {
+          "property:tail_shape": 0
+        }
+      },
+	  "minelp:tail_bumpy": {
+        "set_property": {
+          "property:tail_shape": 1
+        }
+      },
+	  "minelp:tail_swirly": {
+        "set_property": {
+          "property:tail_shape": 2
+        }
+      },
+	  "minelp:tail_spiky": {
+        "set_property": {
+          "property:tail_shape": 3
         }
       },
       "minelp:snout_round": {
         "set_property": {
-          "property:muzzle_type": "1"
+          "property:muzzle_type": 1
         }
       },
       "minelp:snout_square": {
         "set_property": {
-          "property:muzzle_type": "2"
+          "property:muzzle_type": 2
         }
       },
       "minelp:snout_flat": {
         "set_property": {
-          "property:muzzle_type": "0"
+          "property:muzzle_type": 0
         }
       },
       "minelp:size_foal": {
         "sequence": [
           {
             "set_property": {
-              "property:pony_size": "0"
+              "property:pony_size": 0
             }
           },
           {
@@ -712,7 +606,7 @@
         "sequence": [
           {
             "set_property": {
-              "property:pony_size": "2"
+              "property:pony_size": 2
             }
           },
           {

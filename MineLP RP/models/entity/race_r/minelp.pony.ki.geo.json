@@ -768,6 +768,7 @@
 				},
 				{
 					"name": "rightItemMagic",
+					"parent": "root",
 					"pivot": [-9, 13, -8],
 					"cubes": [
 						{
@@ -786,6 +787,7 @@
 				},
 				{
 					"name": "leftItemMagic",
+					"parent": "root",
 					"pivot": [5, 13, -8],
 					"cubes": [
 						{

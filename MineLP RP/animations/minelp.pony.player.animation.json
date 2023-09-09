@@ -7,22 +7,22 @@
 				"head": {
 					"position": [0, "-1 * !query.is_sprinting", 0]
 				},
-				"leftArmPony": {
-					"rotation": ["-35 * !query.is_sprinting", 0, 0],
+				"leftArm": {
+					"rotation": [-35, 0, 0],
 					"position": [4, 6, 1]
 				},
 				"leftLeg": {
 					"position": ["4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
 				},
-				"rightArmPony": {
-					"rotation": ["-35 * !query.is_sprinting", 0, 0],
+				"rightArm": {
+					"rotation": [-35, 0, 0],
 					"position": [-4, 6, 1]
 				},
 				"rightLeg": {
 					"position": ["-4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
 				},
 				"root": {
-					"position": [0, "-6 * !query.is_sprinting", 0]
+					"position": [0, -6, 0]
 				},
 				"waist": {
 					"rotation": [15, 0, 0],
@@ -47,18 +47,10 @@
 					"rotation": ["20 * !query.is_sprinting", 0, "-10 * !query.is_sprinting"]
 				},
 				"rightItemMagic": {
-					"position": [0, -6, -2]
+					"position": [0, 0, -2]
 				},
 				"leftItemMagic": {
-					"position": [0, -6, -2]
-				},
-				"leftArm": {
-					"rotation": [-35, 0, 0],
-					"position": [4, 6, 1]
-				},
-				"rightArm": {
-					"rotation": [-35, 0, 0],
-					"position": [-4, 6, 1]
+					"position": [0, 0, -2]
 				}
 			}
 		},
@@ -73,34 +65,26 @@
 				"root": {
 					"rotation": [0, "90.0 - query.sleep_rotation - query.body_y_rotation", 0],
 					"position": [
-						"12.0 * math.cos(query.body_y_rotation) * math.cos(query.sleep_rotation) - 24.0 * math.sin(query.body_y_rotation) * math.sin(query.sleep_rotation)",
-						-11,
+						"4+10.0 * math.cos(query.body_y_rotation) * math.cos(query.sleep_rotation) - 24.0 * math.sin(query.body_y_rotation) * math.sin(query.sleep_rotation)",
+						-12,
 						"24.0 * math.cos(query.body_y_rotation) * math.sin(query.sleep_rotation) + 24.0 * math.sin(query.body_y_rotation) * math.cos(query.sleep_rotation) - 6"
 					]
 				},
 				"leftArm": {
 					"rotation": [-90, 0, 0],
-					"position": [1, 0, 0]
+					"position": [1, 1, 2]
 				},
 				"rightArm": {
 					"rotation": [-90, 0, 0],
-					"position": [-1, 0, 0]
+					"position": [-1, 1, 2]
 				},
 				"leftLeg": {
 					"rotation": [90, 0, 0],
-					"position": [1, 0, 0]
+					"position": [1, 1, -2]
 				},
 				"rightLeg": {
 					"rotation": [90, 0, 0],
-					"position": [-1, 0, 0]
-				},
-				"leftArmPony": {
-					"rotation": [-90, 0, 0],
-					"position": [1, 0, 0]
-				},
-				"rightArmPony": {
-					"rotation": [-90, 0, 0],
-					"position": [-1, 0, 0]
+					"position": [-1, 1, -2]
 				}
 			}
 		},

@@ -52,7 +52,7 @@
                 ]
             },
             "animations": {
-                "default": "controller.animation.minelp.pony.default",
+                "default": "controller.animation.minelp.pony.skeleton.default",
                 "default.arms": "controller.animation.minelp.pony.default.arms",
                 "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
                 "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",

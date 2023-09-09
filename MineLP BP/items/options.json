@@ -19,7 +19,9 @@
 		},
 		"events": {
 			"options_popup": {
-				"swing": {}
+				"run_command": {
+					"command": "event entity @p minelp:options_popup"
+				}
 			}
 		}
 	}

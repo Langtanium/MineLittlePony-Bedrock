@@ -6,7 +6,7 @@
               "textures": {
                 "Array.skins": [
                   "Texture.default",
-                  "Texture.minelp_seapony"
+                  "Texture.default"
                 ]
               },
 			  "geometries": {
@@ -59,7 +59,7 @@
 				{ "leftLegSlim": false },
 				{ "rightLegSlim": false },
 				{ "tail": "variable.minelp_is_seapony == 0 || !query.is_in_water" },
-				{ "tailBody": "(variable.minelp_tail_length >= 1 && variable.minelp_is_seapony == 0) || (variable.minelp_tail_length >= 1 && !query.is_in_water && variable.minelp_iskirin == 0 && variable.minelp_is_seapony == 1)" },
+				{ "tail1": "(variable.minelp_tail_length >= 1 && variable.minelp_is_seapony == 0) || (variable.minelp_tail_length >= 1 && !query.is_in_water && variable.minelp_iskirin == 0 && variable.minelp_is_seapony == 1)" },
 				{ "tail2": "(variable.minelp_tail_length >= 2 && variable.minelp_is_seapony == 0) || (variable.minelp_tail_length >= 2 && !query.is_in_water && variable.minelp_iskirin == 0 && variable.minelp_is_seapony == 1)" },
 				{ "tail3": "(variable.minelp_tail_length >= 3 && variable.minelp_is_seapony == 0) || (variable.minelp_tail_length >= 3 && !query.is_in_water && variable.minelp_iskirin == 0 && variable.minelp_is_seapony == 1)" },
 				{ "tail4": "(variable.minelp_tail_length == 4 && variable.minelp_is_seapony == 0) || (variable.minelp_tail_length == 4 && !query.is_in_water && variable.minelp_iskirin == 0 && variable.minelp_is_seapony == 1)" },

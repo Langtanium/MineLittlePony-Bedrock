@@ -58,6 +58,7 @@
                     "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
                     "variable.minelp_muzzle_type = q.property('property:muzzle_type');",
                     "variable.minelp_tail_length = q.property('property:tail_length');",
+					"variable.minelp_tail_shape = q.property('property:tail_shape');",
 					"variable.minelp_size = q.property('property:pony_size');",
 					"variable.minelp_has_wings = (variable.minelp_race == 2 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 8 || variable.minelp_race == 9);",
 					"variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
@@ -78,6 +79,9 @@
                     { "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0 && !variable.is_first_person" },
                     { "arm_fix_magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0 && !variable.is_first_person" },
                     { "long_neck": "variable.minelp_race == 6" },
+					{ "tail_bumpy": "variable.minelp_tail_shape == 1" },
+					{ "tail_swirly": "variable.minelp_tail_shape == 2" },
+					{ "tail_spiky": "variable.minelp_tail_shape == 3" },
                     // Original //
                     "root"
                 ]
@@ -99,6 +103,9 @@
                 "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
                 "bob.tail": "animation.minelp.pony.bob.tail",
                 "big_head": "animation.minelp.pony.big_head",
+				"tail_bumpy": "animation.minelp.pony.tail.bumpy",
+				"tail_swirly": "animation.minelp.pony.tail.swirly",
+				"tail_spiky": "animation.minelp.pony.tail.spiky",
                 // Original Animations //
                 "root": "controller.animation.player.root",
                 "base_controller": "controller.animation.player.base",

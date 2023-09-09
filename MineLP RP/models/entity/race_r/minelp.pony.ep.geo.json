@@ -138,10 +138,10 @@
 				{
 					"name": "head",
 					"parent": "neckFix",
-					"pivot": [0, 24, 1],
+					"pivot": [0, 24, 0],
 					"cubes": [
 						{
-							"origin": [-4, 22, -4],
+							"origin": [-4, 22, -5],
 							"size": [8, 8, 8],
 							"uv": {
 								"north": {"uv": [8, 8], "uv_size": [8, 8]},
@@ -157,10 +157,10 @@
 				{
 					"name": "snoutMale",
 					"parent": "head",
-					"pivot": [0, 24, 1],
+					"pivot": [0, 24, 0],
 					"cubes": [
 						{
-							"origin": [-2, 22, -5],
+							"origin": [-2, 22, -6],
 							"size": [4, 3, 1],
 							"uv": {
 								"north": {"uv": [10, 13], "uv_size": [4, 3]},
@@ -175,10 +175,10 @@
 				{
 					"name": "snoutFemale",
 					"parent": "head",
-					"pivot": [0, 24, 1],
+					"pivot": [0, 24, 0],
 					"cubes": [
 						{
-							"origin": [-2, 22, -5],
+							"origin": [-2, 22, -6],
 							"size": [4, 2, 1],
 							"uv": {
 								"north": {"uv": [10, 14], "uv_size": [4, 2]},
@@ -190,7 +190,7 @@
 							}
 						},
 						{
-							"origin": [-1, 24, -5],
+							"origin": [-1, 24, -6],
 							"size": [2, 1, 1],
 							"uv": {
 								"north": {"uv": [11, 13], "uv_size": [2, 1]},
@@ -206,10 +206,10 @@
 				{
 					"name": "hat",
 					"parent": "head",
-					"pivot": [0, 24, 1],
+					"pivot": [0, 24, 0],
 					"cubes": [
 						{
-							"origin": [-4, 22, -4],
+							"origin": [-4, 22, -5],
 							"size": [8, 8, 8],
 							"inflate": 0.5,
 							"uv": {
@@ -226,10 +226,10 @@
 				{
 					"name": "ears",
 					"parent": "head",
-					"pivot": [0, 24, 1],
+					"pivot": [0, 24, 0],
 					"cubes": [
 						{
-							"origin": [2, 30, 1],
+							"origin": [2, 30, 0],
 							"size": [2, 2, 2],
 							"uv": {
 								"north": {"uv": [16, 18], "uv_size": [-2, 2]},
@@ -241,7 +241,7 @@
 							}
 						},
 						{
-							"origin": [-4, 30, 1],
+							"origin": [-4, 30, 0],
 							"size": [2, 2, 2],
 							"uv": {
 								"north": {"uv": [14, 18], "uv_size": [2, 2]},
@@ -421,7 +421,12 @@
 					"name": "tailBody",
 					"parent": "tail",
 					"pivot": [0, 32, 8],
-					"rotation": [60, 0, 0],
+					"rotation": [60, 0, 0]
+				},
+				{
+					"name": "tail1",
+					"parent": "tailBody",
+					"pivot": [0, 32, 8],
 					"cubes": [
 						{
 							"origin": [-2, 30, 6],
@@ -457,7 +462,7 @@
 				},
 				{
 					"name": "tail3",
-					"parent": "tail2",
+					"parent": "tailBody",
 					"pivot": [0, 8, 0],
 					"cubes": [
 						{
@@ -475,7 +480,7 @@
 				},
 				{
 					"name": "tail4",
-					"parent": "tail3",
+					"parent": "tailBody",
 					"pivot": [0, 8, 0],
 					"cubes": [
 						{
