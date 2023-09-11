@@ -1,26 +1,10 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.minelp.pony.setispony.true": {
-			"animation_length": 10,
-			"loop": true,
-			"override_previous_animation": true,
-			"timeline": {
-				"0.0": "variable.minelp_ispony = 1;"
-			}
-		},
 		"animation.minelp.pony.big_head": {
 			"bones": {
 				"head": {
 					"scale": 1.4
-				}
-			},
-			"loop": true
-		},
-		"animation.minelp.pony.look_at_target": {
-			"bones": {
-				"head": {
-					"rotation": ["query.log(query.target_x_rotation)", "query.target_y_rotation", 0]
 				}
 			},
 			"loop": true
@@ -66,24 +50,6 @@
 			},
 			"loop": true
 		},
-		"animation.minelp.pony.bob.leftArm": {
-			"bones": {
-				"leftArm": {
-					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
-					"position": [-0.5, 2.5, 0.5]
-				}
-			},
-			"loop": true
-		},
-		"animation.minelp.pony.bob.rightArm": {
-			"bones": {
-				"rightArm": {
-					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
-					"position": [0.5, 2.5, 0.5]
-				}
-			},
-			"loop": true
-		},
 		"animation.minelp.pony.bob.tail": {
 			"bones": {
 				"tailBody": {
@@ -114,15 +80,49 @@
 			},
 			"loop": true
 		},
+		"animation.minelp.pony.setispony.true": {
+			"animation_length": 10,
+			"loop": true,
+			"override_previous_animation": true,
+			"timeline": {
+				"0.0": "variable.minelp_ispony = 1;"
+			}
+		},
+		"animation.minelp.pony.look_at_target": {
+			"bones": {
+				"head": {
+					"rotation": ["query.log(query.target_x_rotation)", "query.target_y_rotation", 0]
+				}
+			},
+			"loop": true
+		},
+		"animation.minelp.pony.bob.leftArm": {
+			"bones": {
+				"leftArm": {
+					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
+					"position": [-0.5, 2.5, 0.5]
+				}
+			},
+			"loop": true
+		},
+		"animation.minelp.pony.bob.rightArm": {
+			"bones": {
+				"rightArm": {
+					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
+					"position": [0.5, 2.5, 0.5]
+				}
+			},
+			"loop": true
+		},
 		"animation.minelp.pony.long_neck": {
 			"loop": true,
 			"bones": {
 				"neck": {
-					"position": [0, 1, 0],
+					"position": [0, -0.8, 0.1],
 					"scale": [1, 1.4, 1]
 				},
-				"neckFix": {
-					"scale": [1, 0.71429, 1]
+				"head": {
+					"position": [0, 1, -0.3]
 				}
 			}
 		},

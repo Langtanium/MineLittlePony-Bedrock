@@ -11,7 +11,7 @@
 					"position": [0, -8, 0]
 				},
 				"head": {
-					"position": [0, 8, -6]
+					"position": [0, 8, -7]
 				},
 				"leftLeg": {
 					"position": [0, 1, 4]
@@ -46,7 +46,7 @@
 					"position": [0, -8, 0]
 				},
 				"head": {
-					"position": [0, 8, -6]
+					"position": [0, 8, -7]
 				},
 				"leftLeg": {
 					"position": [0, 1, 4]
@@ -58,10 +58,10 @@
 					"position": [0, 4, -6]
 				},
 				"leftArm": {
-					"position": [-3, -1, -6]
+					"position": [-3, -1, -5]
 				},
 				"rightArm": {
-					"position": [3, -1, -6]
+					"position": [3, -1, -5]
 				},
 				"rightItem": {
 					"rotation": ["variable.movement_leg_angle", 0, 0],
