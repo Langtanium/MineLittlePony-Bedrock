@@ -5,9 +5,9 @@
             "geometry": "Geometry.minelp_default",
             "part_visibility": [
                 { "*": false },
-                { "hornGlow": "variable.minelp_horn_type > 0 && (!q.is_item_name_any('slot.weapon.offhand', 0, '') || !q.is_item_name_any('slot.weapon.mainhand', 0, ''))" },
-                { "leftItemMagic": "variable.minelp_horn_type > 0 && !q.is_item_name_any('slot.weapon.offhand', 0, '')" },
-                { "rightItemMagic": "variable.minelp_horn_type > 0 && !q.is_item_name_any('slot.weapon.mainhand', 0, '')" }
+                { "hornGlow": "variable.is_holding_left || variable.is_holding_right" },
+                { "leftItemMagic": "variable.is_holding_left" },
+                { "rightItemMagic": "variable.is_holding_right" }
             ],
             "materials": [
                 { "*": "Material.minelp_magic" }

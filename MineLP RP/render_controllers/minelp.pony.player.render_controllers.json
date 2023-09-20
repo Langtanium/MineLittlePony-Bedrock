@@ -76,7 +76,7 @@
                 { "leftItemMagic": false }
             ],
             "materials": [
-                { "*": "Material.minelp.default" }
+                { "*": "Material.minelp_default" }
             ],
             "textures": [ "Array.skins[query.is_in_water && variable.minelp_is_seapony]" ]
         },
@@ -91,7 +91,7 @@
             },
             "geometry": "Geometry.saddlebags",
             "materials": [
-                { "*": "Material.minelp.default" }
+                { "*": "Material.minelp_default" }
             ],
             "textures": [
                 "Texture.saddlebags",

@@ -110,6 +110,7 @@
         "minecraft:is_baby": {}
       },
       "minelp:yearling": {},
+      "minelp:normal": {},
       "minelp:lanky": {},
       "minelp:bulky": {},
       "minelp:tall": {},
@@ -481,6 +482,11 @@
             "set_property": {
               "property:race": 10
             }
+          },
+          {
+            "set_property": {
+              "property:tail_shape": 0
+            }
           }
         ]
       },
@@ -523,22 +529,22 @@
           "property:tail_length": 4
         }
       },
-	  "minelp:tail_straight": {
+      "minelp:tail_straight": {
         "set_property": {
           "property:tail_shape": 0
         }
       },
-	  "minelp:tail_bumpy": {
+      "minelp:tail_bumpy": {
         "set_property": {
           "property:tail_shape": 1
         }
       },
-	  "minelp:tail_swirly": {
+      "minelp:tail_swirly": {
         "set_property": {
           "property:tail_shape": 2
         }
       },
-	  "minelp:tail_spiky": {
+      "minelp:tail_spiky": {
         "set_property": {
           "property:tail_shape": 3
         }
@@ -559,92 +565,118 @@
         }
       },
       "minelp:size_foal": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:pony_size": 0
-            }
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minelp:foal"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:yearling"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:lanky"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:bulky"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:tall"
-              ]
-            }
-          }
-        ]
+        "set_property": {
+          "property:pony_size": 0
+        },
+        "add": {
+          "component_groups": [
+            "minelp:foal"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:yearling",
+            "minelp:normal",
+            "minelp:lanky",
+            "minelp:bulky",
+            "minelp:tall"
+          ]
+        }
+      },
+      "minelp:size_yearling": {
+        "set_property": {
+          "property:pony_size": 1
+        },
+        "add": {
+          "component_groups": [
+            "minelp:yearling"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:foal",
+            "minelp:normal",
+            "minelp:lanky",
+            "minelp:bulky",
+            "minelp:tall"
+          ]
+        }
       },
       "minelp:size_normal": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:pony_size": 2
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:foal"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:yearling"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:lanky"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:bulky"
-              ]
-            }
-          },
-          {
-            "remove": {
-              "component_groups": [
-                "minelp:tall"
-              ]
-            }
-          }
-        ]
+        "set_property": {
+          "property:pony_size": 2
+        },
+        "add": {
+          "component_groups": [
+            "minelp:normal"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:foal",
+            "minelp:yearling",
+            "minelp:lanky",
+            "minelp:bulky",
+            "minelp:tall"
+          ]
+        }
+      },
+      "minelp:size_lanky": {
+        "set_property": {
+          "property:pony_size": 3
+        },
+        "add": {
+          "component_groups": [
+            "minelp:lanky"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:foal",
+            "minelp:yearling",
+            "minelp:normal",
+            "minelp:bulky",
+            "minelp:tall"
+          ]
+        }
+      },
+      "minelp:size_bulky": {
+        "set_property": {
+          "property:pony_size": 4
+        },
+        "add": {
+          "component_groups": [
+            "minelp:bulky"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:foal",
+            "minelp:yearling",
+            "minelp:normal",
+            "minelp:lanky",
+            "minelp:tall"
+          ]
+        }
+      },
+      "minelp:size_tall": {
+        "set_property": {
+          "property:pony_size": 5
+        },
+        "add": {
+          "component_groups": [
+            "minelp:tall"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:foal",
+            "minelp:yearling",
+            "minelp:normal",
+            "minelp:lanky",
+            "minelp:bulky"
+          ]
+        }
       },
       "minelp:fly": {
         "sequence": [

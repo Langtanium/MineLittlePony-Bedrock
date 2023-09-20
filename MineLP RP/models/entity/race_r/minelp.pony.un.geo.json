@@ -44,6 +44,7 @@
 							"uv": {
 								"north": {"uv": [20, 36], "uv_size": [8, 8]},
 								"east": {"uv": [16, 36], "uv_size": [4, 8]},
+								"south": {"uv": [32, 36], "uv_size": [8, 8]},
 								"west": {"uv": [28, 36], "uv_size": [4, 8]},
 								"up": {"uv": [20, 32], "uv_size": [8, 4]},
 								"down": {"uv": [28, 36], "uv_size": [8, -4]}
@@ -349,6 +350,11 @@
 					]
 				},
 				{
+					"name": "leftItem",
+					"parent": "leftArm",
+					"pivot": [5, 15, 1]
+				},
+				{
 					"name": "rightArm",
 					"parent": "body",
 					"pivot": [-5, 22, 0],
@@ -411,6 +417,11 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "rightItem",
+					"parent": "rightArm",
+					"pivot": [-5, 15, 1]
 				},
 				{
 					"name": "tail",

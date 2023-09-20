@@ -15,7 +15,7 @@
             },
             "geometry": {
                 "default": "geometry.zombie.v1.8",
-                "minelp_default": "geometry.minelp.pony.ep"
+                "minelp_default": "geometry.minelp.pony.ep.zombie"
             },
             "spawn_egg": {
                 "texture": "spawn_egg",
@@ -23,7 +23,7 @@
             },
             "scripts": {
                 "variables": {
-                    "variable.minelp_ispony": "public",
+                    "variable.minelp_is_pony": "public",
                     "variable.minelp_race": "public"
                 },
                 "initialize": [
@@ -48,14 +48,16 @@
                     "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;"
                 ],
                 "animate": [
-					{ "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0" },
-                    "default"
+                    "default",
+                    { "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0" },
+                    { "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" }
                 ]
             },
             "animations": {
                 // MineLP Animations //
                 "default": "controller.animation.minelp.pony.default",
-				"arm_fix": "animation.minelp.pony.correct",
+                "arm_fix": "animation.minelp.pony.correct_zombie",
+                "bow_fix": "animation.minelp.pony.correct_bow",
                 "default.arms": "controller.animation.minelp.pony.zombie.default.arms",
                 "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
                 "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",

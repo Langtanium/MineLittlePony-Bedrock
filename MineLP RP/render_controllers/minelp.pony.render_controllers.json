@@ -24,6 +24,10 @@
                 { "tail2": "variable.minelp_tail_length >= 2" },
                 { "tail3": "variable.minelp_tail_length >= 3" },
                 { "tail4": "variable.minelp_tail_length == 4" },
+				{ "leftArmSlim": false },
+				{ "rightArmSlim": false },
+				{ "leftLegSlim": false },
+				{ "rightLegSlim": false },
                 { "rightItemMagic": 0 }
             ],
             "materials": [

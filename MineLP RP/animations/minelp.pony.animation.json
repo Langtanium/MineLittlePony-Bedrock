@@ -13,9 +13,6 @@
 			"bones": {
 				"leftArm": {
 					"rotation": ["variable.movement_leg_angle", 0, 0]
-				},
-				"leftArmPony": {
-					"rotation": ["variable.movement_leg_angle", 0, 0]
 				}
 			},
 			"loop": true
@@ -23,9 +20,6 @@
 		"animation.minelp.pony.show_movement.rightArm": {
 			"bones": {
 				"rightArm": {
-					"rotation": ["-variable.movement_leg_angle", 0, 0]
-				},
-				"rightArmPony": {
 					"rotation": ["-variable.movement_leg_angle", 0, 0]
 				}
 			},
@@ -62,9 +56,6 @@
 			"bones": {
 				"leftArm": {
 					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "5.73 - (variable.attack2 * 0.6)", 0]
-				},
-				"leftArmPony": {
-					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "5.73 - (variable.attack2 * 0.6)", 0]
 				}
 			},
 			"loop": true
@@ -72,9 +63,6 @@
 		"animation.minelp.pony.show_attack.rightArm": {
 			"bones": {
 				"rightArm": {
-					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "variable.attack2 * 0.6 - 5.73", 0]
-				},
-				"rightArmPony": {
 					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "variable.attack2 * 0.6 - 5.73", 0]
 				}
 			},
