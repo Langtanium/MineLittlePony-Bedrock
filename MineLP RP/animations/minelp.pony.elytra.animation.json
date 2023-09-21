@@ -53,7 +53,7 @@
 			"loop": true,
 			"bones": {
 				"body": {
-					"rotation": [70, 0, 0],
+					"rotation": [90, 0, 0],
 					"position": [0, 3, -4],
 					"scale": 1.067
 				},

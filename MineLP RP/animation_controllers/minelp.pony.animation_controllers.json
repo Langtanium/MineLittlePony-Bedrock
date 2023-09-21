@@ -19,7 +19,7 @@
             "states": {
                 "default": {
                     "animations": [
-                        "show_attack.leftArm",
+                        { "show_attack.rightArm": "variable.minelp_horn_type == 0.0 || !variable.is_holding_right" },
                         "show_movement.leftArm",
                         "show_movement.rightArm"
                     ],

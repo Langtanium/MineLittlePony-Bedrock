@@ -13,7 +13,7 @@
                 { "*": "Material.minelp_magic" }
             ],
             "textures": ["Texture.minelp_default"],
-            "ignore_lighting": false
+            "ignore_lighting": true
         }
     }
 }

@@ -11,7 +11,7 @@
             },
             "textures": {
                 "default": "textures/entity/witch",
-                "minelp_default": "textures/entity/minelp.pony.witch"
+                "minelp_default": "textures/entity/witch_pony"
             },
             "geometry": {
                 "default": "geometry.villager.witch.v1.8",

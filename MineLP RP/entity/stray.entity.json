@@ -14,8 +14,8 @@
             "textures": {
                 "default": "textures/entity/skeleton/stray",
                 "overlay": "textures/entity/skeleton/stray_overlay",
-                "minelp_default": "textures/entity/skeleton/minelp.pony.stray",
-                "minelp_overlay": "textures/entity/skeleton/minelp.pony.stray_overlay"
+                "minelp_default": "textures/entity/skeleton/stray_pony",
+                "minelp_overlay": "textures/entity/skeleton/stray_pony_overlay"
             },
             "geometry": {
                 "default": "geometry.skeleton.stray.v1.8",
@@ -59,7 +59,7 @@
                 ]
             },
             "animations": {
-                "default": "controller.animation.minelp.pony.default",
+                "default": "controller.animation.minelp.pony.skeleton.default",
                 "arm_fix": "animation.minelp.pony.correct_skeleton",
                 "default.arms": "controller.animation.minelp.pony.default.arms",
                 "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",

@@ -5,23 +5,34 @@
       "identifier": "minecraft:allay",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+	  "properties": {
+        "property:is_pony": {
+          "range": [
+            0,
+            1
+          ],
+          "type": "int",
+          "default": 1,
+          "client_sync": true
+        }
+      }
     },
     "component_groups": {
       "allay_default": {
         "minecraft:variant": { "value": 0 }
       },
       "allay_cupid": {
-        "minecraft:variant": { "value": 2 }
+        "minecraft:variant": { "value": 1 }
       },
       "allay_orangetang": {
-        "minecraft:variant": { "value": 3 }
+        "minecraft:variant": { "value": 2 }
       },
       "allay_seabreeze": {
-        "minecraft:variant": { "value": 4 }
+        "minecraft:variant": { "value": 3 }
       },
       "allay_sugartip": {
-        "minecraft:variant": { "value": 5 }
+        "minecraft:variant": { "value": 4 }
       },
       "pickup_item_delay": {
         "minecraft:timer": {

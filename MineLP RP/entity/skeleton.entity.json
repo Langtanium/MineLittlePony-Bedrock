@@ -11,7 +11,7 @@
             },
             "textures": {
                 "default": "textures/entity/skeleton/skeleton",
-                "minelp_default": "textures/entity/skeleton/minelp.pony.skeleton"
+                "minelp_default": "textures/entity/skeleton/skeleton_pony"
             },
             "geometry": {
                 "default": "geometry.skeleton.v1.8",

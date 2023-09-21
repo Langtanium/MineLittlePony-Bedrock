@@ -11,7 +11,7 @@
             },
             "textures": {
                 "default": "textures/entity/zombie/zombie",
-                "minelp_default": "textures/entity/zombie/minelp.pony.zombie"
+                "minelp_default": "textures/entity/zombie/zombie_pony"
             },
             "geometry": {
                 "default": "geometry.zombie.v1.8",

@@ -678,21 +678,6 @@
           ]
         }
       },
-      "minelp:fly": {
-        "sequence": [
-          {
-            "filters": { "test": "has_ability", "subject": "self", "operator": "not", "value": "mayfly" },
-            "run_command": {
-              "command": "ability @s mayfly true"
-            }
-          },
-          {
-            "run_command": {
-              "command": "effect @s slow_falling 1 255 true"
-            }
-          }
-        ]
-      },
       "minecraft:gain_bad_omen": {
         "add": {
           "component_groups": [

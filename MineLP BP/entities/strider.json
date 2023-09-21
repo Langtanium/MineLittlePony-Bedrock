@@ -5,7 +5,18 @@
       "identifier": "minecraft:strider",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+	  "properties": {
+        "property:is_pony": {
+          "range": [
+            0,
+            1
+          ],
+          "type": "int",
+          "default": 1,
+          "client_sync": true
+        }
+      }
     },
     "component_groups": {
       "strider_spike": {

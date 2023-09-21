@@ -11,7 +11,7 @@
             },
             "textures": {
                 "default": "textures/entity/zombie/husk",
-                "minelp_default": "textures/entity/zombie/minelp.pony.husk"
+                "minelp_default": "textures/entity/zombie/husk_pony"
             },
             "geometry": {
                 "default": "geometry.zombie.husk.v1.8",

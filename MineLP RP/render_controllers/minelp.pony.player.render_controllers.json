@@ -98,6 +98,13 @@
                 "Array.saddlebags[variable.minelp_haswings == 0]"
             ]
         },
+		"controller.render.pony.first_person_griffin": {
+            "geometry": "Geometry.saddlebags",
+            "materials": [
+                { "*": "Material.minelp_default" }
+            ],
+            "textures": [ "Texture.default" ]
+        },
         "controller.render.pony.third_person_spectator": {
           "arrays": {
             "geometries": {

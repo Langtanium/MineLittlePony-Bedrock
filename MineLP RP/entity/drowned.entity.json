@@ -11,7 +11,7 @@
             },
             "textures": {
                 "default": "textures/entity/zombie/drowned",
-                "minelp_default": "textures/entity/zombie/minelp.pony.drowned"
+                "minelp_default": "textures/entity/zombie/drowned_pony"
             },
             "geometry": {
                 "default": "geometry.zombie.drowned.v1.16",

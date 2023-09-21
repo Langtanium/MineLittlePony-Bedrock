@@ -11,7 +11,7 @@
             },
             "textures": {
                 "default": "textures/entity/skeleton/wither_skeleton",
-                "minelp_default": "textures/entity/skeleton/minelp.pony.skeleton_wither"
+                "minelp_default": "textures/entity/skeleton/skeleton_wither_pony"
             },
             "geometry": {
                 "default": "geometry.skeleton.wither.v1.8",
@@ -19,7 +19,7 @@
             },
             "spawn_egg": {
                 "texture": "spawn_egg",
-                "texture_index": 9
+                "texture_index": 29
             },
             "scripts": {
                 "variables": {

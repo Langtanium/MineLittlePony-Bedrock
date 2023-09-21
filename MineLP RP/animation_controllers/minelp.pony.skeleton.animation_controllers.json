@@ -6,7 +6,8 @@
                 "default": {
                     "animations": [
                         "look_at_target",
-                        "show_movement",
+						"default.arms",
+                        "show_movement.legs",
                         "show_movement.tail",
                         "bob.tail"
                     ]
