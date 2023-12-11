@@ -46,22 +46,27 @@ Things may not work properly and are subject to change.
 
 ### Technical Misc
 
-| Item             | Status      |
-|------------------|:-----------:|
-| Ponified armor   |      ✔️      |
-| Elytra           | In Progress |
-| Magic auras      | In Progress |
-| Pony hat fixes   |             |
-| Unicorn horn     |      ✔️      |
-| Magic colors     |      ✔️      |
-| Pegasi wings     |      ✔️      |
-| Changeling wings |      ✔️      |
-| Batpony wings    |      ✔️      |
-| Batpony ears     |      ✔️      |
-| Tail length      |      ✔️      |
-| Snout type       |      ✔️      |
-| Model size       | In Progress  |
-| Pony gear        |             |
+| Item                      | Status      |
+|---------------------------|:-----------:|
+| Ponified armor            |      ✔️      |
+| Elytra                    | In Progress |
+| Magic auras               | In Progress |
+| Pony hat fixes            |             |
+| Unicorn horn              |      ✔️      |
+| Magic colors              |      ✔️      |
+| Pegasi/Alicorn wings      |      ✔️      |
+| Changeling wings          |      ✔️      |
+| Reformed Changeling wings |      ✔️      |
+| Reformed Changeling ears  |      ✔️      |
+| Batpony wings             |      ✔️      |
+| Batpony ears              |      ✔️      |
+| Gyphon/Hippogriff wings   |      ✔️      |
+| Gyphon/Hippogriff beak    |      ✔️      |
+| Gyphon legs               |      ✔️      |
+| Tail length               |      ✔️      |
+| Snout type                |      ✔️      |
+| Model size                | In Progress  |
+| Pony gear                 |             |
 
 ### Mobs
 
@@ -95,4 +100,4 @@ Things may not work properly and are subject to change.
 - Player's cape does not render
   - Capes still affect elytra
 - Player's magic aura does not render
-  - The reason for this is unknown
+  - Custom materials are broken for the player

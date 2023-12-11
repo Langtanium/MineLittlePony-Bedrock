@@ -13,14 +13,6 @@
             "type": "data",
             "uuid": "fa6e90c8-c925-460f-8155-c8a60b753caa",
             "version": [1, 0, 0]
-        },
-        {
-            "description": "Mine Little Pony - Scripts",
-            "type": "script",
-            "language": "javascript",
-            "uuid": "3f890c7d-66df-46d5-973e-29ed948ebad6",
-            "version": [1, 0, 0],
-            "entry": "scripts/main.js"
         }
     ],
     "metadata": {
@@ -36,14 +28,6 @@
             // Mine Little Pony Resource Pack
             "version": [1, 0, 0],
             "uuid": "571ec626-7915-4b36-8897-47f793a77643"
-        },
-        {
-            "module_name": "@minecraft/server",
-			"version": "1.6.0-beta"
-        },
-        {
-            "module_name": "@minecraft/server-ui",
-			"version": "1.2.0-beta"
         }
     ]
 }
