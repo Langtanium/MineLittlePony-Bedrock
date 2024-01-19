@@ -45,11 +45,12 @@
                     "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;"
                 ],
                 "animate": [
-                    "default",
-                    { "long_neck": "variable.minelp_race == 6" }
+                    { "default": "(variable.minelp_is_pony ?? 0.0) == 1.0" },
+                    { "long_neck": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_race == 6" }
                 ]
             },
             "animations": {
+                // Minelp //
                 "long_neck": "animation.minelp.pony.long_neck",
                 "default": "controller.animation.minelp.pony.default",
                 "default.arms": "controller.animation.minelp.pony.default.arms",

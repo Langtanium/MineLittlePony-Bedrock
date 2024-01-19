@@ -81,13 +81,13 @@ Things may not work properly and are subject to change.
 | Illusioner       | Unicorn                  |             |
 | Piglin           | ?                        |             |
 | Piglin Brute     | ?                        |             |
-| Pillager         | Changeling               |             |
+| Pillager         | Changeling               | In Progress |
 | Skeleton         | Skeleton (Unicorn)       | In Progress |
 | Stray            | Skeleton (Earth Pony)    | In Progress |
 | Strider          | Dragon                   |             |
 | Vex              | Parasprite               |             |
 | Villager         | Earth Pony               |             |
-| Vindicator       | Pegasus                  |             |
+| Vindicator       | Pegasus                  | In Progress |
 | Wandering Trader | Earth Pony               |             |
 | Witch            | Earth Pony + Hat         | In Progress |
 | Wither Skeleton  | Large Skeleton (Unicorn) | In Progress |
