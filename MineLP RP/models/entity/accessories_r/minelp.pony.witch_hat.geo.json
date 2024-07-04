@@ -1,0 +1,71 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.witch_hat",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "witch_hat",
+					"parent": "head",
+					"pivot": [-5, 29.03125, -6],
+					"cubes": [
+						{"origin": [-5, 29.05, -6], "size": [10, 2, 10], "uv": [0, 64]}
+					]
+				},
+				{
+					"name": "witch_hat2",
+					"parent": "witch_hat",
+					"pivot": [1.75, 29, 1],
+					"rotation": [-3, 0, 1.5],
+					"cubes": [
+						{"origin": [-3.25, 30.5, -4], "size": [7, 4, 7], "uv": [0, 76]}
+					]
+				},
+				{
+					"name": "witch_hat3",
+					"parent": "witch_hat2",
+					"pivot": [1.75, 32, 1],
+					"rotation": [-6, 0, 3],
+					"cubes": [
+						{"origin": [-1.5, 33.5, -2], "size": [4, 4, 4], "uv": [0, 87]}
+					]
+				},
+				{
+					"name": "witch_hat4",
+					"parent": "witch_hat3",
+					"pivot": [1.75, 35, 1],
+					"rotation": [-12, 0, 6],
+					"cubes": [
+						{"origin": [0.25, 37, 0], "size": [1, 2, 1], "uv": [0, 95], "inflate": 0.25}
+					]
+				}
+			]
+		}
+	]
+}

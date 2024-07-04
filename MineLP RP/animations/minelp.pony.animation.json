@@ -21,6 +21,9 @@
 			"bones": {
 				"rightArm": {
 					"rotation": ["-variable.movement_leg_angle", 0, 0]
+				},
+				"arms": {
+					"rotation": ["-variable.movement_leg_angle", 0, 0]
 				}
 			},
 			"loop": true
@@ -64,6 +67,9 @@
 			"bones": {
 				"rightArm": {
 					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "variable.attack2 * 0.6 - 5.73", 0]
+				},
+				"arms": {
+					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "variable.attack2 * 0.6 - 5.73", 0]
 				}
 			},
 			"loop": true
@@ -95,6 +101,10 @@
 		},
 		"animation.minelp.pony.bob.rightArm": {
 			"bones": {
+				"rightArm": {
+					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
+					"position": [0.5, 2.5, 0.5]
+				},
 				"rightArm": {
 					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
 					"position": [0.5, 2.5, 0.5]

@@ -307,18 +307,10 @@
         }
       },
       "minelp:set_human": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 0
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 0
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 0,
+          "property:race": 0
+        }
       },
       "minelp:set_seapony": {
         "set_property": {
@@ -341,168 +333,72 @@
         }
       },
       "minelp:set_earth_pony": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 1
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 1
+        }
       },
       "minelp:set_pegasus": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 2
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 2
+        }
       },
       "minelp:set_unicorn": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 3
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 3
+        }
       },
       "minelp:set_alicorn": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 4
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 4
+        }
       },
       "minelp:set_changeling": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-             "property:race": 5
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 5
+        }
       },
       "minelp:set_zebra": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 6
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 6
+        }
       },
       "minelp:set_reformed_changeling": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 7
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 7
+        }
       },
       "minelp:set_gryphon": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 8
-            }
-          },
-          {
-            "set_property": {
-              "property:tail_shape": 0
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 8,
+          "property:tail_shape": 0
+        }
       },
       "minelp:set_hippogriff": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 9
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 9
+        }
       },
       "minelp:set_kirin": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 10
-            }
-          },
-          {
-            "set_property": {
-              "property:tail_shape": 0
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 10,
+          "property:tail_shape": 0
+        }
       },
       "minelp:set_batpony": {
-        "sequence": [
-          {
-            "set_property": {
-              "property:is_pony": 1
-            }
-          },
-          {
-            "set_property": {
-              "property:race": 11
-            }
-          }
-        ]
+        "set_property": {
+          "property:is_pony": 1,
+          "property:race": 11
+        }
       },
       "minelp:tail_stub": {
         "set_property": {

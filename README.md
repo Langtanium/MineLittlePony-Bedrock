@@ -34,7 +34,7 @@ Things may not work properly and are subject to change.
 | Earth Pony          |   ✔️   | Partial   |
 | Pegasus             |   ✔️   |           |
 | Unicorn             |   ✔️   | Partial   |
-| Alicorn             |   ✔️   |           |
+| Alicorn             |   ✔️   | Partial   |
 | Changeling          |   ✔️   |           |
 | Zebra               |   ✔️   | Complete  |
 | Reformed Changeling |   ✔️   |           |
@@ -64,9 +64,10 @@ Things may not work properly and are subject to change.
 | Gyphon/Hippogriff beak    |      ✔️      |
 | Gyphon legs               |      ✔️      |
 | Tail length               |      ✔️      |
+| Tail shape                |      ✔️      |
 | Snout type                |      ✔️      |
 | Model size                | In Progress  |
-| Pony gear                 |             |
+| Pony gear                 | In Progress  |
 
 ### Mobs
 
@@ -75,7 +76,7 @@ Things may not work properly and are subject to change.
 | Allay            | Breezie                  |             |
 | Drowned          | Earth Pony               | In Progress |
 | Enderman         | Special                  |             |
-| Evoker           | Unicorn                  |             |
+| Evoker           | Unicorn                  | In Progress |
 | Guardian         | Special                  |             |
 | Husk             | Earth Pony               |      ✔️     |
 | Illusioner       | Unicorn                  |             |
@@ -84,12 +85,13 @@ Things may not work properly and are subject to change.
 | Pillager         | Changeling               | In Progress |
 | Skeleton         | Skeleton (Unicorn)       | In Progress |
 | Stray            | Skeleton (Earth Pony)    | In Progress |
+| Bogged           | ?                        |             |
 | Strider          | Dragon                   |             |
 | Vex              | Parasprite               |             |
-| Villager         | Earth Pony               |             |
+| Villager         | Earth Pony               | In Progress |
 | Vindicator       | Pegasus                  | In Progress |
 | Wandering Trader | Earth Pony               |             |
-| Witch            | Earth Pony + Hat         | In Progress |
+| Witch            | Earth Pony? + Hat?       | In Progress |
 | Wither Skeleton  | Large Skeleton (Unicorn) | In Progress |
 | Zombie           | Earth Pony               |      ✔️      |
 | Zombie Pigman    | Earth Pony               |             |
@@ -101,3 +103,5 @@ Things may not work properly and are subject to change.
   - Capes still affect elytra
 - Player's magic aura does not render
   - Custom materials are broken for the player
+- The Vindicator is invisible
+  - Game cannot find variable.minelp_is_pony

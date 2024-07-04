@@ -95,7 +95,7 @@
             ],
             "textures": [
                 "Texture.saddlebags",
-                "Array.saddlebags[variable.minelp_haswings == 0]"
+                "Array.saddlebags[variable.minelp_has_wings == 0]"
             ]
         },
 		"controller.render.pony.first_person_griffin": {

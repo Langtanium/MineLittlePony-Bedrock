@@ -196,13 +196,13 @@
 							"holding" : "variable.minelp_horn_type == 0"
 						},
 						{
-							"brandish_spear" : "variable.is_brandishing_spear"
+							"brandish_spear" : "variable.is_brandishing_spear && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
 						},
 						{
-							"holding_spyglass": "variable.is_holding_spyglass"
+							"holding_spyglass": "variable.is_holding_spyglass && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
 						},
 						{
-							"charging" : "query.is_charging"
+							"charging" : "query.is_charging && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
 						},
 						{
 							"sneaking" : "query.is_sneaking && !query.is_sleeping && variable.minelp_is_pony == 0"
@@ -253,13 +253,13 @@
 							"crossbow_controller" : "query.get_equipped_item_name == 'crossbow'"
 						},
 						{
-							"third_person_bow_equipped" : "query.get_equipped_item_name == 'bow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0)"
+							"third_person_bow_equipped" : "query.get_equipped_item_name == 'bow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0) && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
 						},
 						{
-							"tooting_goat_horn": "variable.is_tooting_goat_horn"
+							"tooting_goat_horn": "variable.is_tooting_goat_horn && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
 						},
 						{
-							"holding_brush": "query.get_equipped_item_name == 'brush'"
+							"holding_brush": "query.get_equipped_item_name == 'brush' && variable.minelp_horn_type == 0"
 						},
 						{
 							"brushing": "variable.is_using_brush"

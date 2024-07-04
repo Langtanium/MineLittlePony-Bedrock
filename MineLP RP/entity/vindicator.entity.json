@@ -3,7 +3,6 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:vindicator",
-      "min_engine_version": "1.8.0",
       "materials": {
         "default": "vindicator",
         "minelp_default": "vindicator",
@@ -15,7 +14,7 @@
       },
       "geometry": {
         "default": "geometry.vindicator.v1.8",
-        "minelp_default": "geometry.minelp.pony.pe"
+        "minelp_default": "geometry.minelp.pony.pe.vindicator"
       },
       "spawn_egg": {
         "texture": "spawn_egg",
@@ -39,7 +38,12 @@
 		"pre_animation": [
           "variable.minelp_is_pony = q.property('property:is_pony');",
           "variable.minelp_race = q.property('property:race');",
-          "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);"
+          "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
+          "variable.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
+          "variable.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
+          "variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
+          "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;",
+          "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;"
         ],
         "animate": [
           // Minelp //
@@ -56,7 +60,7 @@
       },
       "animations": {
         // Minelp //
-		"arm_fix": "animation.minelp.pony.correct",
+		"arm_fix": "animation.minelp.pony.correct_illager",
         "default": "controller.animation.minelp.pony.default",
         "default.arms": "controller.animation.minelp.pony.default.arms",
         "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
@@ -86,9 +90,9 @@
         "controller_riding": "controller.animation.humanoid.riding"
       },
       "render_controllers": [
-        { "controller.render.vindicator": "(variable.minelp_ispony ?? 0.0) == 0.0" },
-		{ "controller.render.minelp.pony": "(variable.minelp_ispony ?? 0.0) == 1.0" },
-        { "controller.render.minelp.pony.magic": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" }
+        "controller.render.vindicator",
+		{ "controller.render.minelp.pony": "(variable.minelp_is_pony ?? 0.0) == 1.0" },
+        { "controller.render.minelp.pony.magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" }
       ],
       "enable_attachables": true,
       "hide_armor": true

@@ -15,7 +15,7 @@
             },
             "geometry": {
                 "default": "geometry.villager.witch.v1.8",
-                "minelp_default": "geometry.minelp.pony.zebra"
+                "minelp_default": "geometry.minelp.pony.ze"
             },
             "scripts": {
                 "scale": "0.9375",
@@ -46,12 +46,14 @@
                 ],
                 "animate": [
                     { "default": "(variable.minelp_is_pony ?? 0.0) == 1.0" },
-                    { "long_neck": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_race == 6" }
+                    { "long_neck": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_race == 6" },
+                    { "arm_fix": "(v.minelp_is_pony ?? 0.0) == 1.0" }
                 ]
             },
             "animations": {
                 // Minelp //
                 "long_neck": "animation.minelp.pony.long_neck",
+                "arm_fix": "animation.minelp.pony.correct",
                 "default": "controller.animation.minelp.pony.default",
                 "default.arms": "controller.animation.minelp.pony.default.arms",
                 "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",

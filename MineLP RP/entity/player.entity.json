@@ -4,21 +4,25 @@
         "description": {
             "identifier": "minecraft:player",
             "materials": {
+                // Vanilla //
                 "default": "entity_alphatest",
                 "cape": "entity_alphatest",
                 "animated": "player_animated",
                 "spectator": "player_spectator",
+                // Minelp //
                 "minelp_default": "entity_alphatest",
                 "minelp_spectator": "player_spectator",
                 "minelp_magic": "pony_magic"
             },
             "textures": {
-                "default": "textures/entity/steve",
+                "default": "textures/entity/pony/the_dude",
                 "cape": "textures/entity/cape_invisible"
             },
             "geometry": {
+                // Vanilla //
                 "default": "geometry.humanoid.custom",
                 "cape": "geometry.cape",
+                // Minelp //
                 "minelp_earth_pony": "geometry.minelp.pony.ep",
                 "minelp_pegasus": "geometry.minelp.pony.pe",
                 "minelp_unicorn": "geometry.minelp.pony.un",
@@ -28,10 +32,16 @@
                 "minelp_reformed_changeling": "geometry.minelp.pony.rc",
                 "minelp_gryphon": "geometry.minelp.pony.gr",
                 "minelp_hippogriff": "geometry.minelp.pony.hg",
-                "minelp_kirin": "geometry.minelp.pony.kirin",
+                "minelp_kirin": "geometry.minelp.pony.ki",
                 "minelp_batpony": "geometry.minelp.pony.bp",
                 "minelp_seapony": "geometry.minelp.pony.seapony.tail",
-                "minelp_default": "geometry.minelp.pony.player"
+                // Minelp Accessories //
+                "minelp_antlers": "geometry.antlers",
+                "minelp_crown": "geometry.crown",
+                "minelp_muffin": "geometry.muffin",
+                "minelp_saddlebags": "geometry.saddlebags",
+                "minelp_stetson": "geometry.stetson",
+                "minelp_witch_hat": "geometry.witch_hat"
             },
             "scripts": {
                 "variables": {
@@ -51,6 +61,7 @@
                     "variable.minelp_has_wings = 0;"
                 ],
                 "pre_animation": [
+                    // Minelp //
                     "variable.minelp_is_pony = q.property('property:is_pony');",
                     "variable.minelp_is_seapony = q.property('property:is_seapony');",
                     "variable.minelp_race = q.property('property:race');",
@@ -66,6 +77,7 @@
                     "variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
                     "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;",
                     "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
+                    // Vanilla //
                     "variable.helmet_layer_visible = 1.0;",
                     "variable.leg_layer_visible = 1.0;",
                     "variable.boot_layer_visible = 1.0;",
@@ -79,18 +91,19 @@
                 ],
                 "animate": [
                     // Minelp //
-                    { "default": "(variable.minelp_is_pony ?? 0.0) == 1.0 && !variable.is_first_person" },
-                    { "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0 && !variable.is_first_person" },
-                    { "arm_fix_magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0 && !variable.is_first_person" },
-                    { "bow_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0 && !variable.is_first_person && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" },
-                    { "bow_fix_magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0 && !variable.is_first_person && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" },
-                    { "long_neck": "variable.minelp_race == 6" },
-                    { "tail_bumpy": "variable.minelp_tail_shape == 1" },
-                    { "tail_swirly": "variable.minelp_tail_shape == 2" },
-                    { "tail_spiky": "variable.minelp_tail_shape == 3" },
-                    { "big_head": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_size == 0" },
-                    { "size_foal": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_size == 0" },
-                    // Original //
+                    { "default": "(v.minelp_is_pony ?? 0.0) == 1.0 && !v.is_first_person" },
+                    // {"fly": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_has_wings ?? 0.0) == 1.0"},
+                    { "arm_fix": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_horn_type ?? 0.0) == 0 && !v.is_first_person" },
+                    { "arm_fix_magic": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_horn_type ?? 0.0) >= 1.0 && !v.is_first_person" },
+                    { "bow_fix": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_horn_type ?? 0) == 0 && !v.is_first_person && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" },
+                    { "bow_fix_magic": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_horn_type ?? 0) >= 1.0 && !variable.is_first_person && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" },
+                    { "long_neck": "(v.minelp_race ?? 0.0) == 6" },
+                    { "tail_bumpy": "(v.minelp_tail_shape ?? 0.0) == 1" },
+                    { "tail_swirly": "(v.minelp_tail_shape ?? 0.0) == 2" },
+                    { "tail_spiky": "(v.minelp_tail_shape ?? 0.0) == 3" },
+                    { "big_head": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_size ?? 0) == 0" },
+                    { "size_foal": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_size ?? 0) == 0" },
+                    // Vanilla //
                     "root"
                 ]
             },
@@ -117,7 +130,7 @@
                 "tail_swirly": "animation.minelp.pony.tail.swirly",
                 "tail_spiky": "animation.minelp.pony.tail.spiky",
                 "size_foal": "animation.minelp.pony.foal",
-                // Original Animations //
+                // Vanilla //
                 "root": "controller.animation.player.root",
                 "base_controller": "controller.animation.player.base",
                 "hudplayer": "controller.animation.player.hudplayer",
@@ -176,15 +189,17 @@
                 "brushing": "animation.humanoid.brushing"
             },
             "render_controllers": [
+                // Vanilla //
                 { "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator" },
                 { "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator && (variable.minelp_is_pony ?? 0.0) == 0.0" },
                 { "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator" },
                 { "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator" },
                 { "controller.render.player.map": "variable.map_face_icon" },
-                { "controller.render.player.cape": "query.has_cape" },
-                { "controller.render.pony.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator" },
-                { "controller.render.pony.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator && (variable.minelp_is_pony ?? 0.0) == 1.0" },
-                { "controller.render.minelp.pony.player.magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0 && !variable.is_first_person && !query.is_spectator" }
+                // Minelp //
+                { "controller.render.player.cape": "q.has_cape" },
+                { "controller.render.pony.third_person_spectator": "!v.is_first_person && !v.map_face_icon && q.is_spectator" },
+                { "controller.render.pony.third_person": "!v.is_first_person && !v.map_face_icon && !q.is_spectator && (v.minelp_is_pony ?? 0.0) == 1.0" },
+                { "controller.render.minelp.pony.player.magic": "(v.minelp_is_pony ?? 0.0) == 1.0 && (v.minelp_horn_type ?? 0.0) >= 1.0 && !v.is_first_person && !q.is_spectator" }
             ],
             "enable_attachables": true
         }

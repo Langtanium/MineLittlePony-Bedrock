@@ -50,11 +50,11 @@
                 "animate": [
                     "default",
                     { "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0" },
-                    { "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" }
+                    { "bow_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" }
                 ]
             },
             "animations": {
-                // MineLP Animations //
+                // Minelp //
                 "default": "controller.animation.minelp.pony.default",
                 "arm_fix": "animation.minelp.pony.correct_zombie",
                 "bow_fix": "animation.minelp.pony.correct_bow",
