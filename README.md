@@ -10,14 +10,8 @@ Things may not work properly and are subject to change.
 
 ## Installation
 
-### Experimental
-
-- Download the source files
-- Zip the folders "MineLP BP" & "MineLP RP"
-- Rename the extention .zip to .mcaddon
-
 ### Releases
-- There are currently no releases
+- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/tag/experimental">Experimental</a>
 
 ### Adding to Minecraft
 - **On PC:** Double click to add to Minecraft
