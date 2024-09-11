@@ -1,0 +1,33 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.minelp.pony.armor": {
+            "geometry": "Geometry.minelp_default",
+            "materials": [
+                { "*": "variable.is_enchanted ? Material.enchanted : Material.default" }
+            ],
+            "textures": ["variable.has_trim ? variable.trim_path : Texture.minelp_default", "Texture.enchanted"]
+        },
+		"controller.render.minelp.pony.armor.layer2": {
+            "geometry": "Geometry.minelp.layer2",
+            "materials": [
+                { "*": "variable.is_enchanted ? Material.enchanted : Material.default" }
+            ],
+            "textures": ["variable.has_trim ? variable.trim_path : Texture.minelp.layer2", "Texture.enchanted"]
+        },
+		"controller.render.minelp.pony.armor.overlay": {
+            "geometry": "Geometry.minelp_default",
+            "materials": [
+                { "*": "variable.is_enchanted ? Material.enchanted : Material.overlay" }
+            ],
+            "textures": ["variable.has_trim ? variable.trim_path : Texture.minelp_overlay", "Texture.enchanted"]
+        },
+		"controller.render.minelp.pony.armor.overlay.layer2": {
+            "geometry": "Geometry.minelp.layer2",
+            "materials": [
+                { "*": "variable.is_enchanted ? Material.enchanted : Material.overlay" }
+            ],
+            "textures": ["variable.has_trim ? variable.trim_path : Texture.minelp_overlay.layer2", "Texture.enchanted"]
+        }
+    }
+}

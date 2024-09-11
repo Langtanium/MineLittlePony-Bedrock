@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:skull",
+      "textures": {
+        "default": "textures/entity/steve",
+        "steve": "textures/entity/player/wide/steve_pony",
+        "skeleton": "textures/entity/skulls/skeleton_pony",
+        "wither": "textures/entity/skulls/skeleton_wither_pony",
+        "zombie": "textures/entity/skulls/zombie_pony",
+        "creeper": "textures/entity/skulls/creeper",
+        "dragon": "textures/entity/dragon/dragon",
+        "piglin": "textures/entity/piglin/piglin"
+      },
+      "geometry": {
+        "default": "geometry.player_head",
+        "steve": "geometry.minelp.pony_head",
+        "skeleton": "geometry.minelp.pony_head",
+        "wither": "geometry.minelp.pony_head",
+        "zombie": "geometry.minelp.pony_head",
+        "creeper": "geometry.mob_head",
+        "dragon": "geometry.dragon_head",
+        "piglin": "geometry.piglin"
+      }
+    }
+  }
+}

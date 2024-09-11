@@ -1,0 +1,273 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.pony.sneaking": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"position": [0, "-1 * !query.is_sprinting", 0]
+				},
+				"leftArm": {
+					"rotation": [-35, 0, 0],
+					"position": [4, 6, 1]
+				},
+				"leftLeg": {
+					"position": ["4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+				},
+				"rightArm": {
+					"rotation": [-35, 0, 0],
+					"position": [-4, 6, 1]
+				},
+				"rightLeg": {
+					"position": ["-4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+				},
+				"root": {
+					"position": [0, -6, 0]
+				},
+				"waist": {
+					"rotation": [15, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"tail": {
+					"rotation": [-15, 0, 0]
+				},
+				"leftWingOpened": {
+					"rotation": [0, 5, 10]
+				},
+				"rightWingOpened": {
+					"rotation": [0, -5, -10]
+				},
+				"leftBatWingOpened": {
+					"rotation": ["20 * !query.is_sprinting", 0, "10 * !query.is_sprinting"]
+				},
+				"rightBatWingOpened": {
+					"rotation": ["20 * !query.is_sprinting", 0, "-10 * !query.is_sprinting"]
+				},
+				"rightItemMagic": {
+					"position": [0, 0, -2]
+				},
+				"leftItemMagic": {
+					"position": [0, 0, -2]
+				}
+			}
+		},
+		"animation.player.pony.sneaking_magic": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"position": [0, "-1 * !query.is_sprinting", 0]
+				},
+				"leftArm": {
+					"rotation": [-35, 0, 0],
+					"position": [4, 6, 1]
+				},
+				"leftLeg": {
+					"position": ["4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+				},
+				"rightArm": {
+					"rotation": [-35, 0, 0],
+					"position": [-4, 6, 1]
+				},
+				"rightLeg": {
+					"position": ["-4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+				},
+				"root": {
+					"position": [0, -6, 0]
+				},
+				"waist": {
+					"rotation": [15, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"tail": {
+					"rotation": [-15, 0, 0]
+				},
+				"leftWingOpened": {
+					"rotation": [0, 5, 10]
+				},
+				"rightWingOpened": {
+					"rotation": [0, -5, -10]
+				},
+				"leftBatWingOpened": {
+					"rotation": ["20 * !query.is_sprinting", 0, "10 * !query.is_sprinting"]
+				},
+				"rightBatWingOpened": {
+					"rotation": ["20 * !query.is_sprinting", 0, "-10 * !query.is_sprinting"]
+				},
+				"rightItemMagic": {
+					"position": [0, 0, -2]
+				},
+				"leftItemMagic": {
+					"position": [0, 0, -2]
+				},
+				"leftItem": {
+					"rotation": [20, 0, 0]
+				},
+				"rightItem": {
+					"rotation": [20, 0, 0]
+				}
+			}
+		},
+		"animation.player.sleeping.pony": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"head": {
+					"rotation": ["10.0 - this", "80-this", "-this"],
+					"position": [0, -1, 0]
+				},
+				"root": {
+					"rotation": [0, "90.0 - query.sleep_rotation - query.body_y_rotation", 0],
+					"position": [
+						"4+10.0 * math.cos(query.body_y_rotation) * math.cos(query.sleep_rotation) - 24.0 * math.sin(query.body_y_rotation) * math.sin(query.sleep_rotation)",
+						-12,
+						"24.0 * math.cos(query.body_y_rotation) * math.sin(query.sleep_rotation) + 24.0 * math.sin(query.body_y_rotation) * math.cos(query.sleep_rotation) - 6"
+					]
+				},
+				"leftArm": {
+					"rotation": [-90, 0, 0],
+					"position": [1, 1, 2]
+				},
+				"rightArm": {
+					"rotation": [-90, 0, 0],
+					"position": [-1, 1, 2]
+				},
+				"leftLeg": {
+					"rotation": [90, 0, 0],
+					"position": [1, 1, -2]
+				},
+				"rightLeg": {
+					"rotation": [90, 0, 0],
+					"position": [-1, 1, -2]
+				}
+			}
+		},
+		"animation.player.fly_timer": {
+			"loop": true,
+			"animation_length": 2
+		},
+		"animation.player.fly": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"leftWingOpened": {
+					"rotation": [0, 0, "90 - (math.cos(query.life_time * 400) * 65)"]
+				},
+				"rightWingOpened": {
+					"rotation": [0, 0, "-90 + (math.cos(query.life_time * 400) * 65)"]
+				},
+				"leftBugWing": {
+					"rotation": [0, 0, "60 - (math.cos(query.life_time * 400) * 65)"]
+				},
+				"rightBugWing": {
+					"rotation": [0, 0, "-60 + (math.cos(query.life_time * 400) * 65)"]
+				},
+				"leftRCwing": {
+					"rotation": [0, 0, "60 - (math.cos(query.life_time * 400) * 65)"]
+				},
+				"rightRCwing": {
+					"rotation": [0, 0, "-60 + (math.cos(query.life_time * 400) * 65)"]
+				}
+			}
+		},
+		"animation.player.fly.move": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-20, -10, 0],
+					"position": [0, 0, -1]
+				},
+				"rightArm": {
+					"rotation": [-20, 10, 0],
+					"position": [0, 0, -1]
+				},
+				"leftArmPony": {
+					"rotation": [-20, -10, 0],
+					"position": [0, 0, -1]
+				},
+				"rightArmPony": {
+					"rotation": [-20, 10, 0],
+					"position": [0, 0, -1]
+				},
+				"leftLeg": {
+					"rotation": [20, 10, 0],
+					"position": [0, 0, 1.5]
+				},
+				"rightLeg": {
+					"rotation": [20, -10, 0],
+					"position": [0, 0, 1.5]
+				}
+			}
+		},
+		"animation.player.fly.sprint": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-90, -15, 0],
+					"position": [0, 1, -1]
+				},
+				"rightArm": {
+					"rotation": [-90, 15, 0],
+					"position": [0, 1, -1]
+				},
+				"leftArmPony": {
+					"rotation": [-90, -15, 0],
+					"position": [0, 1, -1]
+				},
+				"rightArmPony": {
+					"rotation": [-90, 15, 0],
+					"position": [0, 1, -1]
+				},
+				"leftLeg": {
+					"rotation": [90, 15, 0],
+					"position": [0, 3, 3]
+				},
+				"rightLeg": {
+					"rotation": [90, -15, 0],
+					"position": [0, 3, 3]
+				},
+				"rightItemMagic": {
+					"position": [0, 5, 0]
+				},
+				"leftItemMagic": {
+					"position": [0, 5, 0]
+				}
+			}
+		},
+		"animation.player.seapony": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": ["-80 * !query.is_swimming", "-10 * !query.is_swimming", "-((math.cos(query.life_time * 103.2) * 2.865) + 2.865) * !query.is_swimming"],
+					"position": ["2 * !query.is_swimming", "2 * !query.is_swimming", 0]
+				},
+				"rightArm": {
+					"rotation": ["-80 * !query.is_swimming", "10 * !query.is_swimming", "((math.cos(query.life_time * 103.2) * 2.865) + 2.865) * !query.is_swimming"],
+					"position": ["-2 * !query.is_swimming", "2 * !query.is_swimming", 0]
+				},
+				"leftArmPony": {
+					"rotation": ["-80 * !query.is_swimming", "-10 * !query.is_swimming", "-((math.cos(query.life_time * 103.2) * 2.865) + 2.865) * !query.is_swimming"],
+					"position": ["2 * !query.is_swimming", "2 * !query.is_swimming", 0]
+				},
+				"rightArmPony": {
+					"rotation": ["-80 * !query.is_swimming", "10 * !query.is_swimming", "((math.cos(query.life_time * 103.2) * 2.865) + 2.865) * !query.is_swimming"],
+					"position": ["-2 * !query.is_swimming", "2 * !query.is_swimming", 0]
+				},
+				"fishTail": {
+					"rotation": ["(math.cos(query.life_time * 300) * 10)", 0, 0]
+				},
+				"tip": {
+					"rotation": ["(math.cos(query.life_time * 300) * 10)", 0, 0]
+				},
+				"fins": {
+					"rotation": ["(math.cos(query.life_time * 300) * 10)", 0, 0]
+				},
+				"rightItemMagic": {
+					"position": [0, 5, 0]
+				},
+				"leftItemMagic": {
+					"position": [0, 5, 0]
+				}
+			}
+		}
+	}
+}

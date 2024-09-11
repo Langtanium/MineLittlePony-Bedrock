@@ -1,0 +1,348 @@
+{
+    "format_version": "1.17",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "options",
+                "name": "Pony Options",
+                "text": "Choose an option to customize.",
+                "buttons":[
+                    {
+                        "name":"Race",
+                        "commands":[
+                            "/dialogue open @s @initiator race_first"
+                        ]
+                    },
+                    {
+                        "name":"Snout Type",
+                        "commands":[
+                            "/dialogue open @s @initiator snout"
+                        ]
+                    },
+                    {
+                        "name":"Tail Length",
+                        "commands":[
+                            "/dialogue open @s @initiator tail"
+                        ]
+                    },
+                    {
+                        "name":"Tail Shape",
+                        "commands":[
+                            "/dialogue open @s @initiator shape"
+                        ]
+                    },
+                    {  
+                        "name":"Size",
+                        "commands":[
+                            "/dialogue open @s @initiator size"
+                        ] 
+                    }
+                ]
+            },
+            {
+                "scene_tag": "race_first",
+                "name": "Race Select",
+                "text": "Select your race. Default - Earth Pony\nClose the dialogue box to go back.",
+                "on_close_commands": [
+                    "/dialogue open @s @initiator options"
+                ],
+                "buttons":[
+                    {  
+                        "name":"Earth Pony",
+                        "commands":[
+                            "/event entity @s minelp:set_earth_pony",
+                            "/dialogue open @s @initiator race_first"
+                        ] 
+                    },
+                    {  
+                        "name":"Pegasus",
+                        "commands":[
+                            "/event entity @s minelp:set_pegasus",
+                            "/dialogue open @s @initiator race_first"
+                        ] 
+                    },
+                    {  
+                        "name":"Unicorn",
+                        "commands":[
+                            "/event entity @s minelp:set_unicorn",
+                            "/dialogue open @s @initiator race_first"
+                        ] 
+                    },
+                    {  
+                        "name":"Alicorn",
+                        "commands":[
+                            "/event entity @s minelp:set_alicorn",
+                            "/dialogue open @s @initiator race_first"
+                        ] 
+                    },
+                    {  
+                        "name":"Changeling",
+                        "commands":[
+                            "/event entity @s minelp:set_changeling",
+                            "/dialogue open @s @initiator race_first"
+                        ] 
+                    },
+                    {  
+                        "name":"Next",
+                        "commands":[
+                            "/dialogue open @s @initiator race_mid"
+                        ] 
+                    }
+                ]
+            },
+            {
+                "scene_tag": "race_mid",
+                "name": "Race Select",
+                "text": "Select your race. Default - Earth Pony\nClose the dialogue box to go back.",
+                "on_close_commands": [
+                    "/dialogue open @s @initiator options"
+                ],
+                "buttons":[
+                    {
+                        "name":"Previous",
+                        "commands":[
+                            "/dialogue open @s @initiator race_first"
+                        ]
+                    },
+                    {  
+                        "name":"Zebra",
+                        "commands":[
+                            "/event entity @s minelp:set_zebra",
+                            "/dialogue open @s @initiator race_mid"
+                        ] 
+                    },
+                    {  
+                        "name":"Reformed Changeling",
+                        "commands":[
+                            "/event entity @s minelp:set_reformed_changeling",
+                            "/dialogue open @s @initiator race_mid"
+                        ] 
+                    },
+                    {  
+                        "name":"Griffin",
+                        "commands":[
+                            "/event entity @s minelp:set_gryphon",
+                            "/dialogue open @s @initiator race_mid"
+                        ] 
+                    },
+                    {  
+                        "name":"Hippogriff",
+                        "commands":[
+                            "/event entity @s minelp:set_hippogriff",
+                            "/dialogue open @s @initiator race_mid"
+                        ] 
+                    },
+                    {  
+                        "name":"Next",
+                        "commands":[
+                            "/dialogue open @s @initiator race_last"
+                        ] 
+                    }
+                ]
+            },
+            {
+                "scene_tag": "race_last",
+                "name": "Race Select",
+                "text": "Select your race. Default - Earth Pony\nClose the dialogue box to go back.",
+                "on_close_commands": [
+                    "/dialogue open @s @initiator options"
+                ],
+                "buttons":[
+                    {
+                        "name":"Previous",
+                        "commands":[
+                            "/dialogue open @s @initiator race_mid"
+                        ]
+                    },
+                    {  
+                        "name":"Kirin",
+                        "commands":[
+                            "/event entity @s minelp:set_kirin",
+                            "/dialogue open @s @initiator race_last"
+                        ] 
+                    },
+                    {  
+                        "name":"Batpony",
+                        "commands":[
+                            "/event entity @s minelp:set_batpony",
+                            "/dialogue open @s @initiator race_last"
+                        ] 
+                    },
+                    {  
+                        "name":"Human",
+                        "commands":[
+                            "/event entity @s minelp:set_human",
+                            "/dialogue open @s @initiator race_last"
+                        ] 
+                    }
+                ]
+            },
+            {
+                "scene_tag": "snout",
+                "name": "Snout Type",
+                "text": "Select your snout type. Default - Round\nClose the dialogue box to go back.",
+                "on_close_commands": [
+                    "/dialogue open @s @initiator options"
+                ],
+                "buttons":[
+                    {
+                        "name":"Round",
+                        "commands":[
+                            "/event entity @s minelp:snout_round",
+                            "/dialogue open @s @initiator snout"
+                        ]
+                    },
+                    {  
+                        "name":"Square",
+                        "commands":[
+                            "/event entity @s minelp:snout_square",
+                            "/dialogue open @s @initiator snout"
+                        ] 
+                    },
+                    {  
+                        "name":"Flat",
+                        "commands":[
+                            "/event entity @s minelp:snout_flat",
+                            "/dialogue open @s @initiator snout"
+                        ] 
+                    }
+                ]
+            },
+            {
+                "scene_tag": "tail",
+                "name": "Tail Length",
+                "text": "Select your tail length. Default - Full\nClose the dialogue box to go back.",
+                "on_close_commands": [
+                    "/dialogue open @s @initiator options"
+                ],
+                "buttons":[
+                    {
+                        "name":"Stub",
+                        "commands":[
+                            "/event entity @s minelp:tail_stub",
+                            "/dialogue open @s @initiator tail"
+                        ]
+                    },
+                    {  
+                        "name":"Quarter",
+                        "commands":[
+                            "/event entity @s minelp:tail_quarter",
+                            "/dialogue open @s @initiator tail"
+                        ] 
+                    },
+                    {  
+                        "name":"Half",
+                        "commands":[
+                            "/event entity @s minelp:tail_half",
+                            "/dialogue open @s @initiator tail"
+                        ] 
+                    },
+                    {  
+                        "name":"Three Quarters",
+                        "commands":[
+                            "/event entity @s minelp:tail_three_quarters",
+                            "/dialogue open @s @initiator tail"
+                        ] 
+                    },
+                    {  
+                        "name":"Full",
+                        "commands":[
+                            "/event entity @s minelp:tail_full",
+                            "/dialogue open @s @initiator tail"
+                        ] 
+                    }
+                ]
+            },
+            {
+                "scene_tag": "shape",
+                "name": "Tail Shape",
+                "text": "Select your tail shape. Default - Straight\nClose the dialogue box to go back.",
+                "on_close_commands": [
+                    "/dialogue open @s @initiator options"
+                ],
+                "buttons":[
+                    {
+                        "name":"Straight",
+                        "commands":[
+                            "/event entity @s minelp:tail_straight",
+                            "/dialogue open @s @initiator shape"
+                        ]
+                    },
+                    {  
+                        "name":"Bumpy",
+                        "commands":[
+                            "/event entity @s minelp:tail_bumpy",
+                            "/dialogue open @s @initiator shape"
+                        ] 
+                    },
+                    {  
+                        "name":"Swirly",
+                        "commands":[
+                            "/event entity @s minelp:tail_swirly",
+                            "/dialogue open @s @initiator shape"
+                        ] 
+                    },
+                    {  
+                        "name":"Spiky",
+                        "commands":[
+                            "/event entity @s minelp:tail_spiky",
+                            "/dialogue open @s @initiator shape"
+                        ] 
+                    }
+                ]
+            },
+            {
+                "scene_tag": "size",
+                "name": "Size Select",
+                "text": "Select the size of your pony. Default - Normal\nClose the dialogue box to go back.",
+                "on_close_commands": [
+                    "/dialogue open @s @initiator options"
+                ],
+                "buttons":[
+                    {  
+                        "name":"Foal",
+                        "commands":[
+                            "/event entity @s minelp:size_foal",
+                            "/dialogue open @s @initiator size"
+                        ] 
+                    },
+                    {  
+                        "name":"Yearling",
+                        "commands":[
+                            "/event entity @s minelp:size_yearling",
+                            "/dialogue open @s @initiator size"
+                        ] 
+                    },
+                    {  
+                        "name":"Normal",
+                        "commands":[
+                            "/event entity @s minelp:size_normal",
+                            "/dialogue open @s @initiator size"
+                        ] 
+                    },
+                    {  
+                        "name":"Lanky",
+                        "commands":[
+                            "/event entity @s minelp:size_lanky",
+                            "/dialogue open @s @initiator size"
+                        ] 
+                    },
+                    {  
+                        "name":"Bulky",
+                        "commands":[
+                            "/event entity @s minelp:size_bulky",
+                            "/dialogue open @s @initiator size"
+                        ] 
+                    },
+                    {  
+                        "name":"Tall",
+                        "commands":[
+                            "/event entity @s minelp:size_tall",
+                            "/dialogue open @s @initiator size"
+                        ] 
+                    }
+                ]
+            }
+        ]
+    }
+}

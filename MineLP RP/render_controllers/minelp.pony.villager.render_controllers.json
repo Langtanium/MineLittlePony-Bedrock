@@ -1,0 +1,229 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.minelp.villager_base": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.minelp_base",
+            "Texture.minelp_base2",
+            "Texture.minelp_base3",
+            "Texture.minelp_base4",
+            "Texture.minelp_base5",
+            "Texture.minelp_base6"
+          ]
+        }
+      },
+      "geometry": "Geometry.minelp_default",
+      "part_visibility": [
+        { "*": true },
+        { "horn": false },
+        { "hornGlow": false },
+        { "leftItemMagic": false },
+        { "rightItemMagic": false },
+        { "leftWingClosed": "(q.is_on_ground || q.is_in_water) && v.minelp_race == 1.0" },
+        { "leftWingOpened": "(!q.is_on_ground && !q.is_in_water) && v.minelp_race == 1.0" },
+        { "rightWingClosed": "(q.is_on_ground || q.is_in_water) && v.minelp_race == 1.0" },
+        { "rightWingOpened": "(!q.is_on_ground && !q.is_in_water) && v.minelp_race == 1.0" },
+        { "leftWingClosed2": false },
+        { "leftWingOpened2": false },
+        { "bonesL": false },
+        { "bone_1_l": false },
+        { "bone_2_l": false },
+        { "rightWingClosed2": false },
+        { "rightWingOpened2": false },
+        { "bonesR": false },
+        { "bone_1_r": false },
+        { "bone_2_r": false },
+        { "ears2": false },
+        { "snoutFemale": "v.minelp_muzzle_type == 1" },
+        { "snoutMale": "v.minelp_muzzle_type == 2" },
+        { "tailBody": "v.minelp_tail_length >= 1" },
+        { "tail2": "v.minelp_tail_length >= 2" },
+        { "tail3": "v.minelp_tail_length >= 3" },
+        { "tail4": "v.minelp_tail_length == 4" },
+        { "leftArmSlim": false },
+        { "rightArmSlim": false },
+        { "leftLegSlim": false },
+        { "rightLegSlim": false }
+      ],
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [
+        "Array.skins[q.skin_id]"
+      ]
+    },
+    "controller.render.minelp.villager_plains": {
+      "arrays": {
+        "textures": {
+          "Array.pony_plains": [
+            "Texture.minelp_pony_unskilled",
+            "Texture.minelp_pony_farmer",
+            "Texture.minelp_pony_fisherman",
+            "Texture.minelp_pony_shepherd",
+            "Texture.minelp_pony_fletcher",
+            "Texture.minelp_pony_librarian",
+            "Texture.minelp_pony_cartographer",
+            "Texture.minelp_pony_cleric",
+            "Texture.minelp_pony_armorer",
+            "Texture.minelp_pony_weapon_smith",
+            "Texture.minelp_pony_tool_smith",
+            "Texture.minelp_pony_butcher",
+            "Texture.minelp_pony_leatherworker",
+            "Texture.minelp_pony_stonemason",
+            "Texture.minelp_pony_nitwit"
+          ]
+        }
+      },
+      "geometry": "Geometry.minelp_default",
+      "part_visibility": [
+        { "*": true },
+        { "horn": "v.minelp_horn_type > 0" },
+        { "hornGlow": false },
+        { "leftItemMagic": false },
+        { "rightItemMagic": false },
+        { "leftWingClosed": "v.minelp_has_wings && (q.is_on_ground || q.is_in_water)" },
+        { "leftWingOpened": "v.minelp_has_wings && !q.is_on_ground && !q.is_in_water" },
+        { "rightWingClosed": "v.minelp_has_wings && (q.is_on_ground || q.is_in_water)" },
+        { "rightWingOpened": "v.minelp_has_wings && !q.is_on_ground && !q.is_in_water" },
+        { "leftWingClosed2": false },
+        { "leftWingOpened2": false },
+        { "bonesL": false },
+        { "bone_1_l": false },
+        { "bone_2_l": false },
+        { "rightWingClosed2": false },
+        { "rightWingOpened2": false },
+        { "bonesR": false },
+        { "bone_1_r": false },
+        { "bone_2_r": false },
+        { "ears2": false },
+        { "snoutFemale": "v.minelp_muzzle_type == 1" },
+        { "snoutMale": "v.minelp_muzzle_type == 2" },
+        { "tailBody": "v.minelp_tail_length >= 1" },
+        { "tail2": "v.minelp_tail_length >= 2" },
+        { "tail3": "v.minelp_tail_length >= 3" },
+        { "tail4": "v.minelp_tail_length == 4" },
+        { "leftArmSlim": false },
+        { "rightArmSlim": false },
+        { "leftLegSlim": false },
+        { "rightLegSlim": false }
+      ],
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [
+        "Array.pony_plains[v.profession_index]"
+      ]
+    },
+    "controller.render.minelp.villager_masked": {
+      "arrays": {
+        "textures": {
+          "Array.biomes": [ 
+            "Texture.minelp_plains",
+            "Texture.minelp_desert",
+            "Texture.minelp_jungle",
+            "Texture.minelp_savanna",
+            "Texture.minelp_snow",
+            "Texture.minelp_swamp",
+            "Texture.minelp_taiga"
+          ],
+          "Array.professions": [
+            "Texture.minelp_unskilled",
+            "Texture.minelp_farmer",
+            "Texture.minelp_fisherman",
+            "Texture.minelp_shepherd",
+            "Texture.minelp_fletcher",
+            "Texture.minelp_librarian",
+            "Texture.minelp_cartographer",
+            "Texture.minelp_cleric",
+            "Texture.minelp_armorer",
+            "Texture.minelp_weapon_smith",
+            "Texture.minelp_tool_smith",
+            "Texture.minelp_butcher",
+            "Texture.minelp_leatherworker",
+            "Texture.minelp_stonemason",
+            "Texture.minelp_nitwit"
+          ]
+        }
+      },
+      "geometry": "Geometry.minelp_default",
+      "part_visibility": [
+        { "*": false },
+		{ "hat": true },
+		{ "body": true },
+		{ "bodySegment": true },
+		{ "leftArm": true },
+		{ "arms": true },
+		{ "leftLeg": true },
+		{ "rightLeg": true }
+      ],
+      "materials": [
+        { "*": "(q.is_baby || v.profession_index == 0) ? Material.minelp_default : Material.minelp_masked" }
+      ],
+      "textures": [
+        "Array.biomes[q.mark_variant]",
+        "Array.professions[v.profession_index]"
+      ]
+    },
+    "controller.render.minelp.villager_accessory": {
+      "arrays": {
+        "textures": {
+          "Array.accessories": [
+            "Texture.minelp_accessory_unskilled",
+            "Texture.minelp_accessory_farmer",
+            "Texture.minelp_accessory_fisherman",
+            "Texture.minelp_accessory_shepherd",
+            "Texture.minelp_accessory_fletcher",
+            "Texture.minelp_accessory_librarian",
+            "Texture.minelp_accessory_cartographer",
+            "Texture.minelp_accessory_cleric",
+            "Texture.minelp_accessory_armorer",
+            "Texture.minelp_accessory_weapon_smith",
+            "Texture.minelp_accessory_tool_smith",
+            "Texture.minelp_accessory_butcher",
+            "Texture.minelp_accessory_leatherworker",
+            "Texture.minelp_accessory_stonemason",
+            "Texture.minelp_accessory_nitwit"
+          ]
+        }
+      },
+      "geometry": "Geometry.minelp_accessory",
+      "part_visibility": [
+        { "*": "v.minelp_is_pony == 1.0" }
+      ],
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [
+        "Array.accessories[v.profession_index]"
+      ]
+    },
+    "controller.render.minelp.villager_level": {
+      "arrays": {
+        "textures": {
+          "Array.levels": [
+            "Texture.minelp_level_stone",
+            "Texture.minelp_level_iron",
+            "Texture.minelp_level_gold",
+            "Texture.minelp_level_emerald",
+            "Texture.minelp_level_diamond"
+          ]
+        }
+      },
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.minelp_default",
+      // If we are not babies, unskilled, or nitwits we can have a job level
+      "part_visibility": [
+        { "*": false },
+        { "leftArm": "!q.is_baby && v.profession_index != 0 && v.profession_index != 14" }
+      ],
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [
+        "Array.levels[v.level_index]"
+      ]
+    }
+  }
+}

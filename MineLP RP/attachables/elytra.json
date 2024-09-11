@@ -1,0 +1,53 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "minecraft:elytra",
+      "materials": {
+        "default": "elytra",
+        "enchanted": "elytra_glint"
+      },
+      "textures": {
+        "default": "textures/models/armor/elytra",
+        "elytra": "textures/models/armor/elytra",
+        "mojang_studios": "textures/entity/capes/mojang_studios",
+        "pancape": "textures/entity/capes/pancape",
+        "minecon_2019": "textures/entity/capes/minecon_2019",
+        "pride": "textures/entity/capes/pride",
+        "vanilla": "textures/entity/capes/vanilla",
+        "cherry_blossom": "textures/entity/capes/cherry_blossom",
+        "tiktok": "textures/entity/capes/tiktok",
+        "twitch": "textures/entity/capes/twitch",
+        "fifteenth_anniv": "textures/entity/capes/fifteenth_anniv",
+        "mcc": "textures/entity/capes/mcc",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.elytra"
+      },
+      "animations": {
+        "default_controller": "controller.animation.elytra.default",
+        "default": "animation.elytra.default",
+        "gliding": "animation.elytra.gliding",
+        "sneaking": "animation.elytra.sneaking",
+        "sleeping": "animation.elytra.sleeping",
+        "swimming": "animation.elytra.swimming",
+		"pony_default_controller": "controller.animation.elytra.pony",
+        "pony_default": "animation.elytra.pony_default",
+        "pony_gliding": "animation.elytra.pony_gliding",
+        "pony_sneaking": "animation.elytra.pony_sneaking",
+        "pony_sleeping": "animation.elytra.pony_sleeping",
+        "pony_swimming": "animation.elytra.pony_swimming"
+      },
+      "scripts": {
+        "parent_setup": "variable.chest_layer_visible = 0.0;",
+        "animate": [
+		  { "default_controller": "context.owning_entity->variable.minelp_is_pony == 0.0" },
+		  { "pony_default_controller": "context.owning_entity->variable.minelp_is_pony == 1.0" }
+        ]
+      },
+      "render_controllers": [ "controller.render.armor" ]
+    }
+  }
+}
+

@@ -1,0 +1,82 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:witch",
+            "min_engine_version": "1.8.0",
+            "materials": {
+                "default": "witch",
+                "minelp_default": "witch",
+                "minelp_magic": "pony_magic"
+            },
+            "textures": {
+                "default": "textures/entity/witch",
+                "minelp_default": "textures/entity/witch_pony"
+            },
+            "geometry": {
+                "default": "geometry.villager.witch.v1.8",
+                "minelp_default": "geometry.minelp.pony.ze"
+            },
+            "scripts": {
+                "scale": "0.9375",
+                "variables": {
+                    "variable.minelp_ispony": "public",
+                    "variable.minelp_race": "public"
+                },
+                "initialize": [
+                    "variable.minelp_ispony = 1;",
+                    "variable.minelp_race = 6;",
+                    "variable.minelp_handedness = 0;",
+                    "variable.minelp_horn_type = 0;",
+                    "variable.minelp_muzzle_type = 1;",
+                    "variable.minelp_tail_length = 4;",
+                    "variable.minelp_has_wings = 0;"
+                ],
+                "pre_animation": [
+                    "variable.minelp_is_pony = q.property('property:is_pony');",
+                    "variable.minelp_race = q.property('property:race');",
+                    "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
+                    "variable.is_holding_right = query.is_item_equipped('main_hand');",
+                    "variable.is_holding_left = query.is_item_equipped('off_hand');",
+                    "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
+                    "variable.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
+                    "variable.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
+                    "variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
+                    "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;"
+                ],
+                "animate": [
+                    { "default": "(variable.minelp_is_pony ?? 0.0) == 1.0" },
+                    { "long_neck": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_race == 6" },
+                    { "arm_fix": "(v.minelp_is_pony ?? 0.0) == 1.0" }
+                ]
+            },
+            "animations": {
+                // Minelp //
+                "long_neck": "animation.minelp.pony.long_neck",
+                "arm_fix": "animation.minelp.pony.correct",
+                "default": "controller.animation.minelp.pony.default",
+                "default.arms": "controller.animation.minelp.pony.default.arms",
+                "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
+                "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
+                "show_movement.legs": "animation.minelp.pony.show_movement.legs",
+                "show_movement.tail": "animation.minelp.pony.show_movement.tail",
+                "show_attack.leftArm": "animation.minelp.pony.show_attack.leftArm",
+                "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
+                "bob.leftArm": "animation.minelp.pony.bob.leftArm",
+                "bob.rightArm": "animation.minelp.pony.bob.rightArm",
+                "bob.tail": "animation.minelp.pony.bob.tail",
+                "look_at_target": "animation.minelp.pony.look_at_target",
+                "big_head": "animation.minelp.pony.big_head"
+            },
+            "render_controllers": [
+                { "controller.render.witch": "(variable.minelp_ispony ?? 0.0) == 0.0" },
+                { "controller.render.minelp.pony": "(variable.minelp_ispony ?? 0.0) == 1.0" },
+                { "controller.render.minelp.pony.magic": "(variable.minelp_ispony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" }
+            ],
+            "spawn_egg": {
+                "texture": "spawn_egg",
+                "texture_index": 17
+            }
+        }
+    }
+}

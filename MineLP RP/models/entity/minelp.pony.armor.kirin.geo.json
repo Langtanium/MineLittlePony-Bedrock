@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.minelp.pony.armor.chestplate.ki",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 21.5, -11], "size": [8, 7, 3], "inflate": 0.51, "pivot": [0, 20, -8], "rotation": [-17.5, 0, 0], "uv": [29, 21]}
+					]
+				}
+			]
+		}
+	]
+}

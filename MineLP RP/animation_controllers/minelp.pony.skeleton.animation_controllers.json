@@ -1,0 +1,18 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.minelp.pony.skeleton.default": {
+            "states": {
+                "default": {
+                    "animations": [
+                        "look_at_target",
+						"default.arms",
+                        "show_movement.legs",
+                        "show_movement.tail",
+                        "bob.tail"
+                    ]
+                }
+            }
+        }
+    }
+}

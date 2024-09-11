@@ -1,0 +1,53 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.muffin",
+				"texture_width": 64,
+				"texture_height": 44,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "waist",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "waist",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "muffin",
+					"parent": "head",
+					"pivot": [0, 30, -1],
+					"cubes": [
+						{"origin": [-4, 34, -5], "size": [8, 4, 8], "uv": [0, 0]},
+						{"origin": [-1, 37.5, -2], "size": [2, 2, 2], "uv": [0, 0]},
+						{"origin": [-2.5, 38, -3.5], "size": [5, 1, 5], "uv": [0, 12]},
+						{"origin": [-2, 30, -4], "size": [4, 7, 6], "uv": [3, 18]},
+						{"origin": [-3, 30, -3], "size": [6, 7, 4], "uv": [2, 20]}
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "muffin",
+					"pivot": [0, 30, -1]
+				}
+			]
+		}
+	]
+}

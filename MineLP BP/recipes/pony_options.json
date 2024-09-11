@@ -1,0 +1,25 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "minelp:pony_options"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"P": {
+				"item": "minecraft:white_wool"
+			}
+		},
+		"pattern": [
+			"  P",
+			"PPP",
+			"P P"
+		],
+		"result": {
+			"item": "minelp:options",
+			"count": 1
+		}
+	}
+}

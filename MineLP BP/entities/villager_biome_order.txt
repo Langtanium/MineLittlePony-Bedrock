@@ -1,0 +1,7 @@
+0 plains
+1 desert
+2 jungle
+3 savanna
+4 snow
+5 swamp
+6 taiga

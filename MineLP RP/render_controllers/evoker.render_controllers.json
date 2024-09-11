@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.evoker": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "part_visibility": [
+        { "*": "variable.minelp_is_pony == 0.0" },
+        { "arms": "!(query.is_casting || query.is_celebrating) && variable.minelp_is_pony == 0.0" },
+        { "leftarm": "(query.is_casting || query.is_celebrating) && variable.minelp_is_pony == 0.0" },
+        { "rightarm": "(query.is_casting || query.is_celebrating) && variable.minelp_is_pony == 0.0" }
+      ],
+      "textures": [ "Texture.default" ]
+    }
+  }
+}
