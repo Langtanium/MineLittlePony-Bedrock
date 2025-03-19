@@ -32,7 +32,7 @@ Things may not work properly and are subject to change.
 | Changeling          |   ✔️   | Partial   |
 | Zebra               |   ✔️   | Complete  |
 | Reformed Changeling |   ✔️   | Partial   |
-| Gryphon             |        |           |
+| Gryphon             |   ✔️   |           |
 | Hippogriff          |   ✔️   |           |
 | Kirin               |   ✔️   |           |
 | Batpony             |   ✔️   | Partial   |
@@ -43,9 +43,10 @@ Things may not work properly and are subject to change.
 | Item                      | Status      |
 |---------------------------|:-----------:|
 | Ponified armor            |      ✔️      |
-| Elytra                    | In Progress |
-| Magic auras               | In Progress |
-| Pony hat fixes            |             |
+| Elytra                    | In Progress  |
+| Cape                      |   Complete   |
+| Magic auras               |      ✔️      |
+| Pony hat fixes            |              |
 | Unicorn horn              |      ✔️      |
 | Magic colors              |      ✔️      |
 | Pegasi/Alicorn wings      |      ✔️      |
@@ -93,9 +94,7 @@ Things may not work properly and are subject to change.
 
 ### Known Issues & Limitations
 
-- Player's cape does not render
+- Player's cape does not render (replaced with custom cape)
   - Capes still affect elytra
-- Player's magic aura does not render
-  - Custom materials are broken for the player
-- The Vindicator is invisible
+- Some mobs are not ponified even though they should be
   - Game cannot find variable.minelp_is_pony

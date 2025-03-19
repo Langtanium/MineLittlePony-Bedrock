@@ -268,6 +268,24 @@
 					"position": [0, 5, 0]
 				}
 			}
+		},
+		"animation.player.pony.cape" : {
+			"loop" : true,
+			"bones" : {
+				"cape": {
+					"rotation": ["-96+math.clamp(q.cape_flap_amount*12,0,6)", 0, 0],
+					"position": [0, "q.get_root_locator_offset('armor_offset.default_neck',1)+1", -2]
+				}
+			}
+		},
+		"animation.player.pony.cape_flap" : {
+			"loop" : true,
+			"bones" : {
+				"cape": {
+					"rotation": ["math.lerp(-90,-126,q.cape_flap_amount)-6", 0, 0],
+					"position": [0, "q.get_root_locator_offset('armor_offset.default_neck',1)+1", -2]
+				}
+			}
 		}
 	}
 }

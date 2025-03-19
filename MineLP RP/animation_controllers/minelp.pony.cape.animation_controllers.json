@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.minelp.pony.cape": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [ "pony_cape"],
+                    "blend_transition": 0.1,
+                    "transitions": [
+                        { "falling": "q.vertical_speed<0" }
+                    ]
+                },
+                "falling": {
+                    "animations": [ "pony_cape_flap"],
+                    "blend_transition": 0.15,
+                    "transitions": [
+                        { "default": "q.vertical_speed >= 0" }
+                    ]
+                }
+            }
+        }
+    }
+}

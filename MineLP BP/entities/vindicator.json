@@ -6,9 +6,9 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-	  "properties": {
-		"property:race": {
-        	"range": [
+      "properties": {
+        "property:race": {
+          "range": [
             0,
             2
           ],

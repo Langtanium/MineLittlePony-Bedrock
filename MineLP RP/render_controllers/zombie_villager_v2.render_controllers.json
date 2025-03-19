@@ -4,7 +4,7 @@
     "controller.render.zombie_villager_v2_base": {
       "geometry": "Geometry.default",
       "part_visibility": [
-        { "*": "variable.minelp_is_pony == 0.0" }
+        { "*": "!(v.minelp_is_pony ?? 0)" }
       ],
       "materials": [
         { "*": "Material.default" }
@@ -45,14 +45,14 @@
       },
       "geometry": "Geometry.default",
       "part_visibility": [
-        { "*": "variable.minelp_is_pony == 0.0" }
+        { "*": "!(v.minelp_is_pony ?? 0)" }
       ],
       "materials": [
-        { "*": "query.is_baby ? Material.default : Material.masked" }
+        { "*": "q.is_baby ? Material.default : Material.masked" }
       ],
       "textures": [
-        "Array.biomes[query.mark_variant]",
-        "Array.professions[variable.profession_index]"
+        "Array.biomes[q.mark_variant]",
+        "Array.professions[v.profession_index]"
       ]
     }
   }

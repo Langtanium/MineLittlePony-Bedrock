@@ -4,11 +4,11 @@
     "controller.render.vindicator": {
       "geometry": "Geometry.default",
       "part_visibility": [
-        { "*": "variable.minelp_is_pony == 0.0" },
-        { "rightArm": "(query.is_angry || query.is_celebrating) && variable.minelp_is_pony == 0.0" },
-        { "leftArm": "(query.is_angry || query.is_celebrating) && variable.minelp_is_pony == 0.0" },
-        { "rightItem": "query.is_angry && variable.minelp_is_pony == 0.0" },
-        { "arms": "!(query.is_angry || query.is_celebrating) && variable.minelp_is_pony == 0.0" }
+        { "*": "!(v.minelp_is_pony ?? 0)" },
+        { "rightArm": "(q.is_angry || q.is_celebrating) && !(v.minelp_is_pony ?? 0)" },
+        { "leftArm": "(q.is_angry || q.is_celebrating) && !(v.minelp_is_pony ?? 0)" },
+        { "rightItem": "q.is_angry && !(v.minelp_is_pony ?? 0)" },
+        { "arms": "!(q.is_angry || q.is_celebrating) && !(v.minelp_is_pony ?? 0)" }
       ],
       "materials": [ { "*": "Material.default" } ],
       "textures": [ "Texture.default" ]

@@ -26,31 +26,31 @@
           "variable.minelp_race": "public"
         },
         "initialize": [
-          "variable.minelp_is_pony = 1;",
-          "variable.minelp_race = 1;",
-          "variable.minelp_handedness = 0;",
-          "variable.minelp_horn_type = 1;",
-          "variable.minelp_muzzle_type = 1;",
-          "variable.minelp_tail_length = 2;",
-          "variable.minelp_has_wings = 1;"
+          "v.minelp_is_pony = 1;",
+          "v.minelp_race = 1;",
+          "v.minelp_handedness = 0;",
+          "v.minelp_horn_type = 1;",
+          "v.minelp_muzzle_type = 1;",
+          "v.minelp_tail_length = 2;",
+          "v.minelp_has_wings = 1;"
         ],
         "pre_animation": [
-          "variable.minelp_is_pony = q.property('property:is_pony');",
-          "variable.minelp_race = q.property('property:race');",
-          "variable.minelp_horn_type = true || (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
-          "variable.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
-          "variable.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
-          "variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
-          "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;",
-          "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
-          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+          "v.minelp_is_pony = q.property('property:is_pony');",
+          "v.minelp_race = q.property('property:race');",
+          "v.minelp_horn_type = true || (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
+          "v.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
+          "v.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
+          "v.attack = Math.sin((1.0 - (1.0 - v.attack_time) * (1.0 - v.attack_time)) * 180.0) * 57.3;",
+          "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;",
+          "v.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / v.gliding_speed_value) * 20;",
+          "v.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / v.gliding_speed_value) * 57.3;"
         ],
         "animate": [
           // Minelp //
-          { "default": "(v.minelp_is_pony ?? 0.0) == 1.0" },
-          { "arm_fix_magic": "(v.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" },
+          { "default": "(v.minelp_is_pony ?? 0)" },
+          { "arm_fix_magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" },
           // Original //
-          { "pillager_root_controller": "(v.minelp_is_pony ?? 0.0) == 0.0" }
+          { "pillager_root_controller": "!(v.minelp_is_pony ?? 0)" }
         ]
       },
       "animations": {
@@ -94,8 +94,8 @@
       },
       "render_controllers": [
         "controller.render.pillager",
-        { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0.0) == 1.0" },
-        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0.0) == 1.0 && v.minelp_horn_type >= 1.0" }
+        { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
+        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" }
       ],
       "enable_attachables": true,
       "hide_armor": true

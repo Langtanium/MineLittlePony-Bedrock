@@ -5,7 +5,7 @@
         "description": "Turns mobs into ponies!",
         "uuid": "571ec626-7915-4b36-8897-47f793a77643",
         "version": [1, 0, 0],
-        "min_engine_version": [1, 19, 0]
+        "min_engine_version": [1, 21, 60]
     },
     "modules": [
         {

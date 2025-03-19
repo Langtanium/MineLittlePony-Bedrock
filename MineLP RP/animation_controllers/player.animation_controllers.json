@@ -197,26 +197,31 @@
 							"look_at_target": "!q.is_sleeping && !q.is_emoting && v.minelp_is_pony == 0"
 						},
 						{
-							"move.arms": "v.minelp_is_pony == 0"
+							"move.arms": "!v.minelp_is_pony"
 						},
 						{
-							"move.legs": "v.minelp_is_pony == 0"
-						},
-						"cape",
-						{
-							"riding.arms": "q.is_riding && variable.minelp_is_pony == 0"
+							"move.legs": "!v.minelp_is_pony"
 						},
 						{
-							"riding.legs": "q.is_riding && variable.minelp_is_pony == 0"
+							"cape": "!v.minelp_is_pony"
+                        },
+                        {
+							"pony_cape_controller": "v.minelp_is_pony"
+                        },
+						{
+							"riding.arms": "q.is_riding && !v.minelp_is_pony"
 						},
 						{
-							"holding": "variable.minelp_horn_type == 0"
+							"riding.legs": "q.is_riding && !v.minelp_is_pony"
 						},
 						{
-							"brandish_spear": "v.is_brandishing_spear && v.minelp_horn_type == 0 && v.minelp_is_pony == 0"
+							"holding": "v.minelp_horn_type == 0"
 						},
 						{
-							"holding_spyglass": "variable.is_holding_spyglass && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
+							"brandish_spear": "v.is_brandishing_spear && v.minelp_horn_type == 0 && !v.minelp_is_pony"
+						},
+						{
+							"holding_spyglass": "v.is_holding_spyglass && v.minelp_horn_type == 0 && !v.minelp_is_pony"
 						},
 						{
 							"charging": "query.is_charging && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
@@ -225,7 +230,7 @@
 							"sneaking": "query.is_sneaking && !query.is_sleeping && variable.minelp_is_pony == 0"
 						},
 						{
-							"pony_sneaking": "query.is_sneaking && !query.is_sleeping && variable.minelp_is_pony == 1  && v.minelp_horn_type == 0"
+							"pony_sneaking": "query.is_sneaking && !query.is_sleeping && v.minelp_is_pony  && v.minelp_horn_type == 0"
 						},
 						{
 							"pony_sneaking_magic": "query.is_sneaking && !query.is_sleeping && variable.minelp_is_pony == 1 && v.minelp_horn_type > 0"

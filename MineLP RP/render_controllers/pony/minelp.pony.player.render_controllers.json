@@ -1,0 +1,150 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.pony.third_person": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.default",
+            "Texture.default"
+          ]
+        },
+        "geometries": {
+          "Array.race": [
+            "Geometry.default",
+            "Geometry.minelp_earth_pony",
+            "Geometry.minelp_pegasus",
+            "Geometry.minelp_unicorn",
+            "Geometry.minelp_alicorn",
+            "Geometry.minelp_changeling",
+            "Geometry.minelp_zebra",
+            "Geometry.minelp_reformed_changeling",
+            "Geometry.minelp_gryphon",
+            "Geometry.minelp_hippogriff",
+            "Geometry.minelp_kirin",
+            "Geometry.minelp_batpony"
+          ]
+        }
+      },
+      "geometry": "Array.race[v.minelp_race]",
+      "part_visibility": [
+        { "*": true },
+        { "leftWingClosed": "(!q.is_sneaking && q.is_on_ground && v.minelp_is_seapony == 0) || (q.is_in_water && v.minelp_is_seapony == 0) || (q.is_on_ground && !q.is_in_water && !q.is_sneaking) || (!q.is_on_screen)" },
+        { "leftWingOpened": "(q.is_sneaking && !q.is_in_water && q.is_on_screen) || (!q.is_on_ground && !q.is_in_water && q.is_on_screen)" },
+        { "rightWingClosed": "(!q.is_sneaking && q.is_on_ground && v.minelp_is_seapony == 0) || (q.is_in_water && v.minelp_is_seapony == 0) || (q.is_on_ground && !q.is_in_water && !q.is_sneaking) || (!q.is_on_screen)" },
+        { "rightWingOpened": "(q.is_sneaking && !q.is_in_water && q.is_on_screen) || (!q.is_on_ground && !q.is_in_water && q.is_on_screen)" },
+        { "bonesL": "(q.is_sneaking && !q.is_in_water) || (!q.is_on_ground && !q.is_in_water  && q.is_on_screen)" },
+        { "bone_1_l": "(q.is_sneaking && !q.is_in_water) || (!q.is_on_ground && !q.is_in_water  && q.is_on_screen)" },
+        { "bone_2_l": "(q.is_sneaking && !q.is_in_water) || (!q.is_on_ground && !q.is_in_water  && q.is_on_screen)" },
+        { "bonesR": "(q.is_sneaking && !q.is_in_water) || (!q.is_on_ground && !q.is_in_water  && q.is_on_screen)" },
+        { "bone_1_r": "(q.is_sneaking && !q.is_in_water) || (!q.is_on_ground && !q.is_in_water  && q.is_on_screen)" },
+        { "bone_2_r": "(q.is_sneaking && !q.is_in_water) || (!q.is_on_ground && !q.is_in_water  && q.is_on_screen)" },
+        { "leftBugWing": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "leftWingSecondary": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "rightBugWing": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "rightWingSecondary": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "snoutFemale": "v.minelp_muzzle_type == 0" },
+        { "snoutMale": "v.minelp_muzzle_type == 1" },
+        { "bodySegment": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "fishBody": "v.minelp_is_seapony == 1 && q.is_in_water" },
+        { "fishTail": "v.minelp_is_seapony == 1 && q.is_in_water" },
+        { "tip": "v.minelp_is_seapony == 1 && q.is_in_water" },
+        { "fins": "v.minelp_is_seapony == 1 && q.is_in_water" },
+        { "leftArm": "v.short_arm_offset_left == 0" },
+        { "rightArm": "v.short_arm_offset_right == 0" },
+        { "leftArmSlim": "v.short_arm_offset_left == 0.5" },
+        { "rightArmSlim": "v.short_arm_offset_right == 0.5" },
+        { "leftLeg": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_left == 0" },
+        { "rightLeg": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_right == 0" },
+        { "leftLegSlim": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_left == 0.5" },
+        { "rightLegSlim": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_right == 0" },
+        { "tail": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "tail1": "(v.minelp_tail_length >= 1 && v.minelp_is_seapony == 0) || (v.minelp_tail_length >= 1 && !q.is_in_water && v.minelp_iskirin == 0 && v.minelp_is_seapony == 1)" },
+        { "tail2": "(v.minelp_tail_length >= 2 && v.minelp_is_seapony == 0) || (v.minelp_tail_length >= 2 && !q.is_in_water && v.minelp_iskirin == 0 && v.minelp_is_seapony == 1)" },
+        { "tail3": "(v.minelp_tail_length >= 3 && v.minelp_is_seapony == 0) || (v.minelp_tail_length >= 3 && !q.is_in_water && v.minelp_iskirin == 0 && v.minelp_is_seapony == 1)" },
+        { "tail4": "(v.minelp_tail_length == 4 && v.minelp_is_seapony == 0) || (v.minelp_tail_length == 4 && !q.is_in_water && v.minelp_iskirin == 0 && v.minelp_is_seapony == 1)" },
+        { "lionTail": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "lionTail2": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "lionTail3": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "lionTail4": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "lionTail5": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "lionTail6": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "flare_x": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "flare_z": "v.minelp_is_seapony == 0 || !q.is_in_water" },
+        { "hornGlow": false },
+        { "rightItemMagic": false },
+        { "leftItemMagic": false }
+      ],
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [ "Array.skins[q.is_in_water && v.minelp_is_seapony]" ]
+    },
+    "controller.render.player.saddlebags": {
+      "arrays": {
+        "textures": {
+          "Array.saddlebags": [
+            "Texture.saddlebags",
+            "Texture.default"
+          ]
+        }
+      },
+      "geometry": "Geometry.saddlebags",
+      "materials": [
+        { "*": "Material.minelp_masked" }
+      ],
+      "textures": [
+        "Texture.saddlebags",
+        "Array.saddlebags[v.minelp_has_wings == 0]"
+      ]
+    },
+    "controller.render.pony.first_person_griffin": {
+      "geometry": "Geometry.minelp_gryphon_fp",
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [ "Texture.default" ]
+    },
+    "controller.render.pony.third_person_spectator": {
+      "arrays": {
+        "geometries": {
+          "Array.race": [
+            "Geometry.default",
+            "Geometry.minelp_earth_pony",
+            "Geometry.minelp_pegasus",
+            "Geometry.minelp_unicorn",
+            "Geometry.minelp_alicorn",
+            "Geometry.minelp_changeling",
+            "Geometry.minelp_zebra",
+            "Geometry.minelp_reformed_changeling",
+            "Geometry.minelp_gryphon",
+            "Geometry.minelp_hippogriff",
+            "Geometry.minelp_kirin",
+            "Geometry.minelp_batpony"
+          ]
+        }
+      },
+      "geometry": "Array.race[v.minelp_race]",
+      "materials": [ { "*": "Material.minelp_spectator" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": false },
+        { "head": true },
+        { "hat": true },
+        { "snoutMale": "v.minelp_muzzle_type == 1" },
+        { "snoutFemale": "v.minelp_muzzle_type == 2" },
+        { "snoutGryphon": true },
+        { "horn": true },
+        { "bristles": true },
+        { "bristles2": true },
+        { "ears": true }
+      ],
+      "color": {
+        "r": "1.0f",
+        "g": "1.0f",
+        "b": "1.0f",
+        "a": "0.3f"
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.minelp.pony.magic": {
+      "geometry": "Geometry.minelp_default",
+      "part_visibility": [
+        { "*": false },
+        { "hornGlow": "v.minelp_horn_type > 0 && (v.is_holding_left || v.is_holding_right)" },
+        { "leftItemMagic": "v.minelp_horn_type > 0 && v.is_holding_left" },
+        { "rightItemMagic": "v.minelp_horn_type > 0 && v.is_holding_right" }
+      ],
+      "materials": [
+        { "*": "Material.minelp_magic" }
+      ],
+      "textures": ["Texture.minelp_default"],
+      "ignore_lighting": true
+    },
+    "controller.render.minelp.pony.villager.magic": {
+      "arrays": {
+        "textures": {
+          "Array.pony_plains": [
+            "Texture.minelp_pony_unskilled",
+            "Texture.minelp_pony_farmer",
+            "Texture.minelp_pony_fisherman",
+            "Texture.minelp_pony_shepherd",
+            "Texture.minelp_pony_fletcher",
+            "Texture.minelp_pony_librarian",
+            "Texture.minelp_pony_cartographer",
+            "Texture.minelp_pony_cleric",
+            "Texture.minelp_pony_armorer",
+            "Texture.minelp_pony_weapon_smith",
+            "Texture.minelp_pony_tool_smith",
+            "Texture.minelp_pony_butcher",
+            "Texture.minelp_pony_leatherworker",
+            "Texture.minelp_pony_stonemason",
+            "Texture.minelp_pony_nitwit"
+          ]
+        }
+      },
+      "geometry": "Geometry.minelp_default",
+      "part_visibility": [
+        { "*": false },
+        { "hornGlow": "v.minelp_horn_type > 0 && (v.is_holding_left || v.is_holding_right)" },
+        { "leftItemMagic": "v.minelp_horn_type > 0 && v.is_holding_left" },
+        { "rightItemMagic": "v.minelp_horn_type > 0 && v.is_holding_right" }
+      ],
+      "materials": [
+        { "*": "Material.minelp_magic" }
+      ],
+      "textures": ["Array.pony_plains[v.profession_index]"],
+      "ignore_lighting": true
+    },
+    "controller.render.minelp.pony.player.magic": {
+      "geometry": "Geometry.minelp_unicorn",
+      "part_visibility": [
+        { "*": false },
+        { "hornGlow": "v.minelp_horn_type > 0 && (v.is_holding_left || v.is_holding_right)" },
+        { "leftItemMagic": "v.minelp_horn_type > 0 && v.is_holding_left" },
+        { "rightItemMagic": "v.minelp_horn_type > 0 && v.is_holding_right" }
+      ],
+      "materials": [
+        { "*": "Material.minelp_magic" }
+      ],
+      "textures": ["Texture.default"],
+      "ignore_lighting": true
+    }
+  }
+}
