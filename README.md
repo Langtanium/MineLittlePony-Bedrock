@@ -11,7 +11,7 @@ Things may not work properly and are subject to change.
 ## Installation
 
 ### Releases
-- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/tag/0.1.0/MineLittlePony-Bedrock.mcaddon">Latest Release (experimental)</a>
+- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/download/0.1.0/minelittlepony-0.1.0.mcaddon">Latest Release (experimental)</a>
 - <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases">Previous Releases</a>
 
 ### Adding to Minecraft
