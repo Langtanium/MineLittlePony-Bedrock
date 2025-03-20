@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.minelp.pony.gr_arms.first_person",
+				"identifier": "geometry.minelp.pony.gr.first_person",
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 6,

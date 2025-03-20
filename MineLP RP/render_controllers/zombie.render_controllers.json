@@ -4,7 +4,7 @@
     "controller.render.zombie": {
       "geometry": "Geometry.default",
       "part_visibility": [
-        { "*": "variable.minelp_is_pony == 0.0" }
+        { "*": "!(v.minelp_is_pony ?? 0)" }
       ],
       "materials": [ { "*": "Material.default" } ],
       "textures": [ "Texture.default" ]

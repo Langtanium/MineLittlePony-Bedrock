@@ -11,7 +11,8 @@ Things may not work properly and are subject to change.
 ## Installation
 
 ### Releases
-- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/tag/experimental">Experimental</a>
+- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/tag/0.1.0/MineLittlePony-Bedrock.mcaddon">Latest Release (experimental)</a>
+- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases">Previous Releases</a>
 
 ### Adding to Minecraft
 - **On PC:** Double click to add to Minecraft
@@ -30,7 +31,7 @@ Things may not work properly and are subject to change.
 | Unicorn             |   ✔️   | Partial   |
 | Alicorn             |   ✔️   | Partial   |
 | Changeling          |   ✔️   | Partial   |
-| Zebra               |   ✔️   | Complete  |
+| Zebra               |   ✔️   |   ✔️   |
 | Reformed Changeling |   ✔️   | Partial   |
 | Gryphon             |   ✔️   |           |
 | Hippogriff          |   ✔️   |           |
@@ -44,7 +45,7 @@ Things may not work properly and are subject to change.
 |---------------------------|:-----------:|
 | Ponified armor            |      ✔️      |
 | Elytra                    | In Progress  |
-| Cape                      |   Complete   |
+| Cape                      |      ✔️      |
 | Magic auras               |      ✔️      |
 | Pony hat fixes            |              |
 | Unicorn horn              |      ✔️      |
@@ -88,7 +89,7 @@ Things may not work properly and are subject to change.
 | Wandering Trader | Earth Pony               |             |
 | Witch            | Earth Pony? + Hat?       | In Progress |
 | Wither Skeleton  | Large Skeleton (Unicorn) | In Progress |
-| Zombie           | Earth Pony               |      ✔️      |
+| Zombie           | Earth Pony               |      ✔️     |
 | Zombie Pigman    | Earth Pony               |             |
 | Zombie Villager  | Earth Pony               |             |
 

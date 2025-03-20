@@ -21,7 +21,7 @@
                 "default": "geometry.skeleton.stray.v1.8",
                 "overlay": "geometry.stray.armor.v1.8",
                 "minelp_default": "geometry.minelp.pony.ep.skeleton",
-                "minelp_overlay": "geometry.minelp.pony.ep.stray_overlay"
+                "minelp_overlay": "geometry.minelp.pony.ep.skeleton_overlay"
             },
             "spawn_egg": {
                 "texture": "spawn_egg",

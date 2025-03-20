@@ -32,7 +32,7 @@
         "minelp_zebra": "geometry.minelp.pony.ze",
         "minelp_reformed_changeling": "geometry.minelp.pony.rc",
         "minelp_gryphon": "geometry.minelp.pony.gr",
-        "minelp_gryphon_fp": "geometry.minelp.pony.gr_arms.first_person",
+        "minelp_gryphon_fp": "geometry.minelp.pony.gr.first_person",
         "minelp_hippogriff": "geometry.minelp.pony.hg",
         "minelp_kirin": "geometry.minelp.pony.ki",
         "minelp_batpony": "geometry.minelp.pony.bp",

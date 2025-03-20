@@ -5,7 +5,7 @@
       "rebuild_animation_matrices": true,
       "geometry": "Geometry.overlay",
       "part_visibility": [
-        { "*": "variable.minelp_is_pony == 0.0" }
+        { "*": "!(v.minelp_is_pony ?? 0)" }
       ],
       "materials": [ { "*": "Material.overlay" } ],
       "textures": [ "Texture.overlay" ]
