@@ -4,15 +4,15 @@
     "name": "Mine Little Pony",
     "description": "Turns mobs into ponies!",
     "uuid": "571ec626-7915-4b36-8897-47f793a77643",
-    "version": [0, 1, 0],
+    "version": [0, 1, 1],
     "min_engine_version": [1, 21, 60]
   },
   "modules": [
     {
-      "description": "Turns mobs into ponies!",
+      "description": "Mine Little Pony - Resources",
       "type": "resources",
       "uuid": "b81d5c84-a207-4025-a522-daa2caa26156",
-      "version": [0, 1, 0]
+      "version": [0, 1, 1]
     }
   ],
   "metadata": {
@@ -26,7 +26,7 @@
   "dependencies": [
     {
       // Mine Little Pony Behavior Pack
-      "version": [0, 1, 0],
+      "version": [0, 1, 1],
       "uuid": "31115598-d97a-4610-a845-1e000c497505"
     }
   ]

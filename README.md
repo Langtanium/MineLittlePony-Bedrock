@@ -11,14 +11,14 @@ Things may not work properly and are subject to change.
 ## Installation
 
 ### Releases
-- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/download/0.1.0/minelittlepony-0.1.0.mcaddon">Latest Release (experimental)</a>
+- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/download/0.1.1/minelittlepony-bedrock-0.1.1.mcaddon">Latest Release (experimental)</a>
 - <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases">Previous Releases</a>
 
 ### Adding to Minecraft
 - **On PC:** Double click to add to Minecraft
 - **On Andriod:** Tap and open with Minecraft
 
-**The experimental toggles "Upcoming Creator Features" & "Beta APIs" are required.**
+**The experimental toggle "Upcoming Creator Features" is required.**
 
 ## Current State
 
