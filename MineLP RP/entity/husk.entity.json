@@ -1,79 +1,137 @@
 {
-    "format_version": "1.10.0",
-    "minecraft:client_entity": {
-        "description": {
-            "min_engine_version": "1.12.0",
-            "identifier": "minecraft:husk",
-            "materials": {
-                "default": "zombie",
-                "minelp_default": "zombie",
-                "minelp_magic": "pony_magic"
-            },
-            "textures": {
-                "default": "textures/entity/zombie/husk",
-                "minelp_default": "textures/entity/zombie/husk_pony"
-            },
-            "geometry": {
-                "default": "geometry.zombie.husk.v1.8",
-                "minelp_default": "geometry.minelp.pony.ep.zombie"
-            },
-            "spawn_egg": {
-                "texture": "spawn_egg",
-                "texture_index": 28
-            },
-            "scripts": {
-                "variables": {
-                    "variable.minelp_is_pony": "public",
-                    "variable.minelp_race": "public"
-                },
-                "initialize": [
-                    "variable.minelp_is_pony = 1;",
-                    "variable.minelp_race = 1;",
-                    "variable.minelp_handedness = 0;",
-                    "variable.minelp_horn_type = 0;",
-                    "variable.minelp_muzzle_type = 1;",
-                    "variable.minelp_tail_length = 4;",
-                    "variable.minelp_has_wings = 0;"
-                ],
-                "pre_animation": [
-                    "variable.minelp_is_pony = q.property('property:is_pony');",
-                    "variable.minelp_race = q.property('property:race');",
-                    "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
-                    "variable.is_holding_right = query.is_item_equipped('main_hand');",
-                    "variable.is_holding_left = query.is_item_equipped('off_hand');",
-                    "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
-                    "variable.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
-                    "variable.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
-                    "variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
-                    "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;"
-                ],
-                "animate": [
-                    "default",
-					{ "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0" }
-                ]
-            },
-            "animations": {
-                "default": "controller.animation.minelp.pony.default",
-				"arm_fix": "animation.minelp.pony.correct_zombie",
-                "default.arms": "controller.animation.minelp.pony.zombie.default.arms",
-                "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
-                "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
-                "show_movement.legs": "animation.minelp.pony.show_movement.legs",
-                "show_movement.tail": "animation.minelp.pony.show_movement.tail",
-                "show_attack.leftArm": "animation.minelp.pony.show_attack.leftArm",
-                "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
-                "bob.leftArm": "animation.minelp.pony.bob.leftArm",
-                "bob.rightArm": "animation.minelp.pony.bob.rightArm",
-                "bob.tail": "animation.minelp.pony.bob.tail",
-                "look_at_target": "animation.minelp.pony.look_at_target",
-                "big_head": "animation.minelp.pony.big_head"
-            },
-            "render_controllers": [
-                "controller.render.husk",
-                { "controller.render.minelp.pony": "(variable.minelp_is_pony ?? 0.0) == 1.0" },
-                { "controller.render.minelp.pony.magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" }
-            ],
-            "enable_attachables": true
-        }
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "min_engine_version": "1.12.0",
+      "identifier": "minecraft:husk",
+      "materials": {
+        "default": "husk",
+        "minelp_default": "husk",
+        "minelp_magic": "pony_magic"
+      },
+      "textures": {
+        "default": "textures/entity/zombie/husk",
+        "minelp_default": "textures/entity/zombie/husk_pony"
+      },
+      "geometry": {
+        "default": "geometry.zombie.husk.v1.8",
+        "minelp_default": "geometry.minelp.pony.ep.zombie"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg_husk"
+      },
+      "scripts": {
+        "variables": {
+          "variable.minelp_is_pony": "public",
+          "variable.minelp_race": "public"
+        },
+        "initialize": [
+          "v.minelp_is_pony = 1;",
+          "v.minelp_race = 1;",
+          "v.minelp_handedness = 0;",
+          "v.minelp_horn_type = 0;",
+          "v.minelp_muzzle_type = 1;",
+          "v.minelp_tail_length = 4;",
+          "v.minelp_has_wings = 0;"
+        ],
+        "pre_animation": [
+          "v.minelp_is_pony = q.property('minelp:is_pony');",
+          "v.minelp_race = q.property('minelp:race');",
+          "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
+          "v.is_holding_right = q.is_item_equipped('main_hand');",
+          "v.is_holding_left = q.is_item_equipped('off_hand');",
+          "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;",
+          "v.x_bob = Math.sin(q.life_time * 76.776372) * 5.865;",
+          "v.z_bob = Math.cos(q.life_time * 93.13244) * 2.865 + 2.865;",
+          "v.attack = Math.sin((1.0 - (1.0 - v.attack_time) * (1.0 - v.attack_time)) * 180.0) * 57.3;",
+          "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;",
+          // Vanilla //
+          "variable.tcos0 = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          // Minelp //
+          { "default": "(v.minelp_is_pony ?? 0)" },
+          { "arm_fix": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type == 0" },
+          { "bow_fix": "(v.minelp_is_pony ?? 0) && (v.minelp_horn_type ?? 0) == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" },
+          { "fly_controller": "(v.minelp_is_pony ?? 0) && (v.minelp_has_wings ?? 0)" },
+          // Vanilla //
+          { "controller_humanoid_big_head": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_look_at_target": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_move": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_riding": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_holding": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_brandish_spear": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_charging": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_attack": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_sneaking": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_bob": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_damage_nearby_mobs": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_bow_and_arrow": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_use_item_progress": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_zombie_attack_bare_hand": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_swimming": "!(v.minelp_is_pony ?? 0)" }
+        ]
+      },
+      "animations": {
+        // Minelp //
+        "default": "controller.animation.minelp.pony.default",
+        "arm_fix": "animation.minelp.pony.correct_zombie",
+        "bow_fix": "animation.minelp.pony.correct_bow",
+        "default.arms": "controller.animation.minelp.pony.zombie.default.arms",
+        "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
+        "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
+        "show_movement.legs": "animation.minelp.pony.show_movement.legs",
+        "show_movement.tail": "animation.minelp.pony.show_movement.tail",
+        "show_attack.leftArm": "animation.minelp.pony.show_attack.leftArm",
+        "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
+        "bob.leftArm": "animation.minelp.pony.bob.leftArm",
+        "bob.rightArm": "animation.minelp.pony.bob.rightArm",
+        "bob.tail": "animation.minelp.pony.bob.tail",
+        "look_at_target": "animation.minelp.pony.look_at_target",
+        "big_head": "animation.minelp.pony.big_head",
+        "fly": "animation.minelp.pony.fly",
+        "fly_controller": "controller.animation.minelp.pony.fly",
+        // Vanilla //
+        "humanoid_big_head": "animation.humanoid.big_head",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "riding.arms": "animation.humanoid.riding.arms",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "holding": "animation.humanoid.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.humanoid.charging",
+        "attack.rotations": "animation.humanoid.attack.rotations",
+        "sneaking": "animation.humanoid.sneaking",
+        "bob": "animation.humanoid.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "bow_and_arrow": "animation.humanoid.bow_and_arrow",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand",
+        "swimming": "animation.zombie.swimming",
+        "controller_humanoid_big_head": "controller.animation.humanoid.baby_big_head",
+        "controller_look_at_target": "controller.animation.humanoid.look_at_target",
+        "controller_move": "controller.animation.humanoid.move",
+        "controller_riding": "controller.animation.humanoid.riding",
+        "controller_holding": "controller.animation.humanoid.holding",
+        "controller_brandish_spear": "controller.animation.humanoid.brandish_spear",
+        "controller_charging": "controller.animation.humanoid.charging",
+        "controller_attack": "controller.animation.humanoid.attack",
+        "controller_sneaking": "controller.animation.humanoid.sneaking",
+        "controller_bob": "controller.animation.humanoid.bob",
+        "controller_damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs",
+        "controller_bow_and_arrow": "controller.animation.humanoid.bow_and_arrow",
+        "controller_use_item_progress": "controller.animation.humanoid.use_item_progress",
+        "controller_zombie_attack_bare_hand": "controller.animation.zombie.attack_bare_hand",
+        "controller_swimming": "controller.animation.zombie.swimming"
+      },
+      "render_controllers": [
+        "controller.render.husk",
+        { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
+        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" }
+      ],
+      "enable_attachables": true
     }
+  }
 }

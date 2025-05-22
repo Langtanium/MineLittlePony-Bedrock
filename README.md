@@ -11,7 +11,7 @@ Things may not work properly and are subject to change.
 ## Installation
 
 ### Releases
-- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/download/0.1.1/minelittlepony-bedrock-0.1.1.mcaddon">Latest Release (experimental)</a>
+- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/tag/0.2.0">Latest Release (experimental)</a>
 - <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases">Previous Releases</a>
 
 ### Adding to Minecraft
@@ -31,7 +31,7 @@ Things may not work properly and are subject to change.
 | Unicorn             |   ✔️   | Partial   |
 | Alicorn             |   ✔️   | Partial   |
 | Changeling          |   ✔️   | Partial   |
-| Zebra               |   ✔️   |   ✔️   |
+| Zebra               |   ✔️   |    ✔️    |
 | Reformed Changeling |   ✔️   | Partial   |
 | Gryphon             |   ✔️   |           |
 | Hippogriff          |   ✔️   |           |
@@ -76,26 +76,24 @@ Things may not work properly and are subject to change.
 | Guardian         | Special                  |             |
 | Husk             | Earth Pony               |      ✔️     |
 | Illusioner       | Unicorn                  |             |
-| Piglin           | ?                        |             |
-| Piglin Brute     | ?                        |             |
+| Piglin           | Special                  |             |
+| Piglin Brute     | Special                  |             |
 | Pillager         | Changeling               | In Progress |
-| Skeleton         | Skeleton (Unicorn)       | In Progress |
-| Stray            | Skeleton (Earth Pony)    | In Progress |
-| Bogged           | ?                        |             |
+| Skeleton         | Unicorn                  | In Progress |
+| Stray            | Unicorn                  | In Progress |
+| Bogged           | Earth Pony               | In Progress |
 | Strider          | Dragon                   |             |
 | Vex              | Parasprite               |             |
 | Villager         | Earth Pony               | In Progress |
 | Vindicator       | Pegasus                  | In Progress |
-| Wandering Trader | Earth Pony               |             |
-| Witch            | Earth Pony? + Hat?       | In Progress |
-| Wither Skeleton  | Large Skeleton (Unicorn) | In Progress |
+| Wandering Trader | Earth Pony               | In Progress |
+| Witch            | Zebra + Hat              | In Progress |
+| Wither Skeleton  | Unicorn                  | In Progress |
 | Zombie           | Earth Pony               |      ✔️     |
-| Zombie Pigman    | Earth Pony               |             |
+| Zombie Pigman    | Special                  |             |
 | Zombie Villager  | Earth Pony               |             |
 
 ### Known Issues & Limitations
 
 - Player's cape does not render (replaced with custom cape)
   - Capes still affect elytra
-- Some mobs are not ponified even though they should be
-  - Game cannot find variable.minelp_is_pony

@@ -1,29 +1,33 @@
 {
-    "format_version": "1.8.0",
-    "render_controllers": {
-        "controller.render.minelp.pony": {
-            "geometry": "Geometry.minelp_default",
-            "part_visibility": [
-                { "*": true },
-                { "horn": "v.minelp_horn_type > 0" },
-                { "hornGlow": false },
-                { "leftItemMagic": false },
-                { "snoutFemale": "v.minelp_muzzle_type == 1" },
-                { "snoutMale": "v.minelp_muzzle_type == 2" },
-                { "tailBody": "v.minelp_tail_length >= 1" },
-                { "tail2": "v.minelp_tail_length >= 2" },
-                { "tail3": "v.minelp_tail_length >= 3" },
-                { "tail4": "v.minelp_tail_length == 4" },
-                { "leftArmSlim": false },
-                { "rightArmSlim": false },
-                { "leftLegSlim": false },
-                { "rightLegSlim": false },
-                { "rightItemMagic": false }
-            ],
-            "materials": [
-                { "*": "Material.minelp_default" }
-            ],
-            "textures": ["Texture.minelp_default"]
-        }
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.minelp.pony": {
+      "geometry": "Geometry.minelp_default",
+      "part_visibility": [
+        { "*": true },
+        { "horn": "v.minelp_horn_type > 0" },
+        { "hornGlow": false },
+        { "leftItemMagic": false },
+        { "leftWingClosed": "(q.is_on_ground || q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "leftWingOpened": "(!q.is_on_ground && !q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "rightWingClosed": "(q.is_on_ground || q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "rightWingOpened": "(!q.is_on_ground && !q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "snoutFemale": "v.minelp_muzzle_type == 1" },
+        { "snoutMale": "v.minelp_muzzle_type == 2" },
+        { "tailBody": "v.minelp_tail_length >= 1" },
+        { "tail2": "v.minelp_tail_length >= 2" },
+        { "tail3": "v.minelp_tail_length >= 3" },
+        { "tail4": "v.minelp_tail_length == 4" },
+        { "leftArmSlim": false },
+        { "rightArmSlim": false },
+        { "leftLegSlim": false },
+        { "rightLegSlim": false },
+        { "rightItemMagic": false }
+      ],
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": ["Texture.minelp_default"]
     }
+  }
 }

@@ -1,1 +1,0 @@
-event entity @s minelp:set_earth_pony

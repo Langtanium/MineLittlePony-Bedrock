@@ -3,7 +3,7 @@
 	"minecraft:geometry": [
 		{
 			"description": {
-				"identifier": "geometry.minelp.pony.ep.zombie",
+				"identifier": "geometry.minelp.pony.ze.witch",
 				"texture_width": 64,
 				"texture_height": 64,
 				"visible_bounds_width": 6,
@@ -17,7 +17,6 @@
 				},
 				{
 					"name": "body",
-					"parent": "waist",
 					"pivot": [0, 24, 0],
 					"cubes": [
 						{
@@ -173,6 +172,81 @@
 					]
 				},
 				{
+					"name": "bristles",
+					"parent": "head",
+					"pivot": [0, 24, 1],
+					"rotation": [-17, 0, -180],
+					"cubes": [
+						{
+							"origin": [-1, 12.5, 0],
+							"size": [2, 6, 2],
+							"uv": {
+								"north": {"uv": [58, 34], "uv_size": [2, 6]},
+								"east": {"uv": [56, 34], "uv_size": [2, 6]},
+								"south": {"uv": [62, 34], "uv_size": [2, 6]},
+								"west": {"uv": [60, 34], "uv_size": [2, 6]},
+								"up": {"uv": [58, 32], "uv_size": [2, 2]},
+								"down": {"uv": [60, 34], "uv_size": [2, -2]}
+							}
+						},
+						{
+							"origin": [-1, 12.5, 2],
+							"size": [2, 8, 2],
+							"uv": {
+								"north": {"uv": [58, 34], "uv_size": [2, 8]},
+								"east": {"uv": [56, 34], "uv_size": [2, 8]},
+								"south": {"uv": [62, 34], "uv_size": [2, 8]},
+								"west": {"uv": [60, 34], "uv_size": [2, 8]},
+								"up": {"uv": [58, 32], "uv_size": [2, 2]},
+								"down": {"uv": [60, 34], "uv_size": [2, -2]}
+							}
+						},
+						{
+							"origin": [-1, 14.5, 4],
+							"size": [2, 6, 2],
+							"uv": {
+								"north": {"uv": [58, 34], "uv_size": [2, 6]},
+								"east": {"uv": [56, 34], "uv_size": [2, 6]},
+								"south": {"uv": [62, 34], "uv_size": [2, 6]},
+								"west": {"uv": [60, 34], "uv_size": [2, 6]},
+								"up": {"uv": [58, 32], "uv_size": [2, 2]},
+								"down": {"uv": [60, 34], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bristles2",
+					"parent": "bristles",
+					"pivot": [0, 24, 1],
+					"cubes": [
+						{
+							"origin": [-1, 17.5, 0],
+							"size": [2, 8, 2],
+							"uv": {
+								"north": {"uv": [58, 34], "uv_size": [2, 8]},
+								"east": {"uv": [56, 34], "uv_size": [2, 8]},
+								"south": {"uv": [62, 34], "uv_size": [2, 8]},
+								"west": {"uv": [60, 34], "uv_size": [2, 8]},
+								"up": {"uv": [58, 32], "uv_size": [2, 2]},
+								"down": {"uv": [60, 34], "uv_size": [2, -2]}
+							}
+						},
+						{
+							"origin": [-1, 17.5, 2],
+							"size": [2, 6, 2],
+							"uv": {
+								"north": {"uv": [58, 34], "uv_size": [2, 6]},
+								"east": {"uv": [56, 34], "uv_size": [2, 6]},
+								"south": {"uv": [62, 34], "uv_size": [2, 6]},
+								"west": {"uv": [60, 34], "uv_size": [2, 6]},
+								"up": {"uv": [58, 32], "uv_size": [2, 2]},
+								"down": {"uv": [60, 34], "uv_size": [2, -2]}
+							}
+						}
+					]
+				},
+				{
 					"name": "ears",
 					"parent": "head",
 					"pivot": [0, 24, 0],
@@ -297,7 +371,7 @@
 					"pivot": [5, 15, 1]
 				},
 				{
-					"name": "rightArm",
+					"name": "arms",
 					"parent": "body",
 					"pivot": [-5, 22, 0],
 					"cubes": [
@@ -330,7 +404,7 @@
 				},
 				{
 					"name": "rightArmSlim",
-					"parent": "rightArm",
+					"parent": "arms",
 					"pivot": [-5, 22, 0],
 					"cubes": [
 						{
@@ -362,7 +436,7 @@
 				},
 				{
 					"name": "rightItem",
-					"parent": "rightArm",
+					"parent": "arms",
 					"pivot": [-5, 15, 1]
 				},
 				{

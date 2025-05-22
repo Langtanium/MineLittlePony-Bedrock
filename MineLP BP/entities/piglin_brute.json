@@ -3,56 +3,10 @@
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:piglin_brute",
+      "spawn_category": "monster",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-	  "properties": {
-		"property:race": {
-        	"range": [
-            0,
-            2
-          ],
-          "type": "int",
-          "default": 2,
-          "client_sync": true
-        },
-        "property:is_pony": {
-          "range": [
-            0,
-            1
-          ],
-          "type": "int",
-          "default": 1,
-          "client_sync": true
-        },
-        "property:muzzle_type": {
-          "range": [
-            0,
-            2
-          ],
-          "type": "int",
-          "default": 1,
-          "client_sync": true
-        },
-        "property:tail_length": {
-          "range": [
-            0,
-            4
-          ],
-          "type": "int",
-          "default": 3,
-          "client_sync": true
-        },
-        "property:tail_shape": {
-          "range": [
-            0,
-            3
-          ],
-          "type": "int",
-          "default": 0,
-          "client_sync": true
-        }
-      }
+      "is_experimental": false
     },
 
     "component_groups": {
@@ -102,7 +56,7 @@
       },
 
       "melee_unit": {
-        "minecraft:behavior.melee_attack": {
+        "minecraft:behavior.melee_box_attack": {
           "priority": 4,
           "speed_multiplier": 1,
           "track_target": true

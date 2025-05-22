@@ -62,6 +62,12 @@
         { "*": "Material.minelp_magic" }
       ],
       "textures": ["Texture.default"],
+      "color": {
+        "r": "1.0f",
+        "g": "1.0f",
+        "b": "1.0f",
+        "a": "0.9f"
+      },
       "ignore_lighting": true
     }
   }

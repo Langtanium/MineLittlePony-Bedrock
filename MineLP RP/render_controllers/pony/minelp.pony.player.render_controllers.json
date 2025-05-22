@@ -57,7 +57,7 @@
         { "leftLeg": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_left == 0" },
         { "rightLeg": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_right == 0" },
         { "leftLegSlim": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_left == 0.5" },
-        { "rightLegSlim": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_right == 0" },
+        { "rightLegSlim": "(v.minelp_is_seapony == 0 || !q.is_in_water) && v.short_arm_offset_right == 0.5" },
         { "tail": "v.minelp_is_seapony == 0 || !q.is_in_water" },
         { "tail1": "(v.minelp_tail_length >= 1 && v.minelp_is_seapony == 0) || (v.minelp_tail_length >= 1 && !q.is_in_water && v.minelp_iskirin == 0 && v.minelp_is_seapony == 1)" },
         { "tail2": "(v.minelp_tail_length >= 2 && v.minelp_is_seapony == 0) || (v.minelp_tail_length >= 2 && !q.is_in_water && v.minelp_iskirin == 0 && v.minelp_is_seapony == 1)" },
@@ -79,24 +79,6 @@
         { "*": "Material.minelp_default" }
       ],
       "textures": [ "Array.skins[q.is_in_water && v.minelp_is_seapony]" ]
-    },
-    "controller.render.player.saddlebags": {
-      "arrays": {
-        "textures": {
-          "Array.saddlebags": [
-            "Texture.saddlebags",
-            "Texture.default"
-          ]
-        }
-      },
-      "geometry": "Geometry.saddlebags",
-      "materials": [
-        { "*": "Material.minelp_masked" }
-      ],
-      "textures": [
-        "Texture.saddlebags",
-        "Array.saddlebags[v.minelp_has_wings == 0]"
-      ]
     },
     "controller.render.pony.first_person_griffin": {
       "geometry": "Geometry.minelp_gryphon_fp",
@@ -145,6 +127,29 @@
         "b": "1.0f",
         "a": "0.3f"
       }
+    },
+    "controller.render.player.saddlebags": {
+      "arrays": {
+        "textures": {
+          "Array.saddlebags": [
+            "Texture.minelp_saddlebags",
+            "Texture.default"
+          ]
+        }
+      },
+      "geometry": "Geometry.minelp_saddlebags",
+      "part_visibility": [
+        { "left_bag": "(v.minelp_wearable1 ?? 0) == 5 || (v.minelp_wearable1 ?? 0) == 7" },
+        { "right_bag": "(v.minelp_wearable1 ?? 0) == 6 || (v.minelp_wearable1 ?? 0) == 7" },
+        { "strap": "(v.minelp_wearable1 ?? 0) == 7" }
+      ],
+      "materials": [
+        { "*": "Material.minelp_masked" }
+      ],
+      "textures": [
+        "Texture.minelp_saddlebags",
+        "Array.saddlebags[!(v.minelp_has_wings ?? 0)]"
+      ]
     }
   }
 }

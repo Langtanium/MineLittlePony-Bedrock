@@ -1,39 +1,95 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:wandering_trader",
       "materials": {
-        "default": "wandering_trader"
+        "default": "wandering_trader",
+        "minelp_default": "wandering_trader",
+        "minelp_magic": "pony_magic"
       },
       "textures": {
-        "default": "textures/entity/wandering_trader"
+        "default": "textures/entity/wandering_trader",
+        "minelp_default": "textures/entity/wandering_trader_pony"
       },
       "geometry": {
-        "default": "geometry.villager_v2"
+        "default": "geometry.villager_v2",
+		"minelp_default": "geometry.minelp.pony.villager"
       },
       "scripts": {
-        "scale": "0.9375"
+        "variables": {
+          "variable.minelp_is_pony": "public",
+          "variable.minelp_race": "public"
+        },
+        "scale": "0.9375",
+        "initialize": [
+          "v.minelp_is_pony = 1;",
+          "v.minelp_race = 1;",
+          "v.minelp_horn_type = 0;",
+          "v.minelp_muzzle_type = 1;",
+          "v.minelp_tail_length = 4;",
+          "v.minelp_size = 2;",
+          "v.minelp_has_wings = 0;"
+        ],
+        "pre_animation": [
+          // Minelp //
+          "v.minelp_is_pony = q.property('minelp:is_pony');",
+          "v.minelp_race = q.property('minelp:race');",
+          "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
+          "v.minelp_muzzle_type = q.property('minelp:muzzle_type');",
+          "v.minelp_tail_length = q.property('minelp:tail_length');",
+          "v.minelp_tail_shape = q.property('minelp:tail_shape');",
+          "v.minelp_has_wings = (v.minelp_race == 2 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 8 || v.minelp_race == 9);",
+          "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;",
+          "v.x_bob = Math.sin(q.life_time * 76.776372) * 5.865;",
+          "v.z_bob = Math.cos(q.life_time * 93.13244) * 2.865 + 2.865;",
+          "v.attack = Math.sin((1.0 - (1.0 - v.attack_time) * (1.0 - v.attack_time)) * 180.0) * 57.3;",
+          "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;"
+        ],
+        "animate": [
+          // Vanilla //
+          { "controller_general": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_raise_arms": "!(v.minelp_is_pony ?? 0)" },
+          { "controller_move": "!(v.minelp_is_pony ?? 0)" },
+          // Minelp //
+          { "default": "(v.minelp_is_pony ?? 0)" },
+          { "arm_fix": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type == 0" },
+          { "arm_fix_magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type == 1" },
+          { "fly_controller": "(v.minelp_is_pony ?? 0) && (v.minelp_has_wings ?? 0)" }
+        ]
       },
       "animations": {
+        // Vanilla //
         "general": "animation.villager.general",
         "look_at_target": "animation.common.look_at_target",
         "raise_arms": "animation.villager.raise_arms",
-        "move": "animation.villager.move"
+        "move": "animation.villager.move",
+        "controller_general": "controller.animation.villager.general",
+        "controller_raise_arms": "controller.animation.villager_v2.raise_arms",
+        "controller_move": "controller.animation.villager.move",
+        // Minelp //
+        "arm_fix": "animation.minelp.pony.correct_villager",
+        "arm_fix_magic": "animation.minelp.pony.correct_magic_villager",
+        "default": "controller.animation.minelp.pony.default",
+        "default.arms": "controller.animation.minelp.pony.default.arms",
+        "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
+        "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
+        "show_movement.legs": "animation.minelp.pony.show_movement.legs",
+        "show_movement.tail": "animation.minelp.pony.show_movement.tail",
+        "show_attack.leftArm": "animation.minelp.pony.show_attack.leftArm",
+        "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
+        "bob.leftArm": "animation.minelp.pony.bob.leftArm",
+        "bob.rightArm": "animation.minelp.pony.bob.rightArm",
+        "bob.tail": "animation.minelp.pony.bob.tail",
+        "look_at_target": "animation.minelp.pony.look_at_target",
+        "big_head": "animation.minelp.pony.big_head",
+        "fly": "animation.minelp.pony.fly",
+        "fly_controller": "controller.animation.minelp.pony.fly"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.villager.general"
-        },
-        {
-          "raise_arms": "controller.animation.villager_v2.raise_arms"
-        },
-        {
-          "move": "controller.animation.villager.move"
-        }
-      ],
       "render_controllers": [
-        "controller.render.wandering_trader"
+        "controller.render.wandering_trader",
+        { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
+        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" }
       ],
       "spawn_egg": {
         "texture": "spawn_egg_wandering_trader"

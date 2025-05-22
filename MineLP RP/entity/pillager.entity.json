@@ -17,8 +17,7 @@
         "minelp_default": "geometry.minelp.pony.ch.pillager"
       },
       "spawn_egg": {
-        "texture": "spawn_egg",
-        "texture_index": 56
+        "texture": "spawn_egg_pillager"
       },
       "scripts": {
         "variables": {
@@ -35,21 +34,22 @@
           "v.minelp_has_wings = 1;"
         ],
         "pre_animation": [
-          "v.minelp_is_pony = q.property('property:is_pony');",
-          "v.minelp_race = q.property('property:race');",
+          "v.minelp_is_pony = q.property('minelp:is_pony');",
+          "v.minelp_race = q.property('minelp:race');",
           "v.minelp_horn_type = true || (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
-          "v.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
-          "v.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
+          "v.x_bob = Math.sin(q.life_time * 76.776372) * 5.865;",
+          "v.z_bob = Math.cos(q.life_time * 93.13244) * 2.865 + 2.865;",
           "v.attack = Math.sin((1.0 - (1.0 - v.attack_time) * (1.0 - v.attack_time)) * 180.0) * 57.3;",
           "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;",
-          "v.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / v.gliding_speed_value) * 20;",
-          "v.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / v.gliding_speed_value) * 57.3;"
+          "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;",
+          // Vanilla //
+          "v.tcos0 = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 57.3;"
         ],
         "animate": [
           // Minelp //
           { "default": "(v.minelp_is_pony ?? 0)" },
           { "arm_fix_magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" },
-          // Original //
+          // Vanilla //
           { "pillager_root_controller": "!(v.minelp_is_pony ?? 0)" }
         ]
       },
@@ -69,7 +69,7 @@
         "bob.tail": "animation.minelp.pony.bob.tail",
         "look_at_target": "animation.minelp.pony.look_at_target",
         "big_head": "animation.minelp.pony.big_head",
-        // Original //
+        // Vanilla //
         "humanoid_base_pose": "animation.humanoid.base_pose",
         "look_at_target_default": "animation.humanoid.look_at_target.default",
         "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",

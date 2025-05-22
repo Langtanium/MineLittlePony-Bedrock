@@ -10,20 +10,20 @@
 					],
 					"transitions": [
 						{
-							"default": "query.get_equipped_item_name != 'crossbow' || (query.item_remaining_use_duration <= 0.0 && !query.item_is_charged)"
+							"default": "q.get_equipped_item_name != 'crossbow' || (q.item_remaining_use_duration <= 0.0 && !q.item_is_charged)"
 						},
 						{
-							"hold": "query.item_is_charged"
+							"hold": "q.item_is_charged"
 						}
 					]
 				},
 				"default": {
 					"transitions": [
 						{
-							"hold": "query.item_is_charged"
+							"hold": "q.item_is_charged"
 						},
 						{
-							"charge": "query.item_remaining_use_duration > 0.0"
+							"charge": "q.item_remaining_use_duration > 0.0"
 						}
 					]
 				},
@@ -33,10 +33,10 @@
 					],
 					"transitions": [
 						{
-							"default": "query.get_equipped_item_name != 'crossbow' || (query.item_remaining_use_duration <= 0.0 && !query.item_is_charged)"
+							"default": "q.get_equipped_item_name != 'crossbow' || (q.item_remaining_use_duration <= 0.0 && !q.item_is_charged)"
 						},
 						{
-							"charge": "query.item_remaining_use_duration > 0.0"
+							"charge": "q.item_remaining_use_duration > 0.0"
 						}
 					]
 				}
@@ -51,7 +51,7 @@
 					],
 					"transitions": [
 						{
-							"vr_attack": "variable.is_using_vr"
+							"vr_attack": "v.is_using_vr"
 						}
 					]
 				},
@@ -61,7 +61,7 @@
 					],
 					"transitions": [
 						{
-							"default": "!variable.is_using_vr"
+							"default": "!v.is_using_vr"
 						}
 					]
 				}
@@ -73,28 +73,28 @@
 				"default": {
 					"transitions": [
 						{
-							"one_hand": "query.get_equipped_item_name('off_hand') == 'filled_map' || query.get_equipped_item_name('off_hand') == 'shield'"
+							"one_hand": "q.get_equipped_item_name('off_hand') == 'filled_map' || q.get_equipped_item_name('off_hand') == 'shield'"
 						},
 						{
-							"two_hand": "query.get_equipped_item_name('off_hand') != 'filled_map' && query.get_equipped_item_name('off_hand') != 'shield'"
+							"two_hand": "q.get_equipped_item_name('off_hand') != 'filled_map' && q.get_equipped_item_name('off_hand') != 'shield'"
 						}
 					]
 				},
 				"one_hand": {
 					"animations": [
 						{
-							"first_person_map_hold_main_hand": "query.get_equipped_item_name(0, 1) == 'filled_map'"
+							"first_person_map_hold_main_hand": "q.get_equipped_item_name(0, 1) == 'filled_map'"
 						},
 						{
-							"first_person_map_hold_off_hand": "query.get_equipped_item_name('off_hand') == 'filled_map' && (query.get_equipped_item_name == 'bow' ? !(variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0) : 1.0)"
+							"first_person_map_hold_off_hand": "q.get_equipped_item_name('off_hand') == 'filled_map' && (q.get_equipped_item_name == 'bow' ? !(v.item_use_normalized > 0 && v.item_use_normalized < 1.0) : 1.0)"
 						}
 					],
 					"transitions": [
 						{
-							"default": "query.get_equipped_item_name(0, 1) != 'filled_map' && query.get_equipped_item_name('off_hand') != 'filled_map'"
+							"default": "q.get_equipped_item_name(0, 1) != 'filled_map' && q.get_equipped_item_name('off_hand') != 'filled_map'"
 						},
 						{
-							"two_hand": "query.get_equipped_item_name('off_hand') != 'filled_map' && query.get_equipped_item_name('off_hand') != 'shield'"
+							"two_hand": "q.get_equipped_item_name('off_hand') != 'filled_map' && q.get_equipped_item_name('off_hand') != 'shield'"
 						}
 					]
 				},
@@ -105,10 +105,10 @@
 					],
 					"transitions": [
 						{
-							"default": "query.get_equipped_item_name(0, 1) != 'filled_map' && query.get_equipped_item_name('off_hand') != 'filled_map'"
+							"default": "q.get_equipped_item_name(0, 1) != 'filled_map' && q.get_equipped_item_name('off_hand') != 'filled_map'"
 						},
 						{
-							"one_hand": "query.get_equipped_item_name('off_hand') == 'filled_map' || query.get_equipped_item_name('off_hand') == 'shield'"
+							"one_hand": "q.get_equipped_item_name('off_hand') == 'filled_map' || q.get_equipped_item_name('off_hand') == 'shield'"
 						}
 					]
 				}
@@ -120,53 +120,53 @@
 				"first_person": {
 					"animations": [
 						{
-							"first_person_swap_item": "!query.blocking"
+							"first_person_swap_item": "!q.blocking"
 						},
 						{
-							"first_person_shield_block": "query.blocking"
+							"first_person_shield_block": "q.blocking"
 						},
 						{
-							"first_person_attack_controller": "variable.attack_time > 0.0f && query.get_equipped_item_name != 'filled_map'"
+							"first_person_attack_controller": "v.attack_time > 0.0f && q.get_equipped_item_name != 'filled_map'"
 						},
 						"first_person_base_pose",
 						{
-							"first_person_empty_hand": "query.get_equipped_item_name(0, 1) != 'filled_map'"
+							"first_person_empty_hand": "q.get_equipped_item_name(0, 1) != 'filled_map'"
 						},
 						{
-							"first_person_walk": "variable.bob_animation"
+							"first_person_walk": "v.bob_animation"
 						},
 						{
-							"first_person_map_controller": "(query.get_equipped_item_name(0, 1) == 'filled_map' || query.get_equipped_item_name('off_hand') == 'filled_map')"
+							"first_person_map_controller": "(q.get_equipped_item_name(0, 1) == 'filled_map' || q.get_equipped_item_name('off_hand') == 'filled_map')"
 						},
 						{
-							"first_person_crossbow_equipped": "query.get_equipped_item_name == 'crossbow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0)"
+							"first_person_crossbow_equipped": "q.get_equipped_item_name == 'crossbow' && (v.item_use_normalized > 0 && v.item_use_normalized < 1.0)"
 						},
 						{
-							"first_person_breathing_bob": "variable.attack_time <= 0.0"
+							"first_person_breathing_bob": "v.attack_time <= 0.0"
 						}
 					],
 					"transitions": [
 						{
-							"paperdoll": "variable.is_paperdoll"
+							"paperdoll": "v.is_paperdoll"
 						},
 						{
-							"map_player": "variable.map_face_icon"
+							"map_player": "v.map_face_icon"
 						},
 						{
-							"third_person": "!variable.is_first_person"
+							"third_person": "!v.is_first_person"
 						}
 					]
 				},
 				"map_player": {
 					"transitions": [
 						{
-							"paperdoll": "variable.is_paperdoll"
+							"paperdoll": "v.is_paperdoll"
 						},
 						{
-							"first_person": "variable.is_first_person"
+							"first_person": "v.is_first_person"
 						},
 						{
-							"third_person": "!variable.map_face_icon && !variable.is_first_person"
+							"third_person": "!v.map_face_icon && !v.is_first_person"
 						}
 					]
 				},
@@ -180,13 +180,13 @@
 					],
 					"transitions": [
 						{
-							"first_person": "!variable.is_paperdoll && variable.is_first_person"
+							"first_person": "!v.is_paperdoll && v.is_first_person"
 						},
 						{
-							"map_player": "variable.map_face_icon"
+							"map_player": "v.map_face_icon"
 						},
 						{
-							"third_person": "!variable.is_paperdoll && !variable.is_first_person"
+							"third_person": "!v.is_paperdoll && !v.is_first_person"
 						}
 					]
 				},
@@ -194,7 +194,7 @@
 					"animations": [
 						"humanoid_base_pose",
 						{
-							"look_at_target": "!q.is_sleeping && !q.is_emoting && v.minelp_is_pony == 0"
+							"look_at_target_controller": "!q.is_sleeping && !q.is_emoting && !v.minelp_is_pony"
 						},
 						{
 							"move.arms": "!v.minelp_is_pony"
@@ -224,81 +224,84 @@
 							"holding_spyglass": "v.is_holding_spyglass && v.minelp_horn_type == 0 && !v.minelp_is_pony"
 						},
 						{
-							"charging": "query.is_charging && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
+							"charging": "q.is_charging && v.minelp_horn_type == 0 && !v.minelp_is_pony"
 						},
 						{
-							"sneaking": "query.is_sneaking && !query.is_sleeping && variable.minelp_is_pony == 0"
+							"sneaking": "q.is_sneaking && !q.is_sleeping && !v.minelp_is_pony"
 						},
 						{
-							"pony_sneaking": "query.is_sneaking && !query.is_sleeping && v.minelp_is_pony  && v.minelp_horn_type == 0"
+							"pony_sneaking": "q.is_sneaking && !q.is_sleeping && v.minelp_is_pony  && v.minelp_horn_type == 0"
 						},
 						{
-							"pony_sneaking_magic": "query.is_sneaking && !query.is_sleeping && variable.minelp_is_pony == 1 && v.minelp_horn_type > 0"
+							"pony_sneaking_magic": "q.is_sneaking && !q.is_sleeping && v.minelp_is_pony && v.minelp_horn_type > 0"
 						},
 						{
-							"bob": "!variable.is_holding_spyglass && !variable.is_tooting_goat_horn && variable.minelp_is_pony == 0"
+							"bob": "!v.is_holding_spyglass && !v.is_tooting_goat_horn && !v.minelp_is_pony"
 						},
 						{
-							"damage_nearby_mobs": "variable.damage_nearby_mobs"
+							"damage_nearby_mobs": "v.damage_nearby_mobs"
 						},
 						{
-							"swimming": "variable.swim_amount > 0.0 && variable.minelp_is_pony == 0"
+							"swimming": "v.swim_amount > 0.0 && !v.minelp_is_pony"
 						},
 						{
-							"swimming.legs": "variable.swim_amount > 0.0 && variable.minelp_is_pony == 0"
+							"swimming.legs": "v.swim_amount > 0.0 && !v.minelp_is_pony"
 						},
 						{
-							"crawling": "query.is_crawling"
+							"crawling": "q.is_crawling && !v.minelp_is_pony"
 						},
 						{
-							"crawling.legs": "query.is_crawling"
+							"crawling.legs": "q.is_crawling && !v.minelp_is_pony"
 						},
 						{
-							"use_item_progress": "( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 ) && !variable.is_brandishing_spear && !variable.is_holding_spyglass && !variable.is_tooting_goat_horn && !query.is_item_name_any('slot.weapon.mainhand', 'minecraft:bow')"
+							"use_item_progress": "( v.use_item_interval_progress > 0.0 ) || ( v.use_item_startup_progress > 0.0 ) && !v.is_brandishing_spear && !v.is_holding_spyglass && !v.is_tooting_goat_horn && !q.is_item_name_any('slot.weapon.mainhand', 'minecraft:bow')"
 						},
 						{
-							"sleeping": "query.is_sleeping && query.is_alive && variable.minelp_is_pony == 0"
+							"sleeping": "q.is_sleeping && q.is_alive && !v.minelp_is_pony"
 						},
 						{
-							"pony_sleeping": "query.is_sleeping && query.is_alive && variable.minelp_is_pony == 1"
+							"pony_sleeping": "q.is_sleeping && q.is_alive && v.minelp_is_pony"
 						},
 						{
-							"attack.positions": "variable.attack_time >= 0.0 && variable.minelp_is_pony == 0"
+							"attack.positions": "v.attack_time >= 0.0 && !v.minelp_is_pony"
 						},
 						{
-							"attack.rotations": "variable.attack_time >= 0.0 && variable.minelp_is_pony == 0"
+							"attack.rotations": "v.attack_time >= 0.0 && !v.minelp_is_pony"
 						},
 						{
-							"shield_block_main_hand": "query.blocking && query.get_equipped_item_name('off_hand') != 'shield' && query.get_equipped_item_name == 'shield'"
+							"shield_block_main_hand": "q.blocking && q.get_equipped_item_name('off_hand') != 'shield' && q.get_equipped_item_name == 'shield'"
 						},
 						{
-							"shield_block_off_hand": "query.blocking && query.get_equipped_item_name('off_hand') == 'shield'"
+							"shield_block_off_hand": "q.blocking && q.get_equipped_item_name('off_hand') == 'shield'"
 						},
 						{
-							"crossbow_controller": "query.get_equipped_item_name == 'crossbow'"
+							"crossbow_controller": "q.get_equipped_item_name == 'crossbow'"
 						},
 						{
-							"third_person_bow_equipped": "query.get_equipped_item_name == 'bow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0) && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
+							"third_person_bow_equipped": "q.get_equipped_item_name == 'bow' && (v.item_use_normalized > 0 && v.item_use_normalized < 1.0) && v.minelp_horn_type == 0 && v.minelp_is_pony == 0"
 						},
 						{
-							"tooting_goat_horn": "variable.is_tooting_goat_horn && variable.minelp_horn_type == 0 && variable.minelp_is_pony == 0"
+							"tooting_goat_horn": "v.is_tooting_goat_horn && v.minelp_horn_type == 0 && !v.minelp_is_pony"
 						},
 						{
-							"holding_brush": "query.get_equipped_item_name == 'brush' && variable.minelp_horn_type == 0"
+							"holding_brush": "q.get_equipped_item_name == 'brush' && !v.minelp_horn_type"
 						},
 						{
-							"brushing": "variable.is_using_brush"
+							"brushing": "v.is_using_brush"
+						},
+						{
+							"holding_heavy_core" : "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:heavy_core')"
 						}
 					],
 					"transitions": [
 						{
-							"paperdoll": "variable.is_paperdoll"
+							"paperdoll": "v.is_paperdoll"
 						},
 						{
-							"first_person": "variable.is_first_person"
+							"first_person": "v.is_first_person"
 						},
 						{
-							"map_player": "variable.map_face_icon"
+							"map_player": "v.map_face_icon"
 						}
 					]
 				}

@@ -104,10 +104,6 @@
 				"rightArm": {
 					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
 					"position": [0.5, 2.5, 0.5]
-				},
-				"rightArm": {
-					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
-					"position": [0.5, 2.5, 0.5]
 				}
 			},
 			"loop": true
@@ -124,12 +120,120 @@
 				}
 			}
 		},
-		"animation.minelp.pony.foal": {
+		"animation.minelp.pony.fly": {
+			"loop": true,
+			"override_previous_animation": true,
+			"bones": {
+				"leftWingOpened": {
+					"rotation": [0, 0, "90 - (math.cos(query.life_time * 400) * 65)"]
+				},
+				"rightWingOpened": {
+					"rotation": [0, 0, "-90 + (math.cos(query.life_time * 400) * 65)"]
+				},
+				"leftBugWing": {
+					"rotation": [0, 0, "60 - (math.cos(query.life_time * 400) * 65)"]
+				},
+				"rightBugWing": {
+					"rotation": [0, 0, "-60 + (math.cos(query.life_time * 400) * 65)"]
+				},
+				"leftRCwing": {
+					"rotation": [0, 0, "60 - (math.cos(query.life_time * 400) * 65)"]
+				},
+				"rightRCwing": {
+					"rotation": [0, 0, "-60 + (math.cos(query.life_time * 400) * 65)"]
+				}
+			}
+		},
+		"animation.minelp.pony.size.foal": {
 			"loop": true,
 			"bones": {
 				"root": {
-					"position": [0, 0, -3],
-					"scale": 0.5
+					"position": [0, 0, -2.5],
+					"scale": 0.6
+				},
+				"head": {
+					"scale": "(q.get_actor_info_id('minecraft:player')==63)?0.6:1"
+				}
+			}
+		},
+		"animation.minelp.pony.size.yearling": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, -2.5],
+					"scale": 0.6
+				},
+				"head": {
+					"scale": "(q.get_actor_info_id('minecraft:player')==63)?0.6:1"
+				}
+			}
+		},
+		"animation.minelp.pony.size.squat": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, -1.8],
+					"scale": 0.7
+				},
+				"head": {
+					"scale": "(q.get_actor_info_id('minecraft:player')==63)?0.7:1"
+				}
+			}
+		},
+		"animation.minelp.pony.size.stocky": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, -1.2],
+					"scale": 0.8
+				},
+				"head": {
+					"scale": "(q.get_actor_info_id('minecraft:player')==63)?0.8:1"
+				}
+			}
+		},
+		"animation.minelp.pony.size.normal": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, -1],
+					"scale": 0.8
+				},
+				"head": {
+					"scale": "(q.get_actor_info_id('minecraft:player')==63)?0.8:1"
+				}
+			}
+		},
+		"animation.minelp.pony.size.lanky": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, 0],
+					"scale": 0.85
+				},
+				"head": {
+					"scale": "(q.get_actor_info_id('minecraft:player')==63)?0.85:1"
+				}
+			}
+		},
+		"animation.minelp.pony.size.bulky": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, 0],
+					"scale": 1
+				}
+			}
+		},
+		"animation.minelp.pony.size.tall": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"position": [0, 0, 0],
+					"scale": 1.1
+				},
+				"head": {
+					"scale": "(q.get_actor_info_id('minecraft:player')==63)?1.1:1"
 				}
 			}
 		}

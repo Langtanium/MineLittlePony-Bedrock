@@ -5,7 +5,8 @@
       "rebuild_animation_matrices": true,
       "geometry": "Geometry.default",
       "part_visibility": [
-        { "mushrooms": "!query.is_sheared" }
+        { "*": "!(v.minelp_is_pony ?? 0)" },
+        { "mushrooms": "!q.is_sheared && !(v.minelp_is_pony ?? 0)" }
       ],
       "materials": [ { "*": "Material.default" } ],
       "textures": [ "Texture.default" ]

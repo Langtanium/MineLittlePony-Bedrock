@@ -6,9 +6,9 @@
                 "default": {
                     "animations": [
                         "look_at_target",
-                        { "big_head": "query.is_baby" },
+                        { "big_head": "q.is_baby" },
                         "default.arms",
-                        "show_movement.legs",
+                        { "show_movement.legs": "!(v.minelp_has_wings ?? 0) || q.is_on_ground" },
                         "bob.tail",
                         "show_movement.tail"
                     ]
@@ -19,35 +19,35 @@
             "states": {
                 "default": {
                     "animations": [
-                        { "show_attack.rightArm": "variable.minelp_horn_type == 0.0 || !variable.is_holding_right" },
-                        "show_movement.leftArm",
-                        "show_movement.rightArm"
+                        { "show_attack.rightArm": "(v.minelp_horn_type ?? 0) == 0 || !v.is_holding_right" },
+                        { "show_movement.leftArm": "!(v.minelp_has_wings ?? 0) || q.is_on_ground" },
+                        { "show_movement.rightArm": "!(v.minelp_has_wings ?? 0) || q.is_on_ground" }
                     ],
                     "transitions": [
-                        { "holding_left": "variable.minelp_horn_type == 0.0 && variable.is_holding_left  && ( variable.minelp_handedness == 1.0 || !variable.is_holding_right )" },
-                        { "holding_right": "variable.minelp_horn_type == 0.0 && variable.is_holding_right && ( variable.minelp_handedness == 0.0 || !variable.is_holding_left  )" }
+                        { "holding_left": "(v.minelp_horn_type ?? 0) == 0 && v.is_holding_left  && ((v.minelp_handedness ?? 0) == 1 || !v.is_holding_right)" },
+                        { "holding_right": "(v.minelp_horn_type ?? 0) == 0 && v.is_holding_right && ((v.minelp_handedness ?? 0) == 0 || !v.is_holding_left)" }
                     ]
                 },
                 "holding_left": {
                     "animations": [
                         "bob.leftArm",
                         "show_attack.leftArm",
-                        "show_movement.rightArm"
+                        { "show_movement.rightArm": "!(v.minelp_has_wings ?? 0) || q.is_on_ground" }
                     ],
                     "transitions": [
-                        { "default": "variable.minelp_horn_type >  0.0 || ( !variable.is_holding_left && !variable.is_holding_right )" },
-                        { "holding_right": "variable.minelp_horn_type == 0.0 && variable.is_holding_right && ( variable.minelp_handedness == 0.0 || !variable.is_holding_left  )" }
+                        { "default": "(v.minelp_horn_type ?? 0) > 0 || (!v.is_holding_left && !v.is_holding_right)" },
+                        { "holding_right": "(v.minelp_horn_type ?? 0) == 0 && v.is_holding_right && ((v.minelp_handedness ?? 0) == 0 || !v.is_holding_left)" }
                     ]
                 },
                 "holding_right": {
                     "animations": [
                         "bob.rightArm",
                         "show_attack.rightArm",
-                        "show_movement.leftArm"
+                        { "show_movement.leftArm": "!(v.minelp_has_wings ?? 0) || q.is_on_ground" }
                     ],
                     "transitions": [
-                        { "default": "variable.minelp_horn_type >  0.0 || ( !variable.is_holding_left && !variable.is_holding_right )" },
-                        { "holding_left": "variable.minelp_horn_type == 0.0 && variable.is_holding_left  && ( variable.minelp_handedness == 1.0 || !variable.is_holding_right )" }
+                        { "default": "(v.minelp_horn_type ?? 0) >  0 || ( !v.is_holding_left && !v.is_holding_right )" },
+                        { "holding_left": "(v.minelp_horn_type ?? 0) == 0 && v.is_holding_left && ((v.minelp_handedness ?? 0) == 1 || !v.is_holding_right)" }
                     ]
                 }
             }

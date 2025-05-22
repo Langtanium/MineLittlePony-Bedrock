@@ -4,15 +4,15 @@
     "name": "Mine Little Pony",
     "description": "Turns mobs into ponies!",
     "uuid": "31115598-d97a-4610-a845-1e000c497505",
-    "version": [0, 1, 1],
-    "min_engine_version": [1, 19, 0]
+    "version": [0, 2, 0],
+    "min_engine_version": [1, 21, 70]
   },
   "modules": [
     {
       "description": "Mine Little Pony - Behaviors",
       "type": "data",
       "uuid": "fa6e90c8-c925-460f-8155-c8a60b753caa",
-      "version": [0, 1, 1]
+      "version": [0, 2, 0]
     },
     {
       "type": "script",
@@ -33,12 +33,12 @@
   "dependencies": [
     {
       // Mine Little Pony Resource Pack
-      "version": [0, 1, 0],
+      "version": [0, 2, 0],
       "uuid": "571ec626-7915-4b36-8897-47f793a77643"
     },
     {
       "module_name": "@minecraft/server",
-      "version": "1.18.0"
+      "version": "1.19.0"
     },
     {
       "module_name": "@minecraft/server-ui",

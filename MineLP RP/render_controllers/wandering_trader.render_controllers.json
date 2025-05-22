@@ -4,6 +4,9 @@
     "controller.render.wandering_trader": {
       "geometry": "Geometry.default",
       "materials": [ { "*": "Material.default" } ],
+      "part_visibility": [
+        { "*": "!(v.minelp_is_pony ?? 0)" }
+      ],
       "textures": [ "Texture.default" ]
     }
   }

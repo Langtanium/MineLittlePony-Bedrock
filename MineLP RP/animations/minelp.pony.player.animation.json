@@ -12,21 +12,21 @@
 					"position": [4, 6, 1]
 				},
 				"leftLeg": {
-					"position": ["4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+					"position": ["4 * !query.is_sprinting", "-2 * !query.is_sprinting", "2 * !query.is_sprinting"]
 				},
 				"rightArm": {
 					"rotation": [-35, 0, 0],
 					"position": [-4, 6, 1]
 				},
 				"rightLeg": {
-					"position": ["-4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+					"position": ["-4 * !query.is_sprinting", "-2 * !query.is_sprinting", "2 * !query.is_sprinting"]
 				},
 				"root": {
-					"position": [0, -6, 0]
+					"position": [0, 0, 0]
 				},
 				"waist": {
 					"rotation": [15, 0, 0],
-					"position": [0, 0, 0]
+					"position": [0, -6, 0]
 				},
 				"tail": {
 					"rotation": [-15, 0, 0]
@@ -42,12 +42,6 @@
 				},
 				"rightBatWingOpened": {
 					"rotation": ["20 * !query.is_sprinting", 0, "-10 * !query.is_sprinting"]
-				},
-				"rightItemMagic": {
-					"position": [0, 0, -2]
-				},
-				"leftItemMagic": {
-					"position": [0, 0, -2]
 				}
 			}
 		},
@@ -62,21 +56,21 @@
 					"position": [4, 6, 1]
 				},
 				"leftLeg": {
-					"position": ["4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+					"position": ["4 * !query.is_sprinting", "-2 * !query.is_sprinting", "2 * !query.is_sprinting"]
 				},
 				"rightArm": {
 					"rotation": [-35, 0, 0],
 					"position": [-4, 6, 1]
 				},
 				"rightLeg": {
-					"position": ["-4 * !query.is_sprinting", "4 * !query.is_sprinting", "2 * !query.is_sprinting"]
+					"position": ["-4 * !query.is_sprinting", "-2 * !query.is_sprinting", "2 * !query.is_sprinting"]
 				},
 				"root": {
-					"position": [0, -6, 0]
+					"position": [0, 0, 0]
 				},
 				"waist": {
 					"rotation": [15, 0, 0],
-					"position": [0, 0, 0]
+					"position": [0, -6, 0]
 				},
 				"tail": {
 					"rotation": [-15, 0, 0]
@@ -94,16 +88,18 @@
 					"rotation": ["20 * !query.is_sprinting", 0, "-10 * !query.is_sprinting"]
 				},
 				"rightItemMagic": {
-					"position": [0, 0, -2]
+					"position": [0, -6, -2]
 				},
 				"leftItemMagic": {
-					"position": [0, 0, -2]
+					"position": [0, -6, -2]
 				},
 				"leftItem": {
-					"rotation": [20, 0, 0]
+					"rotation": [20, 0, 0],
+					"position": [-4, 0, 0]
 				},
 				"rightItem": {
-					"rotation": [20, 0, 0]
+					"rotation": [20, 0, 0],
+					"position": [4, 0, 0]
 				}
 			}
 		},
@@ -198,41 +194,6 @@
 				}
 			}
 		},
-		"animation.player.fly.sprint": {
-			"loop": true,
-			"bones": {
-				"leftArm": {
-					"rotation": [-90, -15, 0],
-					"position": [0, 1, -1]
-				},
-				"rightArm": {
-					"rotation": [-90, 15, 0],
-					"position": [0, 1, -1]
-				},
-				"leftArmPony": {
-					"rotation": [-90, -15, 0],
-					"position": [0, 1, -1]
-				},
-				"rightArmPony": {
-					"rotation": [-90, 15, 0],
-					"position": [0, 1, -1]
-				},
-				"leftLeg": {
-					"rotation": [90, 15, 0],
-					"position": [0, 3, 3]
-				},
-				"rightLeg": {
-					"rotation": [90, -15, 0],
-					"position": [0, 3, 3]
-				},
-				"rightItemMagic": {
-					"position": [0, 5, 0]
-				},
-				"leftItemMagic": {
-					"position": [0, 5, 0]
-				}
-			}
-		},
 		"animation.player.seapony": {
 			"loop": true,
 			"bones": {
@@ -269,18 +230,119 @@
 				}
 			}
 		},
-		"animation.player.pony.cape" : {
-			"loop" : true,
-			"bones" : {
+		"animation.player.fly.move_magic": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-20, -10, 0],
+					"position": [0, 0, -1]
+				},
+				"rightArm": {
+					"rotation": [-20, 10, 0],
+					"position": [0, 0, -1]
+				},
+				"leftArmPony": {
+					"rotation": [-20, -10, 0],
+					"position": [0, 0, -1]
+				},
+				"rightArmPony": {
+					"rotation": [-20, 10, 0],
+					"position": [0, 0, -1]
+				},
+				"leftLeg": {
+					"rotation": [20, 10, 0],
+					"position": [0, 0, 1.5]
+				},
+				"rightLeg": {
+					"rotation": [20, -10, 0],
+					"position": [0, 0, 1.5]
+				},
+				"leftItem": {
+					"rotation": [20, 10, 0],
+					"position": [0, -1.5, -1]
+				},
+				"rightItem": {
+					"rotation": [20, -10, 0],
+					"position": [0, -1.5, -1]
+				}
+			}
+		},
+		"animation.player.fly.sprint": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-90, -15, 0],
+					"position": [0, 1, -1]
+				},
+				"rightArm": {
+					"rotation": [-90, 15, 0],
+					"position": [0, 1, -1]
+				},
+				"leftArmPony": {
+					"rotation": [-90, -15, 0],
+					"position": [0, 1, -1]
+				},
+				"rightArmPony": {
+					"rotation": [-90, 15, 0],
+					"position": [0, 1, -1]
+				},
+				"leftLeg": {
+					"rotation": [90, 15, 0],
+					"position": [0, 3, 3]
+				},
+				"rightLeg": {
+					"rotation": [90, -15, 0],
+					"position": [0, 3, 3]
+				}
+			}
+		},
+		"animation.player.fly.sprint_magic": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-90, -15, 0],
+					"position": [0, 1, -1]
+				},
+				"rightArm": {
+					"rotation": [-90, 15, 0],
+					"position": [0, 1, -1]
+				},
+				"leftArmPony": {
+					"rotation": [-90, -15, 0],
+					"position": [0, 1, -1]
+				},
+				"rightArmPony": {
+					"rotation": [-90, 15, 0],
+					"position": [0, 1, -1]
+				},
+				"leftLeg": {
+					"rotation": [90, 15, 0],
+					"position": [0, 3, 3]
+				},
+				"rightLeg": {
+					"rotation": [90, -15, 0],
+					"position": [0, 3, 3]
+				},
+				"rightItemMagic": {
+					"position": [0, 5, 0]
+				},
+				"leftItemMagic": {
+					"position": [0, 5, 0]
+				}
+			}
+		},
+		"animation.player.pony.cape": {
+			"loop": true,
+			"bones": {
 				"cape": {
 					"rotation": ["-96+math.clamp(q.cape_flap_amount*12,0,6)", 0, 0],
 					"position": [0, "q.get_root_locator_offset('armor_offset.default_neck',1)+1", -2]
 				}
 			}
 		},
-		"animation.player.pony.cape_flap" : {
-			"loop" : true,
-			"bones" : {
+		"animation.player.pony.cape_flap": {
+			"loop": true,
+			"bones": {
 				"cape": {
 					"rotation": ["math.lerp(-90,-126,q.cape_flap_amount)-6", 0, 0],
 					"position": [0, "q.get_root_locator_offset('armor_offset.default_neck',1)+1", -2]

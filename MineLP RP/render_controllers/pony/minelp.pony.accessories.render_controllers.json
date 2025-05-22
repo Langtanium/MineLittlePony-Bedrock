@@ -1,0 +1,58 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.minelp.pony.crown": {
+      "geometry": "Geometry.minelp_crown",
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [ "Texture.minelp_crown" ]
+    },
+    "controller.render.minelp.pony.muffin": {
+      "geometry": "Geometry.minelp_muffin",
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [ "Texture.minelp_muffin" ]
+    },
+    "controller.render.minelp.pony.witch_hat": {
+      "geometry": "Geometry.minelp_witch_hat",
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [ "Texture.minelp_witch_hat" ]
+    },
+    "controller.render.minelp.pony.antlers": {
+      "geometry": "Geometry.minelp_antlers",
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [ "Texture.minelp_antlers" ]
+    },
+    "controller.render.minelp.pony.saddlebags": {
+      "arrays": {
+        "textures": {
+          "Array.saddlebags": [
+            "Texture.minelp_saddlebags",
+            "Texture.minelp_default"
+          ]
+        }
+      },
+      "geometry": "Geometry.minelp_saddlebags",
+      "materials": [
+        { "*": "Material.minelp_masked" }
+      ],
+      "textures": [
+        "Texture.minelp_saddlebags",
+        "Array.saddlebags[(v.minelp_has_wings ?? 0) == 0]"
+      ]
+    },
+    "controller.render.minelp.pony.stetson": {
+      "geometry": "Geometry.minelp_stetson",
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [ "Texture.minelp_stetson" ]
+    }
+  }
+}

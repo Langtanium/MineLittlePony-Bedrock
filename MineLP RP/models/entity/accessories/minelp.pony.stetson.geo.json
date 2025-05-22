@@ -34,7 +34,7 @@
 					"name": "stetson",
 					"parent": "head",
 					"pivot": [1, 29, -4],
-					"rotation": [17, 180, 5.7],
+					"rotation": [17, 180, -5.7],
 					"cubes": [
 						{
 							"origin": [-6, 29, -16],

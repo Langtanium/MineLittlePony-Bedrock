@@ -4,6 +4,9 @@
     "controller.render.bogged_clothes": {
       "rebuild_animation_matrices": true,
       "geometry": "Geometry.overlay",
+      "part_visibility": [
+        { "*": "!(v.minelp_is_pony ?? 0)" }
+      ],
       "materials": [ { "*": "Material.overlay" } ],
       "textures": [ "Texture.overlay" ]
     }

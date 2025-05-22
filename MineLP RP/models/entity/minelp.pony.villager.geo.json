@@ -998,6 +998,11 @@
 					]
 				},
 				{
+					"name": "held_item",
+					"parent": "arms",
+					"pivot": [-1, 17, -1]
+				},
+				{
 					"name": "rightArmSlim",
 					"parent": "arms",
 					"pivot": [-5, 22, 0],

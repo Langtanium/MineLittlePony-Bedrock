@@ -1,13 +1,13 @@
 {
-  "format_version": "1.18.20",
+  "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:player",
+      "spawn_category": "creature",
       "is_spawnable": false,
       "is_summonable": false,
-      "is_experimental": false,
       "properties": {
-        "property:race": {
+        "minelp:race": {
           "range": [
             0,
             11
@@ -16,7 +16,7 @@
           "default": 1,
           "client_sync": true
         },
-        "property:is_pony": {
+        "minelp:is_pony": {
           "range": [
             0,
             1
@@ -25,7 +25,7 @@
           "default": 1,
           "client_sync": true
         },
-        "property:is_seapony": {
+        "minelp:is_seapony": {
           "range": [
             0,
             1
@@ -34,7 +34,7 @@
           "default": 0,
           "client_sync": true
         },
-        "property:muzzle_type": {
+        "minelp:muzzle_type": {
           "range": [
             0,
             2
@@ -43,7 +43,7 @@
           "default": 0,
           "client_sync": true
         },
-        "property:tail_length": {
+        "minelp:tail_length": {
           "range": [
             0,
             4
@@ -52,7 +52,7 @@
           "default": 4,
           "client_sync": true
         },
-        "property:tail_shape": {
+        "minelp:tail_shape": {
           "range": [
             0,
             3
@@ -61,16 +61,16 @@
           "default": 0,
           "client_sync": true
         },
-        "property:pony_size": {
+        "minelp:pony_size": {
           "range": [
             0,
-            5
+            7
           ],
           "type": "int",
-          "default": 2,
+          "default": 4,
           "client_sync": true
         },
-        "property:pony_gear_first": {
+        "minelp:pony_gear_first": {
           "range": [
             0,
             8
@@ -79,7 +79,7 @@
           "default": 0,
           "client_sync": true
         },
-        "property:pony_gear_second": {
+        "minelp:pony_gear_second": {
           "range": [
             0,
             8
@@ -88,19 +88,10 @@
           "default": 0,
           "client_sync": true
         },
-        "property:pony_gear_third": {
+        "minelp:pony_gear_third": {
           "range": [
             0,
             8
-          ],
-          "type": "int",
-          "default": 0,
-          "client_sync": true
-        },
-        "property:cape": {
-          "range": [
-            0,
-            11
           ],
           "type": "int",
           "default": 0,
@@ -109,6 +100,7 @@
       }
     },
     "component_groups": {
+      // Minelp //
       "minelp:seapony": {},
       "minelp:foal": {
         "minecraft:type_family": {
@@ -116,39 +108,39 @@
             "player",
             "foal"
           ]
-        },
-        "minecraft:is_baby": {}
+        }
       },
       "minelp:yearling": {},
+      "minelp:squat": {},
+      "minelp:stocky": {},
       "minelp:normal": {},
       "minelp:lanky": {},
       "minelp:bulky": {},
       "minelp:tall": {},
-      "minecraft:add_bad_omen": {
+      // Vanilla //
+      "minecraft:add_raid_omen": {
         "minecraft:spell_effects": {
           "add_effects": [
             {
-              "effect": "bad_omen",
-              "duration": 6000,
-              "visible": false,
+              "effect": "raid_omen",
+              "duration": 30,
               "display_on_screen_animation": true
             }
-          ]
+          ],
+          "remove_effects": "bad_omen"
         },
         "minecraft:timer": {
-          "time": [
-            0.0,
-            0.0
-          ],
+          "time": [ 0.0, 0.0 ],
           "looping": false,
           "time_down_event": {
-            "event": "minecraft:clear_add_bad_omen",
+            "event": "minecraft:clear_add_raid_omen",
             "target": "self"
           }
         }
       },
-      "minecraft:clear_bad_omen_spell_effect": {
-        "minecraft:spell_effects": {}
+      "minecraft:clear_raid_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
       },
       "minecraft:raid_trigger": {
         "minecraft:raid_trigger": {
@@ -156,58 +148,28 @@
             "event": "minecraft:remove_raid_trigger",
             "target": "self"
           }
-        },
-        "minecraft:spell_effects": {
-          "remove_effects": "bad_omen"
         }
       }
     },
+
     "components": {
-      "minecraft:npc": {
-        "npc_data": {
-          "portrait_offsets": {
-            "translate": [
-              0,
-              -50,
-              0
-            ]
-          }
-        }
-      },
-      "minecraft:interact": {
-        "interactions": [
-          {
-            "on_interact": {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "player"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
       "minecraft:experience_reward": {
         "on_death": "Math.Min(query.player_level * 7, 100)"
       },
       "minecraft:type_family": {
-        "family": [
-          "player"
-        ]
+        "family": [ "player" ]
       },
-      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:is_hidden_when_invisible": {
+      },
       "minecraft:loot": {
         "table": "loot_tables/empty.json"
       },
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 1.575
+        "height": 1.8
       },
-      "minecraft:can_climb": {},
+      "minecraft:can_climb": {
+      },
       "minecraft:movement": {
         "value": 0.1
       },
@@ -283,28 +245,21 @@
         "pull_in_entities": true,
         "seats": [
           {
-            "position": [
-              0.4,
-              -0.2,
-              -0.1
-            ],
+            "position": [ 0.4, -0.2, -0.1 ],
             "min_rider_count": 0,
             "max_rider_count": 0,
             "lock_rider_rotation": 0
           },
           {
-            "position": [
-              -0.4,
-              -0.2,
-              -0.1
-            ],
+            "position": [ -0.4, -0.2, -0.1 ],
             "min_rider_count": 1,
             "max_rider_count": 2,
             "lock_rider_rotation": 0
           }
         ]
       },
-      "minecraft:conditional_bandwidth_optimization": {},
+      "minecraft:conditional_bandwidth_optimization": {
+      },
       "minecraft:block_climber": {},
       "minecraft:environment_sensor": {
         "triggers": {
@@ -322,15 +277,16 @@
               }
             ]
           },
-          "event": "minecraft:trigger_raid"
+          "event": "minecraft:gain_raid_omen"
         }
       }
     },
+
     "events": {
-      "minelp:options_popup": {},
+      // Minelp //
       "minelp:set_seapony": {
         "set_property": {
-          "property:is_seapony": 1
+          "minelp:is_seapony": 1
         },
         "add": {
           "component_groups": [
@@ -340,7 +296,7 @@
       },
       "minelp:remove_seapony": {
         "set_property": {
-          "property:is_seapony": 0
+          "minelp:is_seapony": 0
         },
         "remove": {
           "component_groups": [
@@ -349,17 +305,14 @@
         }
       },
       "minelp:size_foal": {
-        "set_property": {
-          "property:pony_size": 0
-        },
         "add": {
-          "component_groups": [
-            "minelp:foal"
-          ]
+          "component_groups": [ "minelp:foal" ]
         },
         "remove": {
           "component_groups": [
             "minelp:yearling",
+            "minelp:squat",
+            "minelp:stocky",
             "minelp:normal",
             "minelp:lanky",
             "minelp:bulky",
@@ -368,17 +321,47 @@
         }
       },
       "minelp:size_yearling": {
-        "set_property": {
-          "property:pony_size": 1
-        },
         "add": {
-          "component_groups": [
-            "minelp:yearling"
-          ]
+          "component_groups": [ "minelp:yearling" ]
         },
         "remove": {
           "component_groups": [
             "minelp:foal",
+            "minelp:squat",
+            "minelp:stocky",
+            "minelp:normal",
+            "minelp:lanky",
+            "minelp:bulky",
+            "minelp:tall"
+          ]
+        }
+      },
+	  
+      "minelp:size_squat": {
+        "add": {
+          "component_groups": [ "minelp:squat" ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:foal",
+            "minelp:yearling",
+            "minelp:stocky",
+            "minelp:normal",
+            "minelp:lanky",
+            "minelp:bulky",
+            "minelp:tall"
+          ]
+        }
+      },
+      "minelp:size_stocky": {
+        "add": {
+          "component_groups": [ "minelp:stocky" ]
+        },
+        "remove": {
+          "component_groups": [
+            "minelp:foal",
+            "minelp:squat",
+            "minelp:yearling",
             "minelp:normal",
             "minelp:lanky",
             "minelp:bulky",
@@ -387,18 +370,15 @@
         }
       },
       "minelp:size_normal": {
-        "set_property": {
-          "property:pony_size": 2
-        },
         "add": {
-          "component_groups": [
-            "minelp:normal"
-          ]
+          "component_groups": [ "minelp:normal" ]
         },
         "remove": {
           "component_groups": [
             "minelp:foal",
             "minelp:yearling",
+            "minelp:squat",
+            "minelp:stocky",
             "minelp:lanky",
             "minelp:bulky",
             "minelp:tall"
@@ -406,18 +386,15 @@
         }
       },
       "minelp:size_lanky": {
-        "set_property": {
-          "property:pony_size": 3
-        },
         "add": {
-          "component_groups": [
-            "minelp:lanky"
-          ]
+          "component_groups": [ "minelp:lanky" ]
         },
         "remove": {
           "component_groups": [
             "minelp:foal",
             "minelp:yearling",
+            "minelp:squat",
+            "minelp:stocky",
             "minelp:normal",
             "minelp:bulky",
             "minelp:tall"
@@ -425,18 +402,15 @@
         }
       },
       "minelp:size_bulky": {
-        "set_property": {
-          "property:pony_size": 4
-        },
         "add": {
-          "component_groups": [
-            "minelp:bulky"
-          ]
+          "component_groups": [ "minelp:bulky" ]
         },
         "remove": {
           "component_groups": [
             "minelp:foal",
             "minelp:yearling",
+            "minelp:squat",
+            "minelp:stocky",
             "minelp:normal",
             "minelp:lanky",
             "minelp:tall"
@@ -444,55 +418,49 @@
         }
       },
       "minelp:size_tall": {
-        "set_property": {
-          "property:pony_size": 5
-        },
         "add": {
-          "component_groups": [
-            "minelp:tall"
-          ]
+          "component_groups": [ "minelp:tall" ]
         },
         "remove": {
           "component_groups": [
             "minelp:foal",
             "minelp:yearling",
+            "minelp:squat",
+            "minelp:stocky",
             "minelp:normal",
             "minelp:lanky",
             "minelp:bulky"
           ]
         }
       },
-      "minecraft:gain_bad_omen": {
+      // Vanilla //
+      "minecraft:gain_raid_omen": {
         "add": {
           "component_groups": [
-            "minecraft:add_bad_omen"
+            "minecraft:add_raid_omen"
           ]
         }
       },
-      "minecraft:clear_add_bad_omen": {
+      "minecraft:clear_add_raid_omen": {
         "remove": {
           "component_groups": [
-            "minecraft:add_bad_omen"
+            "minecraft:add_raid_omen"
           ]
         },
         "add": {
           "component_groups": [
-            "minecraft:clear_bad_omen_spell_effect"
+            "minecraft:clear_raid_omen_spell_effect"
           ]
         }
       },
       "minecraft:trigger_raid": {
         "add": {
-          "component_groups": [
-            "minecraft:raid_trigger"
-          ]
+          "component_groups": [ "minecraft:raid_trigger" ]
         }
       },
       "minecraft:remove_raid_trigger": {
         "remove": {
-          "component_groups": [
-            "minecraft:raid_trigger"
-          ]
+          "component_groups": [ "minecraft:raid_trigger" ]
         }
       }
     }

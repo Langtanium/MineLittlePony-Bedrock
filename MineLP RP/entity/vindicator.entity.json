@@ -17,8 +17,7 @@
         "minelp_default": "geometry.minelp.pony.pe.vindicator"
       },
       "spawn_egg": {
-        "texture": "spawn_egg",
-        "texture_index": 39
+        "texture": "spawn_egg_vindicator"
       },
       "scripts": {
         "variables": {
@@ -36,8 +35,8 @@
           "v.minelp_has_wings = 1;"
         ],
 		"pre_animation": [
-          "v.minelp_is_pony = q.property('property:is_pony');",
-          "v.minelp_race = q.property('property:race');",
+          "v.minelp_is_pony = q.property('minelp:is_pony');",
+          "v.minelp_race = q.property('minelp:race');",
           "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
           "v.x_bob = Math.sin(q.life_time * 76.776372) * 5.865;",
           "v.z_bob = Math.cos(q.life_time * 93.13244) * 2.865 + 2.865;",
@@ -49,7 +48,8 @@
           // Minelp //
           { "default": "(v.minelp_is_pony ?? 0)" },
           { "arm_fix": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type == 0" },
-          // Original //
+          { "fly_controller": "(v.minelp_is_pony ?? 0) && (v.minelp_has_wings ?? 0)" },
+          // Vanilla //
           { "vindicator_base": "!(v.minelp_is_pony ?? 0)" },
           { "vindicator_walk": "!(v.minelp_is_pony ?? 0)" },
 
@@ -74,7 +74,9 @@
         "bob.tail": "animation.minelp.pony.bob.tail",
         "look_at_target": "animation.minelp.pony.look_at_target",
         "big_head": "animation.minelp.pony.big_head",
-        // Original //
+        "fly": "animation.minelp.pony.fly",
+        "fly_controller": "controller.animation.minelp.pony.fly",
+        // Vanilla //
         "look_at_target_default": "animation.humanoid.look_at_target.default",
         "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
         "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
@@ -92,7 +94,7 @@
       "render_controllers": [
         "controller.render.vindicator",
 		{ "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
-        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1.0" }
+        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" }
       ],
       "enable_attachables": true,
       "hide_armor": true

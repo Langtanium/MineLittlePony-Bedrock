@@ -8,13 +8,7 @@
                     "blend_transition": 0.2,
                     "transitions": [
                         {
-                            "flying": "!q.is_on_ground"
-                        },
-                        {
-                            "flying_moving": "!q.is_on_ground && q.is_moving && !q.is_jumping"
-                        },
-                        {
-                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting"
+                            "flying": "!q.is_on_ground && !q.is_moving && !q.is_in_water"
                         }
                     ]
                 },
@@ -25,13 +19,43 @@
                     "blend_transition": 0.2,
                     "transitions": [
                         {
-                            "default": "q.is_on_ground"
+                            "default": "q.is_on_ground || q.is_in_water"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.player.pony.fly": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "blend_transition": 0.2,
+                    "transitions": [
+                        {
+                            "flying": "!q.is_on_ground && !q.is_moving && !q.is_in_water"
                         },
                         {
-                            "flying_moving": "!q.is_on_ground && q.is_moving"
+                            "flying_moving": "!q.is_on_ground && q.is_moving && !q.is_sprinting && !q.is_jumping && q.vertical_speed == 0 && !q.is_in_water"
                         },
                         {
-                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting"
+                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting && !q.is_jumping && !q.is_in_water"
+                        }
+                    ]
+                },
+                "flying": {
+                    "animations": [
+                        "fly"
+                    ],
+                    "blend_transition": 0.2,
+                    "transitions": [
+                        {
+                            "default": "q.is_on_ground || q.is_in_water"
+                        },
+                        {
+                            "flying_moving": "!q.is_on_ground && q.is_moving && !q.is_sprinting && !q.is_jumping && q.vertical_speed == 0 && !q.is_in_water"
+                        },
+                        {
+                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting && !q.is_in_water"
                         }
                     ]
                 },
@@ -43,13 +67,13 @@
                     "blend_transition": 0.2,
                     "transitions": [
                         {
-                            "default": "q.is_on_ground"
+                            "default": "q.is_on_ground || q.is_in_water"
                         },
                         {
                             "flying": "!q.is_on_ground && !q.is_moving"
                         },
                         {
-                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting"
+                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting && !q.is_jumping"
                         }
                     ]
                 },
@@ -61,13 +85,13 @@
                     "blend_transition": 0.2,
                     "transitions": [
                         {
-                            "default": "q.is_on_ground"
+                            "default": "q.is_on_ground || q.is_in_water"
                         },
                         {
-                            "flying_moving": "!q.is_on_ground && q.is_moving && !q.is_sprinting"
+                            "flying_moving": "!q.is_on_ground && q.is_moving && !q.is_sprinting && !q.is_jumping && !q.is_in_water"
                         },
                         {
-                            "flying": "!q.is_on_ground && !q.is_sprinting"
+                            "flying": "!q.is_on_ground && !q.is_moving && !q.is_sprinting && !q.is_in_water"
                         }
                     ]
                 }

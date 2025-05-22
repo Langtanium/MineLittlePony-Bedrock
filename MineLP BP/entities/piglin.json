@@ -3,56 +3,10 @@
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:piglin",
+      "spawn_category": "monster",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-	  "properties": {
-		"property:race": {
-        	"range": [
-            0,
-            2
-          ],
-          "type": "int",
-          "default": 2,
-          "client_sync": true
-        },
-        "property:is_pony": {
-          "range": [
-            0,
-            1
-          ],
-          "type": "int",
-          "default": 1,
-          "client_sync": true
-        },
-        "property:muzzle_type": {
-          "range": [
-            0,
-            2
-          ],
-          "type": "int",
-          "default": 1,
-          "client_sync": true
-        },
-        "property:tail_length": {
-          "range": [
-            0,
-            4
-          ],
-          "type": "int",
-          "default": 3,
-          "client_sync": true
-        },
-        "property:tail_shape": {
-          "range": [
-            0,
-            3
-          ],
-          "type": "int",
-          "default": 0,
-          "client_sync": true
-        }
-      }
+      "is_experimental": false
     },
 
     "component_groups": {
@@ -130,7 +84,7 @@
       },
 
       "melee_unit": {
-        "minecraft:behavior.melee_attack": {
+        "minecraft:behavior.melee_box_attack": {
           "priority": 8,
           "speed_multiplier": 1.0,
           "track_target": true
@@ -271,7 +225,22 @@
                 "minecraft:trapped_chest",
                 "minecraft:ender_chest",
                 "minecraft:barrel",
-                "minecraft:shulker_box",
+                "minecraft:white_shulker_box",
+                "minecraft:orange_shulker_box",
+                "minecraft:magenta_shulker_box",
+                "minecraft:light_blue_shulker_box",
+                "minecraft:yellow_shulker_box",
+                "minecraft:lime_shulker_box",
+                "minecraft:pink_shulker_box",
+                "minecraft:gray_shulker_box",
+                "minecraft:light_gray_shulker_box",
+                "minecraft:cyan_shulker_box",
+                "minecraft:purple_shulker_box",
+                "minecraft:blue_shulker_box",
+                "minecraft:brown_shulker_box",
+                "minecraft:green_shulker_box",
+                "minecraft:red_shulker_box",
+                "minecraft:black_shulker_box",
                 "minecraft:undyed_shulker_box"
               ],
               "on_block_broken": "important_block_destroyed_event"
@@ -694,13 +663,6 @@
           },
           {
             "item": "minecraft:golden_shovel",
-            "priority": 2,
-            "admire": true,
-            "pickup_limit": 1,
-            "stored_in_inventory": true
-          },
-          {
-            "item": "minecraft:golden_rail",
             "priority": 2,
             "admire": true,
             "pickup_limit": 1,

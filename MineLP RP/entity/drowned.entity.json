@@ -1,80 +1,120 @@
 {
-    "format_version": "1.10.0",
-    "minecraft:client_entity": {
-        "description": {
-            "identifier": "minecraft:drowned",
-            "min_engine_version": "1.16.0",
-            "materials": {
-                "default": "drowned",
-                "minelp_default": "drowned",
-                "minelp_magic": "pony_magic"
-            },
-            "textures": {
-                "default": "textures/entity/zombie/drowned",
-                "minelp_default": "textures/entity/zombie/drowned_pony"
-            },
-            "geometry": {
-                "default": "geometry.zombie.drowned.v1.16",
-                "minelp_default": "geometry.minelp.pony.ep.zombie"
-            },
-            "scripts": {
-                "variables": {
-                    "variable.minelp_is_pony": "public",
-                    "variable.minelp_race": "public"
-                },
-                "initialize": [
-                    "variable.minelp_is_pony = 1;",
-                    "variable.minelp_race = 1;",
-                    "variable.minelp_handedness = 0;",
-                    "variable.minelp_horn_type = 0;",
-                    "variable.minelp_muzzle_type = 1;",
-                    "variable.minelp_tail_length = 4;",
-                    "variable.minelp_has_wings = 0;"
-                ],
-                "pre_animation": [
-                    "variable.minelp_is_pony = q.property('property:is_pony');",
-                    "variable.minelp_race = q.property('property:race');",
-                    "variable.minelp_horn_type = (variable.minelp_race == 3 || variable.minelp_race == 4 || variable.minelp_race == 5 || variable.minelp_race == 7 || variable.minelp_race == 10);",
-                    "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
-                    "variable.is_holding_right = query.is_item_equipped('main_hand');",
-                    "variable.is_holding_left = query.is_item_equipped('off_hand');",
-                    "variable.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 20;",
-                    "variable.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
-                    "variable.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
-                    "variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
-                    "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;"
-                ],
-                "animate": [
-                    "default",
-					{ "arm_fix": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type == 0" }
-                ]
-            },
-            "animations": {
-                "default": "controller.animation.minelp.pony.default",
-				"arm_fix": "animation.minelp.pony.correct_zombie",
-                "default.arms": "controller.animation.minelp.pony.zombie.default.arms",
-                "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
-                "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
-                "show_movement.legs": "animation.minelp.pony.show_movement.legs",
-                "show_movement.tail": "animation.minelp.pony.show_movement.tail",
-                "show_attack.leftArm": "animation.minelp.pony.show_attack.leftArm",
-                "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
-                "bob.leftArm": "animation.minelp.pony.bob.leftArm",
-                "bob.rightArm": "animation.minelp.pony.bob.rightArm",
-                "bob.tail": "animation.minelp.pony.bob.tail",
-                "look_at_target": "animation.minelp.pony.look_at_target",
-                "big_head": "animation.minelp.pony.big_head"
-            },
-            "render_controllers": [
-                "controller.render.drowned",
-                { "controller.render.minelp.pony": "(variable.minelp_is_pony ?? 0.0) == 1.0" },
-                { "controller.render.minelp.pony.magic": "(variable.minelp_is_pony ?? 0.0) == 1.0 && variable.minelp_horn_type >= 1.0" }
-            ],
-            "enable_attachables": true,
-            "spawn_egg": {
-                "texture": "spawn_egg",
-                "texture_index": 48
-            }
-        }
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:drowned",
+      "min_engine_version": "1.16.0",
+      "materials": {
+        "default": "drowned",
+        "minelp_default": "drowned",
+        "minelp_magic": "pony_magic"
+      },
+      "textures": {
+        "default": "textures/entity/zombie/drowned",
+        "minelp_default": "textures/entity/zombie/drowned_pony"
+      },
+      "geometry": {
+        "default": "geometry.zombie.drowned.v1.16",
+        "minelp_default": "geometry.minelp.pony.ep.zombie"
+      },
+      "scripts": {
+        "variables": {
+          "variable.minelp_is_pony": "public",
+          "variable.minelp_race": "public"
+        },
+        "initialize": [
+          "v.minelp_is_pony = 1;",
+          "v.minelp_race = 1;",
+          "v.minelp_handedness = 0;",
+          "v.minelp_horn_type = 0;",
+          "v.minelp_muzzle_type = 1;",
+          "v.minelp_tail_length = 4;",
+          "v.minelp_has_wings = 0;"
+        ],
+        "pre_animation": [
+          "v.minelp_is_pony = q.property('minelp:is_pony');",
+          "v.minelp_race = q.property('minelp:race');",
+          "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
+          "v.is_holding_right = q.is_item_equipped('main_hand');",
+          "v.is_holding_left = q.is_item_equipped('off_hand');",
+          "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;",
+          "v.x_bob = Math.sin(q.life_time * 76.776372) * 5.865;",
+          "v.z_bob = Math.cos(q.life_time * 93.13244) * 2.865 + 2.865;",
+          "v.attack = Math.sin((1.0 - (1.0 - v.attack_time) * (1.0 - v.attack_time)) * 180.0) * 57.3;",
+          "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;",
+          // Vanilla //
+          "v.tcos0 = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          // Minelp //
+          { "default": "(v.minelp_is_pony ?? 0)" },
+          { "arm_fix": "(v.minelp_is_pony ?? 0) && (v.minelp_horn_type ?? 0) == 0" },
+          { "bow_fix": "(v.minelp_is_pony ?? 0) && (v.minelp_horn_type ?? 0) == 0 && q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')" },
+          { "fly_controller": "(v.minelp_is_pony ?? 0) && (v.minelp_has_wings ?? 0)" },
+          // Vanilla //
+          { "humanoid_big_head": "q.is_baby && !(v.minelp_is_pony ?? 0)" },
+          { "look_at_target_controller": "!(v.minelp_is_pony ?? 0)" },
+          { "move": "!(v.minelp_is_pony ?? 0)" },
+          { "riding.arms": "q.is_riding && !(v.minelp_is_pony ?? 0)" },
+          { "riding.legs": "q.is_riding && !(v.minelp_is_pony ?? 0)" },
+          { "holding": "!(v.minelp_is_pony ?? 0)" },
+          { "charging": "q.is_charging && !(v.minelp_is_pony ?? 0)" },
+          { "attack_controller": "!(v.minelp_is_pony ?? 0)" },
+          { "brandish_spear": "v.is_brandishing_spear && !(v.minelp_is_pony ?? 0)" },
+          { "bob": "!(v.minelp_is_pony ?? 0)" },
+          { "damage_nearby_mobs": "v.damage_nearby_mobs && !(v.minelp_is_pony ?? 0)" },
+          { "use_item_progress": "(( v.use_item_interval_progress > 0.0 ) || ( v.use_item_startup_progress > 0.0 )) && !(v.minelp_is_pony ?? 0)" },
+          { "swimming": "v.swim_amount > 0.0 && !(v.minelp_is_pony ?? 0)" }
+        ]
+      },
+      "animations": {
+        // Minelp //
+        "default": "controller.animation.minelp.pony.default",
+        "arm_fix": "animation.minelp.pony.correct_zombie",
+        "bow_fix": "animation.minelp.pony.correct_bow",
+        "default.arms": "controller.animation.minelp.pony.zombie.default.arms",
+        "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
+        "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
+        "show_movement.legs": "animation.minelp.pony.show_movement.legs",
+        "show_movement.tail": "animation.minelp.pony.show_movement.tail",
+        "show_attack.leftArm": "animation.minelp.pony.show_attack.leftArm",
+        "show_attack.rightArm": "animation.minelp.pony.show_attack.rightArm",
+        "bob.leftArm": "animation.minelp.pony.bob.leftArm",
+        "bob.rightArm": "animation.minelp.pony.bob.rightArm",
+        "bob.tail": "animation.minelp.pony.bob.tail",
+        "look_at_target": "animation.minelp.pony.look_at_target",
+        "big_head": "animation.minelp.pony.big_head",
+        "fly": "animation.minelp.pony.fly",
+        "fly_controller": "controller.animation.minelp.pony.fly",
+        // Vanilla //
+        "humanoid_big_head": "animation.humanoid.big_head",
+        "look_at_target_controller": "controller.animation.humanoid.look_at_target",
+        "look_at_target_default": "animation.humanoid.look_at_target.default",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+        "move": "animation.humanoid.move",
+        "riding.arms": "animation.humanoid.riding.arms",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "holding": "animation.humanoid.holding",
+        "brandish_spear": "animation.humanoid.brandish_spear",
+        "charging": "animation.humanoid.charging",
+        "bob": "animation.humanoid.bob",
+        "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+        "use_item_progress": "animation.humanoid.use_item_progress",
+        "attack_controller": "controller.animation.drowned.attack.rotations",
+        "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand",
+        "attack_rotations": "animation.drowned.attack.rotations",
+        "swimming": "animation.zombie.swimming"
+      },
+      "render_controllers": [
+        "controller.render.drowned",
+        { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
+        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" }
+      ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "texture": "spawn_egg_drowned"
+      }
     }
+  }
 }

@@ -5,7 +5,54 @@
       "identifier": "minecraft:bogged",
       "spawn_category": "monster",
       "is_spawnable": true,
-      "is_summonable": true
+      "is_summonable": true,
+	  "properties": {
+		"minelp:race": {
+        	"range": [
+            0,
+            2
+          ],
+          "type": "int",
+          "default": 1,
+          "client_sync": true
+        },
+        "minelp:is_pony": {
+          "range": [
+            0,
+            1
+          ],
+          "type": "int",
+          "default": 1,
+          "client_sync": true
+        },
+        "minelp:muzzle_type": {
+          "range": [
+            0,
+            2
+          ],
+          "type": "int",
+          "default": 1,
+          "client_sync": true
+        },
+        "minelp:tail_length": {
+          "range": [
+            0,
+            4
+          ],
+          "type": "int",
+          "default": 4,
+          "client_sync": true
+        },
+        "minelp:tail_shape": {
+          "range": [
+            0,
+            3
+          ],
+          "type": "int",
+          "default": 0,
+          "client_sync": true
+        }
+      }
     },
 
     "component_groups": {

@@ -17,12 +17,14 @@ function ponyOptions(data) {
     const Player = data.source;
     // Remember changes so change the pony options isn't so tedious
     let lastSelected = {
-        "race": Player.getProperty("property:race"),
-        "muzzle": Player.getProperty("property:muzzle_type"),
-        "tailLength": Player.getProperty("property:tail_length"),
-        "tailShape": Player.getProperty("property:tail_shape"),
-        "size": Player.getProperty("property:pony_size"),
-        "cape": Player.getProperty("property:cape")
+        "race": Player.getProperty("minelp:race"),
+        "muzzle": Player.getProperty("minelp:muzzle_type"),
+        "tailLength": Player.getProperty("minelp:tail_length"),
+        "tailShape": Player.getProperty("minelp:tail_shape"),
+        "size": Player.getProperty("minelp:pony_size"),
+        "wearables1": Player.getProperty("minelp:pony_gear_first"),
+        "wearables2": Player.getProperty("minelp:pony_gear_second"),
+        "wearables3": Player.getProperty("minelp:pony_gear_third")
     };
     // Create the pony options menu
     const ponyMenu = new ModalFormData();
@@ -37,7 +39,7 @@ function ponyOptions(data) {
         { translate: "race.alicorn" },
         { translate: "race.changeling" },
         { translate: "race.zebra" },
-        { translate: "race.reformed_changeling" },
+        { translate: "race.reformedChangeling" },
         { translate: "race.griffin" },
         { translate: "race.hippogriff" },
         { translate: "race.kirin" },
@@ -65,6 +67,8 @@ function ponyOptions(data) {
     const sizeOptions = [
         { translate: "size.foal" },
         { translate: "size.yearling" },
+        { translate: "size.squat" },
+        { translate: "size.stocky" },
         { translate: "size.normal" },
         { translate: "size.lanky" },
         { translate: "size.bulky" },
@@ -72,39 +76,40 @@ function ponyOptions(data) {
     ];
     ponyMenu.dropdown({ translate: "ponyMenu.size" }, sizeOptions, lastSelected.size);
 
-    const capeOptions = [
-        { translate: "cape.mojang" },
-        { translate: "cape.pancape" },
-        { translate: "cape.minecon2019" },
-        { translate: "cape.pride" },
-        { translate: "cape.vanilla" },
-        { translate: "cape.cherry" },
-        { translate: "cape.tiktok" },
-        { translate: "cape.twitch" },
-        { translate: "cape.fifteenth_anniversary" },
-        { translate: "cape.minecraft_championship" }
+    const wearables1Options = [
+        { translate: "wearables.none" },
+        { translate: "wearables.crown" },
+        { translate: "wearables.muffin" },
+        { translate: "wearables.hat" },
+        { translate: "wearables.antlers" },
+        { translate: "wearables.saddleBagLeft" },
+        { translate: "wearables.saddleBagRight" },
+        { translate: "wearables.saddleBags" },
+        { translate: "wearables.stetson" }
     ];
-    //ponyMenu.dropdown({ translate: "ponyMenu.cape" }, capeOptions, lastSelected.cape);
+    ponyMenu.dropdown({ translate: "ponyMenu.wearables1" }, wearables1Options, lastSelected.wearables1);
 
     system.runTimeout(() => {
         ponyMenu.show(Player).then(result => {
             const ponySizeEvents = [
                 "minelp:size_foal",
                 "minelp:size_yearling",
+                "minelp:size_squat",
+                "minelp:size_stocky",
                 "minelp:size_normal",
                 "minelp:size_lanky",
                 "minelp:size_bulky",
                 "minelp:size_tall"
             ];
             if (!result.canceled) {
-                Player.setProperty("property:race", result.formValues[0]);
-                Player.setProperty("property:is_pony", checkIfPony(result.formValues[0]));
-                Player.setProperty("property:muzzle_type", result.formValues[1]);
-                Player.setProperty("property:tail_length", result.formValues[2]);
-                Player.setProperty("property:tail_shape", result.formValues[3]);
-                //Player.setProperty("property:pony_size", result.formValues[4]);
+                Player.setProperty("minelp:race", result.formValues[0]);
+                Player.setProperty("minelp:is_pony", checkIfPony(result.formValues[0]));
+                Player.setProperty("minelp:muzzle_type", result.formValues[1]);
+                Player.setProperty("minelp:tail_length", result.formValues[2]);
+                Player.setProperty("minelp:tail_shape", result.formValues[3]);
+                Player.setProperty("minelp:pony_size", result.formValues[4]);
                 Player.triggerEvent(ponySizeEvents[result.formValues[4]]);
-                //Player.setProperty("property:cape", result.formValues[5]);
+                Player.setProperty("minelp:pony_gear_first", result.formValues[5]);
             }
         });
     }, 1);

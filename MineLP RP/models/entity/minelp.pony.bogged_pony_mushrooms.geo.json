@@ -1,0 +1,91 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.minelp.pony.bogged_pony_mushrooms",
+				"texture_width": 64,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "mushrooms",
+					"parent": "head",
+					"pivot": [0, 25, -1]
+				},
+				{
+					"name": "red_mushroom_1",
+					"parent": "mushrooms",
+					"pivot": [3, 33, 2],
+					"rotation": [0, -45, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [0, 30, 2], "size": [6, 4, 0], "uv": [50, 16]}
+					]
+				},
+				{
+					"name": "red_mushroom_2",
+					"parent": "mushrooms",
+					"pivot": [3, 33, 2],
+					"rotation": [0, -134, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [0, 30, 2], "size": [6, 4, 0], "uv": [50, 16]}
+					]
+				},
+				{
+					"name": "brown_mushroom_1",
+					"parent": "mushrooms",
+					"pivot": [-3, 33, -4],
+					"rotation": [0, -45, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-6, 30, -4], "size": [6, 4, 0], "uv": [50, 22]}
+					]
+				},
+				{
+					"name": "brown_mushroom_2",
+					"parent": "mushrooms",
+					"pivot": [-3, 33, -4],
+					"rotation": [0, -134, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-6, 30, -4], "size": [6, 4, 0], "uv": [50, 22]}
+					]
+				},
+				{
+					"name": "brown_mushroom_3",
+					"parent": "mushrooms",
+					"pivot": [-2, 26, 3],
+					"rotation": [90, 0, 45],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-5, 22, 3], "size": [6, 4, 0], "uv": [50, 28]}
+					]
+				},
+				{
+					"name": "brown_mushroom_4",
+					"parent": "mushrooms",
+					"pivot": [-2, 26, 3],
+					"rotation": [90, 0, 134],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-5, 22, 3], "size": [6, 4, 0], "uv": [50, 28]}
+					]
+				}
+			]
+		}
+	]
+}
