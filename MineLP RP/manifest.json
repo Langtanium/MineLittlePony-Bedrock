@@ -4,15 +4,15 @@
     "name": "Mine Little Pony",
     "description": "Turns mobs into ponies!",
     "uuid": "571ec626-7915-4b36-8897-47f793a77643",
-    "version": [0, 2, 0],
-    "min_engine_version": [1, 21, 70]
+    "version": [0, 3, 0],
+    "min_engine_version": [1, 21, 130]
   },
   "modules": [
     {
       "description": "Mine Little Pony - Resources",
       "type": "resources",
       "uuid": "b81d5c84-a207-4025-a522-daa2caa26156",
-      "version": [0, 2, 0]
+      "version": [0, 3, 0]
     }
   ],
   "metadata": {
@@ -21,12 +21,20 @@
       "Langtanium"
     ],
     "license": "MPL-2.0",
-    "url": "https://github.com/Tschrock/MineLittlePony-Bedrock#readme"
+    "url": "https://github.com/Langtanium/MineLittlePony-Bedrock#readme"
   },
+  "settings": [
+    {
+      "type": "toggle",
+      "text": "Big Pony (Doesn't work yet)",
+      "name": "minelp:enable_bigpony",
+      "default": false
+    }
+  ],
   "dependencies": [
     {
       // Mine Little Pony Behavior Pack
-      "version": [0, 2, 0],
+      "version": [0, 3, 0],
       "uuid": "31115598-d97a-4610-a845-1e000c497505"
     }
   ]

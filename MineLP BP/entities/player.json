@@ -102,14 +102,7 @@
     "component_groups": {
       // Minelp //
       "minelp:seapony": {},
-      "minelp:foal": {
-        "minecraft:type_family": {
-          "family": [
-            "player",
-            "foal"
-          ]
-        }
-      },
+      "minelp:foal": {},
       "minelp:yearling": {},
       "minelp:squat": {},
       "minelp:stocky": {},

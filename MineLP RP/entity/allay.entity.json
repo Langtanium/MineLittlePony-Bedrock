@@ -1,23 +1,35 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:allay",
       "materials": {
-        "default": "allay"
+        "default": "allay",
+        "minelp_default": "allay"
       },
       "textures": {
-        "default": "textures/entity/allay/allay"
+        "default": "textures/entity/allay/allay",
+        "minelp_default": "textures/entity/allay/allay"
       },
       "geometry": {
-        "default": "geometry.allay"
+        "default": "geometry.allay",
+        "minelp_default": "geometry.allay"
       },
       "spawn_egg": {
         "texture": "spawn_egg_allay"
       },
       "scripts": {
+        "initialize": [
+          "v.minelp_is_pony = 0;"
+        ],
         "pre_animation": [
-          "variable.holding_trident = query.is_item_name_any('slot.weapon.mainhand', 'minecraft:trident');"
+          "v.holding_trident = q.is_item_name_any('slot.weapon.mainhand', 'minecraft:trident');"
+        ],
+        "animate": [
+          "general_controller",
+          "look_at_target_controller",
+          "holding_controller",
+          "dancing_controller"
         ]
       },
       "animations": {
@@ -26,22 +38,12 @@
         "hold_item": "animation.allay.hold_item",
         "dance": "animation.allay.dance",
         "hold_item_fly": "animation.allay.hold_item_fly",
-        "look_at_target_default": "animation.allay.look_at_target.default"
+        "look_at_target_default": "animation.allay.look_at_target.default",
+        "general_controller": "controller.animation.allay.general",
+        "look_at_target_controller": "controller.animation.allay.look_at_target",
+        "holding_controller": "controller.animation.allay.holding",
+        "dancing_controller": "controller.animation.allay.dancing"
       },
-      "animation_controllers": [
-        {
-          "general": "controller.animation.allay.general"
-        },
-        {
-          "look_at_target": "controller.animation.allay.look_at_target"
-        },
-        {
-          "holding": "controller.animation.allay.holding"
-        },
-        {
-          "dancing": "controller.animation.allay.dancing"
-        }
-      ],
       "render_controllers": [
         "controller.render.allay"
       ],

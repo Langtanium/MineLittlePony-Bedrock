@@ -5,10 +5,12 @@
       "identifier": "minecraft:armor_stand",
       "min_engine_version": "1.8.0",
       "materials": {
-        "default": "armor_stand"
+        "default": "armor_stand",
+        "minelp_default": "armor_stand"
       },
       "textures": {
-        "default": "textures/entity/armor_stand"
+        "default": "textures/entity/armor_stand",
+        "minelp_default": "textures/entity/armor_stand"
       },
       "animations": {
         "default_pose": "animation.armor_stand.default_pose",
@@ -31,9 +33,17 @@
         "controller.holding_heavy_core": "controller.animation.armor_stand.holding_heavy_core"
       },
       "scripts": {
+        "variables": {
+          "variable.minelp_is_pony": "public",
+          "variable.minelp_race": "public"
+        },
         "initialize": [
-          "variable.armor_stand.pose_index = 0;",
-          "variable.armor_stand.hurt_time = 0;"
+          // Minelp //
+          "v.minelp_is_pony = 0;",
+          "v.minelp_race = 1;",
+          // Vanilla //
+          "v.armor_stand.pose_index = 0;",
+          "v.armor_stand.hurt_time = 0;"
         ],
         "animate": [
           "controller.pose",
@@ -42,11 +52,10 @@
         ]
       },
       "geometry": {
-        "default": "geometry.armor_stand"
+        "default": "geometry.armor_stand",
+        "minelp_default": "geometry.armor_stand"
       },
-      "render_controllers": [
-        "controller.render.armor_stand"
-      ],
+      "render_controllers": [ "controller.render.armor_stand" ],
       "enable_attachables": true
     }
   }

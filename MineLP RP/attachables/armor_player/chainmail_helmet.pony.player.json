@@ -11,7 +11,7 @@
             "textures": {
                 "default": "textures/models/armor/chainmail_1",
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "minelp_default": "textures/models/armor/chainmail_layer_outer_pony"
+                "minelp_default": "textures/entity/equipment/ponified_humanoid/chainmail"
             },
             "geometry": {
                 "default": "geometry.player.armor.helmet",

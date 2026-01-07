@@ -10,8 +10,8 @@
             "textures": {
                 "default": "textures/models/armor/netherite_1",
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "minelp_default": "textures/models/armor/netherite_layer_inner_pony",
-                "minelp.layer2": "textures/models/armor/netherite_layer_outer_pony"
+                "minelp_default": "textures/entity/equipment/ponified_humanoid_leggings/netherite",
+                "minelp.layer2": "textures/entity/equipment/ponified_humanoid/netherite"
             },
             "geometry": {
                 "default": "geometry.humanoid.armor.chestplate",

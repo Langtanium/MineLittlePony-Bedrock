@@ -1,124 +1,69 @@
 {
 	"format_version": "1.10.0",
 	"animation_controllers": {
-		"controller.animation.player.crossbow": {
-			"initial_state": "default",
-			"states": {
-				"charge": {
-					"animations": [
-						"third_person_crossbow_equipped"
-					],
-					"transitions": [
-						{
-							"default": "q.get_equipped_item_name != 'crossbow' || (q.item_remaining_use_duration <= 0.0 && !q.item_is_charged)"
-						},
-						{
-							"hold": "q.item_is_charged"
-						}
-					]
-				},
-				"default": {
-					"transitions": [
-						{
-							"hold": "q.item_is_charged"
-						},
-						{
-							"charge": "q.item_remaining_use_duration > 0.0"
-						}
-					]
-				},
-				"hold": {
-					"animations": [
-						"crossbow_hold"
-					],
-					"transitions": [
-						{
-							"default": "q.get_equipped_item_name != 'crossbow' || (q.item_remaining_use_duration <= 0.0 && !q.item_is_charged)"
-						},
-						{
-							"charge": "q.item_remaining_use_duration > 0.0"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.first_person_attack": {
-			"initial_state": "default",
-			"states": {
-				"default": {
-					"animations": [
-						"first_person_attack_rotation"
-					],
-					"transitions": [
-						{
-							"vr_attack": "v.is_using_vr"
-						}
-					]
-				},
-				"vr_attack": {
-					"animations": [
-						"first_person_vr_attack_rotation"
-					],
-					"transitions": [
-						{
-							"default": "!v.is_using_vr"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.first_person_map": {
-			"initial_state": "default",
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"one_hand": "q.get_equipped_item_name('off_hand') == 'filled_map' || q.get_equipped_item_name('off_hand') == 'shield'"
-						},
-						{
-							"two_hand": "q.get_equipped_item_name('off_hand') != 'filled_map' && q.get_equipped_item_name('off_hand') != 'shield'"
-						}
-					]
-				},
-				"one_hand": {
-					"animations": [
-						{
-							"first_person_map_hold_main_hand": "q.get_equipped_item_name(0, 1) == 'filled_map'"
-						},
-						{
-							"first_person_map_hold_off_hand": "q.get_equipped_item_name('off_hand') == 'filled_map' && (q.get_equipped_item_name == 'bow' ? !(v.item_use_normalized > 0 && v.item_use_normalized < 1.0) : 1.0)"
-						}
-					],
-					"transitions": [
-						{
-							"default": "q.get_equipped_item_name(0, 1) != 'filled_map' && q.get_equipped_item_name('off_hand') != 'filled_map'"
-						},
-						{
-							"two_hand": "q.get_equipped_item_name('off_hand') != 'filled_map' && q.get_equipped_item_name('off_hand') != 'shield'"
-						}
-					]
-				},
-				"two_hand": {
-					"animations": [
-						"first_person_map_hold",
-						"first_person_map_hold_attack"
-					],
-					"transitions": [
-						{
-							"default": "q.get_equipped_item_name(0, 1) != 'filled_map' && q.get_equipped_item_name('off_hand') != 'filled_map'"
-						},
-						{
-							"one_hand": "q.get_equipped_item_name('off_hand') == 'filled_map' || q.get_equipped_item_name('off_hand') == 'shield'"
-						}
-					]
-				}
-			}
-		},
+        "controller.animation.player.melee_spear": {
+            "initial_state": "hold",
+            "states": {
+                "hold": {
+                    "animations": [
+                        {
+                            "third_person_melee_spear_hold": "v.minelp_horn_type == 0"
+                        },
+                        {
+                            "pony_spear_hold_magic": "v.minelp_horn_type >= 1"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "use": "variable.item_use_normalized > 0.0"
+                        },
+                        {
+                            "attack": "variable.attack_time > 0.0"
+                        }
+                    ]
+                },
+                "use": {
+                    "animations": [
+                        {
+                            "third_person_melee_spear_use": "v.minelp_horn_type == 0"
+                        },
+                        {
+                            "pony_spear_use_magic": "v.minelp_horn_type >= 1"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "hold": "variable.item_use_normalized == 0.0"
+                        }
+                    ]
+                },
+                "attack": {
+                    "animations": [
+                        {
+                            "third_person_melee_spear_attack": "v.minelp_horn_type == 0"
+                        },
+                        {
+                            "pony_spear_attack_magic": "v.minelp_horn_type >= 1"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "hold": "v.attack_time == 0.0"
+                        },
+                        {
+                            "use": "v.item_use_normalized > 0.0"
+                        }
+                    ]
+                }
+            }
+        },
 		"controller.animation.player.root": {
 			"initial_state": "first_person",
 			"states": {
 				"first_person": {
 					"animations": [
+						"first_person_base_pose",
+                        "first_person_breathing_bob",
 						{
 							"first_person_swap_item": "!q.blocking"
 						},
@@ -128,7 +73,6 @@
 						{
 							"first_person_attack_controller": "v.attack_time > 0.0f && q.get_equipped_item_name != 'filled_map'"
 						},
-						"first_person_base_pose",
 						{
 							"first_person_empty_hand": "q.get_equipped_item_name(0, 1) != 'filled_map'"
 						},
@@ -141,9 +85,9 @@
 						{
 							"first_person_crossbow_equipped": "q.get_equipped_item_name == 'crossbow' && (v.item_use_normalized > 0 && v.item_use_normalized < 1.0)"
 						},
-						{
-							"first_person_breathing_bob": "v.attack_time <= 0.0"
-						}
+                        {
+                            "first_person_melee_spear_controller": "v.melee_spear_equipped"
+                        }
 					],
 					"transitions": [
 						{
@@ -208,6 +152,9 @@
                         {
 							"pony_cape_controller": "v.minelp_is_pony"
                         },
+                        {
+                            "riding.root": "q.is_riding && !v.minelp_is_pony"
+                        },
 						{
 							"riding.arms": "q.is_riding && !v.minelp_is_pony"
 						},
@@ -215,25 +162,25 @@
 							"riding.legs": "q.is_riding && !v.minelp_is_pony"
 						},
 						{
-							"holding": "v.minelp_horn_type == 0"
+							"holding": "!v.minelp_magic_type"
 						},
 						{
-							"brandish_spear": "v.is_brandishing_spear && v.minelp_horn_type == 0 && !v.minelp_is_pony"
+							"brandish_spear": "v.is_brandishing_spear && !v.minelp_is_pony"
 						},
 						{
-							"holding_spyglass": "v.is_holding_spyglass && v.minelp_horn_type == 0 && !v.minelp_is_pony"
+							"holding_spyglass": "v.is_holding_spyglass && !v.minelp_is_pony"
 						},
 						{
-							"charging": "q.is_charging && v.minelp_horn_type == 0 && !v.minelp_is_pony"
+							"charging": "q.is_charging && !v.minelp_is_pony"
 						},
 						{
 							"sneaking": "q.is_sneaking && !q.is_sleeping && !v.minelp_is_pony"
 						},
 						{
-							"pony_sneaking": "q.is_sneaking && !q.is_sleeping && v.minelp_is_pony  && v.minelp_horn_type == 0"
+							"pony_sneaking": "q.is_sneaking && !q.is_sleeping && v.minelp_is_pony  && !v.minelp_magic_type"
 						},
 						{
-							"pony_sneaking_magic": "q.is_sneaking && !q.is_sleeping && v.minelp_is_pony && v.minelp_horn_type > 0"
+							"pony_sneaking_magic": "q.is_sneaking && !q.is_sleeping && v.minelp_is_pony && v.minelp_magic_type"
 						},
 						{
 							"bob": "!v.is_holding_spyglass && !v.is_tooting_goat_horn && !v.minelp_is_pony"
@@ -242,14 +189,20 @@
 							"damage_nearby_mobs": "v.damage_nearby_mobs"
 						},
 						{
-							"swimming": "v.swim_amount > 0.0 && !v.minelp_is_pony"
+							"swimming": "v.swim_amount > 0.0 && !v.melee_spear_equipped && !v.minelp_is_pony"
 						},
+                        {
+                            "swimming.no_right_arm": "v.swim_amount > 0.0 && v.melee_spear_equipped && !v.minelp_is_pony"
+                        },
 						{
 							"swimming.legs": "v.swim_amount > 0.0 && !v.minelp_is_pony"
 						},
 						{
-							"crawling": "q.is_crawling && !v.minelp_is_pony"
+							"crawling": "q.is_crawling && !v.melee_spear_equipped && !v.minelp_is_pony"
 						},
+                        {
+                            "crawling.no_right_arm": "q.is_crawling && v.melee_spear_equipped && !v.minelp_is_pony"
+                        },
 						{
 							"crawling.legs": "q.is_crawling && !v.minelp_is_pony"
 						},
@@ -263,10 +216,10 @@
 							"pony_sleeping": "q.is_sleeping && q.is_alive && v.minelp_is_pony"
 						},
 						{
-							"attack.positions": "v.attack_time >= 0.0 && !v.minelp_is_pony"
+							"attack.positions": "v.attack_time >= 0.0 && !v.melee_spear_equipped && !v.minelp_is_pony"
 						},
 						{
-							"attack.rotations": "v.attack_time >= 0.0 && !v.minelp_is_pony"
+							"attack.rotations": "v.attack_time >= 0.0 && !v.melee_spear_equipped && !v.minelp_is_pony"
 						},
 						{
 							"shield_block_main_hand": "q.blocking && q.get_equipped_item_name('off_hand') != 'shield' && q.get_equipped_item_name == 'shield'"
@@ -278,20 +231,23 @@
 							"crossbow_controller": "q.get_equipped_item_name == 'crossbow'"
 						},
 						{
-							"third_person_bow_equipped": "q.get_equipped_item_name == 'bow' && (v.item_use_normalized > 0 && v.item_use_normalized < 1.0) && v.minelp_horn_type == 0 && v.minelp_is_pony == 0"
+							"third_person_bow_equipped": "q.get_equipped_item_name == 'bow' && (v.item_use_normalized > 0 && v.item_use_normalized < 1.0) && !v.minelp_is_pony"
 						},
 						{
 							"tooting_goat_horn": "v.is_tooting_goat_horn && v.minelp_horn_type == 0 && !v.minelp_is_pony"
 						},
 						{
-							"holding_brush": "q.get_equipped_item_name == 'brush' && !v.minelp_horn_type"
+							"holding_brush": "q.get_equipped_item_name == 'brush' && !v.minelp_magic_type"
 						},
 						{
 							"brushing": "v.is_using_brush"
 						},
 						{
 							"holding_heavy_core" : "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:heavy_core')"
-						}
+						},
+                        {
+                            "third_person_melee_spear_controller": "v.melee_spear_equipped"
+                        }
 					],
 					"transitions": [
 						{

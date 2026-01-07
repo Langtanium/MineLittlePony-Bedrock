@@ -1,5 +1,5 @@
 item.minelp:options=Pony Options
-ponyMenu.title=Pony Options
+ponyMenu.header=Pony Options
 ponyMenu.race=Race
 race.human=Human
 race.earth_pony=Earth Pony
@@ -44,3 +44,4 @@ wearables.saddleBagLeft=Saddle Bags Left
 wearables.saddleBagRight=Saddle Bags Right
 wearables.saddleBags=Saddle Bags Both
 wearables.stetson=Stetson
+ponyMenu.submit=Accept

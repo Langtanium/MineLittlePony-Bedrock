@@ -11,8 +11,8 @@
             "textures": {
                 "default": "textures/models/armor/leather_2",
                 "enchanted": "textures/misc/enchanted_item_glint",
-                "minelp_default": "textures/models/armor/leather_layer_inner_pony",
-				"minelp_overlay": "textures/models/armor/leather_layer_inner_overlay_pony"
+                "minelp_default": "textures/entity/equipment/ponified_humanoid_leggings/leather",
+				"minelp_overlay": "textures/entity/equipment/ponified_humanoid_leggings/leather_overlay"
             },
             "geometry": {
                 "default": "geometry.humanoid.armor.leggings",

@@ -54,25 +54,66 @@
         "Array.skins[q.skin_id]"
       ]
     },
+    "controller.render.minelp.villager_zombie": {
+      "geometry": "Geometry.minelp_default",
+      "part_visibility": [
+        { "*": true },
+        { "horn": false },
+        { "hornGlow": false },
+        { "leftItemMagic": false },
+        { "rightItemMagic": false },
+        { "leftWingClosed": "(q.is_on_ground || q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "leftWingOpened": "(!q.is_on_ground && !q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "rightWingClosed": "(q.is_on_ground || q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "rightWingOpened": "(!q.is_on_ground && !q.is_in_water) && (v.minelp_has_wings ?? 0)" },
+        { "leftWingClosed2": false },
+        { "leftWingOpened2": false },
+        { "bonesL": false },
+        { "bone_1_l": false },
+        { "bone_2_l": false },
+        { "rightWingClosed2": false },
+        { "rightWingOpened2": false },
+        { "bonesR": false },
+        { "bone_1_r": false },
+        { "bone_2_r": false },
+        { "ears2": false },
+        { "snoutFemale": "v.minelp_muzzle_type == 1" },
+        { "snoutMale": "v.minelp_muzzle_type == 2" },
+        { "tailBody": "v.minelp_tail_length >= 1" },
+        { "tail2": "v.minelp_tail_length >= 2" },
+        { "tail3": "v.minelp_tail_length >= 3" },
+        { "tail4": "v.minelp_tail_length == 4" },
+        { "leftArmSlim": false },
+        { "rightArmSlim": false },
+        { "leftLegSlim": false },
+        { "rightLegSlim": false }
+      ],
+      "materials": [
+        { "*": "Material.minelp_default" }
+      ],
+      "textures": [
+        "Texture.minelp_default"
+      ]
+    },
     "controller.render.minelp.villager_plains": {
       "arrays": {
         "textures": {
           "Array.pony_plains": [
-            "Texture.minelp_pony_unskilled",
-            "Texture.minelp_pony_farmer",
-            "Texture.minelp_pony_fisherman",
-            "Texture.minelp_pony_shepherd",
-            "Texture.minelp_pony_fletcher",
-            "Texture.minelp_pony_librarian",
-            "Texture.minelp_pony_cartographer",
-            "Texture.minelp_pony_cleric",
-            "Texture.minelp_pony_armorer",
-            "Texture.minelp_pony_weapon_smith",
-            "Texture.minelp_pony_tool_smith",
-            "Texture.minelp_pony_butcher",
-            "Texture.minelp_pony_leatherworker",
-            "Texture.minelp_pony_stonemason",
-            "Texture.minelp_pony_nitwit"
+            "Texture.minelp_plains_unskilled",
+            "Texture.minelp_plains_farmer",
+            "Texture.minelp_plains_fisherman",
+            "Texture.minelp_plains_shepherd",
+            "Texture.minelp_plains_fletcher",
+            "Texture.minelp_plains_librarian",
+            "Texture.minelp_plains_cartographer",
+            "Texture.minelp_plains_cleric",
+            "Texture.minelp_plains_armorer",
+            "Texture.minelp_plains_weapon_smith",
+            "Texture.minelp_plains_tool_smith",
+            "Texture.minelp_plains_butcher",
+            "Texture.minelp_plains_leatherworker",
+            "Texture.minelp_plains_stonemason",
+            "Texture.minelp_plains_nitwit"
           ]
         }
       },

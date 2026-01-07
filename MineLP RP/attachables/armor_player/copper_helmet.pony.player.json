@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "minecraft:copper_helmet.player",
+            "item": { "minecraft:copper_helmet": "query.is_owner_identifier_any('minecraft:player')" },
+            "materials": {
+                "default": "armor",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/models/armor/copper_1",
+                "enchanted": "textures/misc/enchanted_item_glint",
+                "minelp_default": "textures/entity/equipment/ponified_humanoid/copper"
+            },
+            "geometry": {
+                "default": "geometry.player.armor.helmet",
+                "minelp_default": "geometry.minelp.pony.armor.helmet"
+            },
+            "scripts": {
+                "parent_setup": "variable.helmet_layer_visible = 0.0;"
+            },
+            "render_controllers": [
+                { "controller.render.armor": "context.owning_entity->variable.minelp_is_pony != 1.0" },
+                { "controller.render.minelp.pony.armor": "context.owning_entity->variable.minelp_is_pony == 1.0" }
+            ]
+        }
+    }
+}

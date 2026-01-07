@@ -62,7 +62,12 @@
                 "flying_moving": {
                     "animations": [
                         "fly",
-                        "fly_move"
+                        {
+                            "fly_move": "v.minelp_horn_type == 0"
+                        },
+                        {
+                            "fly_move_magic": "v.minelp_horn_type > 0"
+                        }
                     ],
                     "blend_transition": 0.2,
                     "transitions": [
@@ -80,7 +85,12 @@
                 "flying_sprinting": {
                     "animations": [
                         "fly",
-                        "fly_sprint"
+                        {
+                            "fly_sprint": "v.minelp_horn_type == 0"
+                        },
+                        {
+                            "fly_sprint_magic": "v.minelp_horn_type > 0"
+                        }
                     ],
                     "blend_transition": 0.2,
                     "transitions": [

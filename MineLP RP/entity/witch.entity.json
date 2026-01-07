@@ -39,9 +39,10 @@
           "v.minelp_is_pony = q.property('minelp:is_pony');",
           "v.minelp_race = q.property('minelp:race');",
           "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
-          "v.is_holding_right = query.is_item_equipped('main_hand');",
-          "v.is_holding_left = query.is_item_equipped('off_hand');",
+          "v.minelp_magic_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10);",
           "v.minelp_wearable1 = q.property('minelp:pony_gear_first');",
+          "v.is_holding_right = q.is_item_equipped('main_hand');",
+          "v.is_holding_left = false;",
           "v.movement_leg_angle = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / v.gliding_speed_value) * 20;",
           "v.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
           "v.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
@@ -52,7 +53,6 @@
           // Minelp //
           { "default": "(v.minelp_is_pony ?? 0)" },
           { "long_neck": "(v.minelp_is_pony ?? 0.0) == 1.0 && v.minelp_race == 6" },
-          { "arm_fix": "(v.minelp_is_pony ?? 0.0) == 1.0" },
           // Vanilla //
           { "controller_general": "!(v.minelp_is_pony ?? 0)" },
           { "controller_move": "!(v.minelp_is_pony ?? 0)" }
@@ -62,6 +62,7 @@
         // Minelp //
         "long_neck": "animation.minelp.pony.long_neck",
         "arm_fix": "animation.minelp.pony.correct_villager",
+        "arm_fix_magic": "animation.minelp.pony.correct_villager_magic",
         "default": "controller.animation.minelp.pony.default",
         "default.arms": "controller.animation.minelp.pony.default.arms",
         "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
@@ -87,7 +88,7 @@
         "controller.render.witch",
         { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
         { "controller.render.minelp.pony.witch_hat": "(v.minelp_is_pony ?? 0) && (v.minelp_wearable1 ?? 0) == 3" },
-        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" }
+        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && (v.minelp_magic_type ?? 0)" }
       ],
       "spawn_egg": {
         "texture": "spawn_egg_witch"

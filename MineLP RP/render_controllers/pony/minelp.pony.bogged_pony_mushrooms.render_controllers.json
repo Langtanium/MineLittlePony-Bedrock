@@ -1,7 +1,7 @@
 {
   "format_version": "1.8.0",
   "render_controllers": {
-    "controller.render.minelp.pony.bogged_pony_mushrooms": {
+    "controller.render.minelp.pony.bogged_mushrooms": {
       "geometry": "Geometry.minelp_mushrooms",
       "materials": [
         { "*": "Material.minelp_default" }

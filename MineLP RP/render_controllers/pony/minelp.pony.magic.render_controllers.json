@@ -19,21 +19,21 @@
       "arrays": {
         "textures": {
           "Array.pony_plains": [
-            "Texture.minelp_pony_unskilled",
-            "Texture.minelp_pony_farmer",
-            "Texture.minelp_pony_fisherman",
-            "Texture.minelp_pony_shepherd",
-            "Texture.minelp_pony_fletcher",
-            "Texture.minelp_pony_librarian",
-            "Texture.minelp_pony_cartographer",
-            "Texture.minelp_pony_cleric",
-            "Texture.minelp_pony_armorer",
-            "Texture.minelp_pony_weapon_smith",
-            "Texture.minelp_pony_tool_smith",
-            "Texture.minelp_pony_butcher",
-            "Texture.minelp_pony_leatherworker",
-            "Texture.minelp_pony_stonemason",
-            "Texture.minelp_pony_nitwit"
+            "Texture.minelp_plains_unskilled",
+            "Texture.minelp_plains_farmer",
+            "Texture.minelp_plains_fisherman",
+            "Texture.minelp_plains_shepherd",
+            "Texture.minelp_plains_fletcher",
+            "Texture.minelp_plains_librarian",
+            "Texture.minelp_plains_cartographer",
+            "Texture.minelp_plains_cleric",
+            "Texture.minelp_plains_armorer",
+            "Texture.minelp_plains_weapon_smith",
+            "Texture.minelp_plains_tool_smith",
+            "Texture.minelp_plains_butcher",
+            "Texture.minelp_plains_leatherworker",
+            "Texture.minelp_plains_stonemason",
+            "Texture.minelp_plains_nitwit"
           ]
         }
       },

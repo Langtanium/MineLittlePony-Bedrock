@@ -12,7 +12,7 @@
 		"animation.minelp.pony.show_movement.leftArm": {
 			"bones": {
 				"leftArm": {
-					"rotation": ["variable.movement_leg_angle", 0, 0]
+					"rotation": ["v.movement_leg_angle", 0, 0]
 				}
 			},
 			"loop": true
@@ -20,10 +20,10 @@
 		"animation.minelp.pony.show_movement.rightArm": {
 			"bones": {
 				"rightArm": {
-					"rotation": ["-variable.movement_leg_angle", 0, 0]
+					"rotation": ["-v.movement_leg_angle", 0, 0]
 				},
 				"arms": {
-					"rotation": ["-variable.movement_leg_angle", 0, 0]
+					"rotation": ["-v.movement_leg_angle", 0, 0]
 				}
 			},
 			"loop": true
@@ -31,10 +31,10 @@
 		"animation.minelp.pony.show_movement.legs": {
 			"bones": {
 				"leftLeg": {
-					"rotation": ["-variable.movement_leg_angle", 0, 0]
+					"rotation": ["-v.movement_leg_angle", 0, 0]
 				},
 				"rightLeg": {
-					"rotation": ["variable.movement_leg_angle", 0, 0]
+					"rotation": ["v.movement_leg_angle", 0, 0]
 				}
 			},
 			"loop": true
@@ -42,7 +42,7 @@
 		"animation.minelp.pony.show_movement.tail": {
 			"bones": {
 				"tailBody": {
-					"rotation": ["query.modified_move_speed * 30", 0, 0]
+					"rotation": ["q.modified_move_speed * 30", 0, 0]
 				}
 			},
 			"loop": true
@@ -50,7 +50,7 @@
 		"animation.minelp.pony.bob.tail": {
 			"bones": {
 				"tailBody": {
-					"rotation": ["-variable.x_bob / 3", 0, 0]
+					"rotation": ["-v.x_bob / 3", 0, 0]
 				}
 			},
 			"loop": true
@@ -58,7 +58,7 @@
 		"animation.minelp.pony.show_attack.leftArm": {
 			"bones": {
 				"leftArm": {
-					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "5.73 - (variable.attack2 * 0.6)", 0]
+					"rotation": ["-(v.attack2 * 1.2 - v.attack * 0.4)", "5.73 - (v.attack2 * 0.6)", 0]
 				}
 			},
 			"loop": true
@@ -66,10 +66,10 @@
 		"animation.minelp.pony.show_attack.rightArm": {
 			"bones": {
 				"rightArm": {
-					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "variable.attack2 * 0.6 - 5.73", 0]
+					"rotation": ["-(v.attack2 * 1.2 - v.attack * 0.4)", "v.attack2 * 0.6 - 5.73", 0]
 				},
 				"arms": {
-					"rotation": ["-(variable.attack2 * 1.2 - variable.attack * 0.4)", "variable.attack2 * 0.6 - 5.73", 0]
+					"rotation": ["-(v.attack2 * 1.2 - v.attack * 0.4)", "v.attack2 * 0.6 - 5.73", 0]
 				}
 			},
 			"loop": true
@@ -79,13 +79,13 @@
 			"loop": true,
 			"override_previous_animation": true,
 			"timeline": {
-				"0.0": "variable.minelp_ispony = 1;"
+				"0.0": "v.minelp_ispony = 1;"
 			}
 		},
 		"animation.minelp.pony.look_at_target": {
 			"bones": {
 				"head": {
-					"rotation": ["query.log(query.target_x_rotation)", "query.target_y_rotation", 0]
+					"rotation": ["q.log(q.target_x_rotation)", "q.target_y_rotation", 0]
 				}
 			},
 			"loop": true
@@ -93,7 +93,7 @@
 		"animation.minelp.pony.bob.leftArm": {
 			"bones": {
 				"leftArm": {
-					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
+					"rotation": ["-v.x_bob - 90", 0, "v.z_bob"],
 					"position": [-0.5, 2.5, 0.5]
 				}
 			},
@@ -102,7 +102,7 @@
 		"animation.minelp.pony.bob.rightArm": {
 			"bones": {
 				"rightArm": {
-					"rotation": ["-variable.x_bob - 90", 0, "variable.z_bob"],
+					"rotation": ["-v.x_bob - 90", 0, "v.z_bob"],
 					"position": [0.5, 2.5, 0.5]
 				}
 			},
@@ -125,22 +125,22 @@
 			"override_previous_animation": true,
 			"bones": {
 				"leftWingOpened": {
-					"rotation": [0, 0, "90 - (math.cos(query.life_time * 400) * 65)"]
+					"rotation": [0, 0, "90 - (math.cos(q.life_time * 400) * 65)"]
 				},
 				"rightWingOpened": {
-					"rotation": [0, 0, "-90 + (math.cos(query.life_time * 400) * 65)"]
+					"rotation": [0, 0, "-90 + (math.cos(q.life_time * 400) * 65)"]
 				},
 				"leftBugWing": {
-					"rotation": [0, 0, "60 - (math.cos(query.life_time * 400) * 65)"]
+					"rotation": [0, 0, "60 - (math.cos(q.life_time * 400) * 65)"]
 				},
 				"rightBugWing": {
-					"rotation": [0, 0, "-60 + (math.cos(query.life_time * 400) * 65)"]
+					"rotation": [0, 0, "-60 + (math.cos(q.life_time * 400) * 65)"]
 				},
 				"leftRCwing": {
-					"rotation": [0, 0, "60 - (math.cos(query.life_time * 400) * 65)"]
+					"rotation": [0, 0, "60 - (math.cos(q.life_time * 400) * 65)"]
 				},
 				"rightRCwing": {
-					"rotation": [0, 0, "-60 + (math.cos(query.life_time * 400) * 65)"]
+					"rotation": [0, 0, "-60 + (math.cos(q.life_time * 400) * 65)"]
 				}
 			}
 		},

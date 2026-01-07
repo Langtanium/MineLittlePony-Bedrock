@@ -7,6 +7,8 @@
                     "animations": [
                         "look_at_target",
 						"default.arms",
+                        { "arm_fix": "!(v.minelp_magic_type ?? 0)" },
+                        { "arm_fix_magic": "(v.minelp_magic_type ?? 0)" },
                         "show_movement.legs",
                         "show_movement.tail",
                         "bob.tail"

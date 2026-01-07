@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "minecraft:copper_chestplate.player",
+            "item": { "minecraft:copper_chestplate": "query.is_owner_identifier_any('minecraft:player')" },
+            "materials": {
+                "default": "armor",
+                "enchanted": "armor_enchanted"
+            },
+            "textures": {
+                "default": "textures/models/armor/copper_1",
+                "enchanted": "textures/misc/enchanted_item_glint",
+                "minelp_default": "textures/entity/equipment/ponified_humanoid_leggings/copper",
+                "minelp.layer2": "textures/entity/equipment/ponified_humanoid/copper"
+            },
+            "geometry": {
+                "default": "geometry.player.armor.chestplate",
+                "minelp_default": "geometry.minelp.pony.armor.chestplate",
+                "minelp.layer2": "geometry.minelp.pony.armor.chestplate.layer2"
+            },
+            "scripts": {
+                "parent_setup": "variable.chest_layer_visible = 0.0;"
+            },
+            "render_controllers": [
+                { "controller.render.armor": "context.owning_entity->variable.minelp_is_pony != 1.0" },
+                { "controller.render.minelp.pony.armor": "context.owning_entity->variable.minelp_is_pony == 1.0" },
+                { "controller.render.minelp.pony.armor.layer2": "context.owning_entity->variable.minelp_is_pony == 1.0" }
+            ]
+        }
+    }
+}

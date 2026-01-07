@@ -24,7 +24,7 @@
         },
         "initialize": [
           "v.minelp_is_pony = 1;",
-          "v.minelp_race = 1;",
+          "v.minelp_race = 3;",
           "v.minelp_handedness = 0;",
           "v.minelp_horn_type = 1;",
           "v.minelp_muzzle_type = 1;",
@@ -32,20 +32,26 @@
           "v.minelp_has_wings = 0;"
         ],
         "pre_animation": [
+          // Minelp //
           "v.minelp_is_pony = q.property('minelp:is_pony');",
           "v.minelp_race = q.property('minelp:race');",
           "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
+          "v.minelp_magic_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10);",
+          "v.is_holding_right = q.is_item_equipped('main_hand');",
+          "v.is_holding_left = false;",
           "v.attack = Math.sin((1.0 - (1.0 - v.attack_time) * (1.0 - v.attack_time)) * 180.0) * 57.3;",
-          // Vanilla //
+          "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;",
           "v.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
           "v.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
-          "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;",
-          "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;"
+          "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;",
+          // Vanilla //
+          "v.riding_y_offset_with_respect_to_player = 1.25;",
+          "v.riding_y_offset_on_vehicle_where_other_entites_can_stand = q.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat') ? -3.0 : 0.0;",
+          "v.riding_y_offset = v.riding_y_offset_with_respect_to_player + v.riding_y_offset_on_vehicle_where_other_entites_can_stand;"
         ],
         "animate": [
           // Minelp //
           { "default": "(v.minelp_is_pony ?? 0)" },
-          { "arm_fix": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type == 0" },
           // Vanilla //
           { "controller_general": "!(v.minelp_is_pony ?? 0)" },
           { "controller_move": "!(v.minelp_is_pony ?? 0)" }
@@ -53,8 +59,9 @@
       },
       "animations": {
         // Minelp //
-        "arm_fix_magic": "animation.minelp.pony.correct_illager_magic",
         "default": "controller.animation.minelp.pony.default",
+        "arm_fix": "animation.minelp.pony.correct_illager",
+        "arm_fix_magic": "animation.minelp.pony.correct_illager_magic",
         "default.arms": "controller.animation.minelp.pony.default.arms",
         "show_movement.leftArm": "animation.minelp.pony.show_movement.leftArm",
         "show_movement.rightArm": "animation.minelp.pony.show_movement.rightArm",
@@ -72,6 +79,7 @@
         "casting": "animation.evoker.casting",
         "look_at_target": "animation.common.look_at_target",
         "move": "animation.evoker.move",
+        "riding.body": "animation.humanoid.riding.body",
         "riding.legs": "animation.humanoid.riding.legs",
         "celebrating": "animation.humanoid.celebrating",
         "controller_general": "controller.animation.evoker.general",
@@ -84,7 +92,7 @@
       "render_controllers": [
         "controller.render.evoker",
         { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
-        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && v.minelp_horn_type >= 1" }
+        { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && (v.minelp_magic_type ?? 0)" }
       ],
       "spawn_egg": {
         "texture": "spawn_egg_evoker"

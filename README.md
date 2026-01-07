@@ -11,14 +11,14 @@ Things may not work properly and are subject to change.
 ## Installation
 
 ### Releases
-- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/tag/0.2.0">Latest Release (experimental)</a>
+- <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases/tag/0.3.0">Latest Release (experimental)</a>
 - <a href="https://github.com/Langtanium/MineLittlePony-Bedrock/releases">Previous Releases</a>
 
 ### Adding to Minecraft
 - **On PC:** Double click to add to Minecraft
-- **On Andriod:** Tap and open with Minecraft
+- **On Andriod/IOS:** Tap and open with Minecraft
 
-**The experimental toggle "Upcoming Creator Features" is required.**
+**There are no experimental toggles required.**
 
 ## Current State
 
@@ -69,31 +69,36 @@ Things may not work properly and are subject to change.
 
 | Mobs             | Race                     | Status      |
 |------------------|--------------------------|:-----------:|
-| Allay            | Breezie                  |             |
-| Drowned          | Earth Pony               | In Progress |
+| Allay            | Breezie                  | In Progress |
+| Armor Stand      | Special                  | In Progress |
+| Bogged           | Earth Pony/Unicorn       | In Progress |
+| Copper Golem     | Dragon                   | In Progress |
+| Drowned          | Earth Pony/Pegasus       | In Progress |
 | Enderman         | Special                  |             |
 | Evoker           | Unicorn                  | In Progress |
 | Guardian         | Special                  |             |
-| Husk             | Earth Pony               |      ✔️     |
+| Husk             | Earth Pony/Pegasus       | In Progress |
 | Illusioner       | Unicorn                  |             |
 | Piglin           | Special                  |             |
 | Piglin Brute     | Special                  |             |
 | Pillager         | Changeling               | In Progress |
-| Skeleton         | Unicorn                  | In Progress |
-| Stray            | Unicorn                  | In Progress |
-| Bogged           | Earth Pony               | In Progress |
+| Parched          | Earth Pony/Unicorn       | In Progress |
+| Skeleton         | Earth Pony/Unicorn       | In Progress |
+| Stray            | Earth Pony/Unicorn       | In Progress |
 | Strider          | Dragon                   |             |
 | Vex              | Parasprite               |             |
 | Villager         | Earth Pony               | In Progress |
 | Vindicator       | Pegasus                  | In Progress |
 | Wandering Trader | Earth Pony               | In Progress |
 | Witch            | Zebra + Hat              | In Progress |
-| Wither Skeleton  | Unicorn                  | In Progress |
-| Zombie           | Earth Pony               |      ✔️     |
+| Wither Skeleton  | Earth Pony/Unicorn       | In Progress |
+| Zombie           | Earth Pony/Pegasus       | In Progress |
 | Zombie Pigman    | Special                  |             |
-| Zombie Villager  | Earth Pony               |             |
+| Zombie Villager  | Earth Pony               | In Progress |
 
 ### Known Issues & Limitations
 
 - Player's cape does not render (replaced with custom cape)
   - Capes still affect elytra
+- Evoker and Vindicator appear unponified
+- Copper golem and zombie villager have redering issues
