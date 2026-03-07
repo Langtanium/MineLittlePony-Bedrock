@@ -3,6 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:evocation_illager",
+      "min_engine_version": "1.8.0",
       "materials": {
         "default": "evoker",
         "minelp_default": "evoker",
@@ -26,6 +27,7 @@
           "v.minelp_is_pony = 1;",
           "v.minelp_race = 3;",
           "v.minelp_handedness = 0;",
+          "v.minelp_magic_type = 1;",
           "v.minelp_horn_type = 1;",
           "v.minelp_muzzle_type = 1;",
           "v.minelp_tail_length = 2;",
@@ -35,14 +37,14 @@
           // Minelp //
           "v.minelp_is_pony = q.property('minelp:is_pony');",
           "v.minelp_race = q.property('minelp:race');",
-          "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
-          "v.minelp_magic_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10);",
+          "v.minelp_magic_type = v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10;",
+          "v.minelp_horn_type = v.minelp_magic_type || v.minelp_race == 5 || v.minelp_race == 7;",
           "v.is_holding_right = q.is_item_equipped('main_hand');",
           "v.is_holding_left = false;",
           "v.attack = Math.sin((1.0 - (1.0 - v.attack_time) * (1.0 - v.attack_time)) * 180.0) * 57.3;",
           "v.attack2 = Math.sin(v.attack_time * 180.0) * 57.3;",
-          "v.x_bob = Math.sin(query.life_time * 76.776372) * 5.865;",
-          "v.z_bob = Math.cos(query.life_time * 93.13244) * 2.865 + 2.865;",
+          "v.x_bob = Math.sin(q.life_time * 76.776372) * 5.865;",
+          "v.z_bob = Math.cos(q.life_time * 93.13244) * 2.865 + 2.865;",
           "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;",
           // Vanilla //
           "v.riding_y_offset_with_respect_to_player = 1.25;",

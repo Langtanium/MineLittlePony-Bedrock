@@ -134,6 +134,8 @@
         "initialize": [
           "v.minelp_is_pony = 1;",
           "v.minelp_race = 1;",
+          "v.minelp_handedness = 0;",
+          "v.minelp_magic_type = 0;",
           "v.minelp_horn_type = 0;",
           "v.minelp_muzzle_type = 1;",
           "v.minelp_tail_length = 4;",
@@ -150,8 +152,8 @@
           // Minelp //
           "v.minelp_is_pony = q.property('minelp:is_pony');",
           "v.minelp_race = q.property('minelp:race');",
-          "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
-          "v.minelp_magic_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10);",
+          "v.minelp_magic_type = v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10;",
+          "v.minelp_horn_type = v.minelp_magic_type || v.minelp_race == 5 || v.minelp_race == 7;",
           "v.minelp_muzzle_type = q.property('minelp:muzzle_type');",
           "v.minelp_tail_length = q.property('minelp:tail_length');",
           "v.minelp_tail_shape = q.property('minelp:tail_shape');",

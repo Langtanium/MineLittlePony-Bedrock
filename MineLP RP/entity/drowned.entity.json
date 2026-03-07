@@ -29,6 +29,7 @@
           "v.minelp_is_pony = 1;",
           "v.minelp_race = 1;",
           "v.minelp_handedness = 0;",
+          "v.minelp_magic_type = 0;",
           "v.minelp_horn_type = 0;",
           "v.minelp_muzzle_type = 1;",
           "v.minelp_tail_length = 4;",
@@ -41,8 +42,8 @@
           // Minelp //
           "v.minelp_is_pony = q.property('minelp:is_pony');",
           "v.minelp_race = q.property('minelp:race');",
-          "v.minelp_horn_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 5 || v.minelp_race == 7 || v.minelp_race == 10);",
-          "v.minelp_magic_type = (v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10);",
+          "v.minelp_magic_type = v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10;",
+          "v.minelp_horn_type = v.minelp_magic_type || v.minelp_race == 5 || v.minelp_race == 7;",
           "v.is_holding_right = q.is_item_equipped('main_hand');",
           "v.is_holding_left = q.is_item_equipped('off_hand');",
           "v.movement_leg_angle = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 20;",
