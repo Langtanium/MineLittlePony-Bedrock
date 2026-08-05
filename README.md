@@ -2,8 +2,8 @@
 
 Turns players and mobs into ponies.
 
+This is an unofficial Bedrock port of Mine Little Pony.
 Original Addon from Tschrock: https://github.com/Tschrock/MineLittlePony-Bedrock
-
 Original Mod Here: https://minelittlepony-mod.com/
 
 Things may not work properly and are subject to change.
@@ -101,4 +101,4 @@ Things may not work properly and are subject to change.
 - Player's cape does not render (replaced with custom cape)
   - Capes still affect elytra
 - Evoker and Vindicator appear unponified
-- Copper golem and zombie villager have redering issues
+- Copper golem eyes render black

@@ -4,18 +4,19 @@
     "description": {
       "identifier": "minecraft:zombie_villager_v2",
       "materials": {
-        // Vanilla //
+        // Vanilla
         "default": "zombie_villager_v2",
         "masked": "zombie_villager_v2_masked",
-        // Minelp //
+        // Minelp
         "minelp_default": "zombie_villager_v2",
         "minelp_masked": "zombie_villager_v2_masked",
         "minelp_magic": "pony_magic"
       },
       "textures": {
-        // Vanilla //
+        // Vanilla
         "default": "textures/entity/zombie_villager2/zombie-villager",
-        // Vanilla Biome Layer //
+        "baby_default": "textures/entity/zombie_villager2/zombie-villager_baby",
+        // Vanilla Biome Layer
         "desert": "textures/entity/zombie_villager2/biomes/biome-desert-zombie",
         "jungle": "textures/entity/zombie_villager2/biomes/biome-jungle-zombie",
         "plains": "textures/entity/zombie_villager2/biomes/biome-plains-zombie",
@@ -23,7 +24,14 @@
         "snow": "textures/entity/zombie_villager2/biomes/biome-snow-zombie",
         "swamp": "textures/entity/zombie_villager2/biomes/biome-swamp-zombie",
         "taiga": "textures/entity/zombie_villager2/biomes/biome-taiga-zombie",
-        // Vanilla Profession Layer //
+        "baby_desert": "textures/entity/zombie_villager2/biomes/biome_desert_baby",
+        "baby_jungle": "textures/entity/zombie_villager2/biomes/biome_jungle_baby",
+        "baby_plains": "textures/entity/zombie_villager2/biomes/biome_plains_baby",
+        "baby_savanna": "textures/entity/zombie_villager2/biomes/biome_savanna_baby",
+        "baby_snow": "textures/entity/zombie_villager2/biomes/biome_snow_baby",
+        "baby_swamp": "textures/entity/zombie_villager2/biomes/biome_swamp_baby",
+        "baby_taiga": "textures/entity/zombie_villager2/biomes/biome_taiga_baby",
+        // Vanilla Profession Layer
         "armorer": "textures/entity/zombie_villager2/professions/armorer",
         "butcher": "textures/entity/zombie_villager2/professions/butcher",
         "cartographer": "textures/entity/zombie_villager2/professions/cartographer",
@@ -39,9 +47,18 @@
         "stonemason": "textures/entity/zombie_villager2/professions/stonemason",
         "nitwit": "textures/entity/zombie_villager2/professions/nitwit",
         "unskilled": "textures/entity/zombie_villager2/professions/unskilled",
-        // Minelp //
+        // Vanilla Baby
+        "baby_default": "textures/entity/zombie_villager2/zombie-villager_baby",
+        "baby_desert": "textures/entity/zombie_villager2/biomes/biome_desert_baby",
+        "baby_jungle": "textures/entity/zombie_villager2/biomes/biome_jungle_baby",
+        "baby_plains": "textures/entity/zombie_villager2/biomes/biome_plains_baby",
+        "baby_savanna": "textures/entity/zombie_villager2/biomes/biome_savanna_baby",
+        "baby_snow": "textures/entity/zombie_villager2/biomes/biome_snow_baby",
+        "baby_swamp": "textures/entity/zombie_villager2/biomes/biome_swamp_baby",
+        "baby_taiga": "textures/entity/zombie_villager2/biomes/biome_taiga_baby",
+        // Minelp
         "minelp_default": "textures/entity/zombie_villager/zombie_villager_pony",
-        // Minelp Biome Layer //
+        // Minelp Biome Layer
         "minelp_desert": "textures/entity/zombie_villager/type/desert",
         "minelp_jungle": "textures/entity/zombie_villager/type/jungle",
         "minelp_plains": "textures/entity/zombie_villager/type/plains",
@@ -49,7 +66,7 @@
         "minelp_snow": "textures/entity/zombie_villager/type/snow",
         "minelp_swamp": "textures/entity/zombie_villager/type/swamp",
         "minelp_taiga": "textures/entity/zombie_villager/type/taiga",
-        // Minelp Profession Layer //
+        // Minelp Profession Layer
         "minelp_armorer": "textures/entity/zombie_villager/profession/armorer",
         "minelp_butcher": "textures/entity/zombie_villager/profession/butcher",
         "minelp_cartographer": "textures/entity/zombie_villager/profession/cartographer",
@@ -65,7 +82,7 @@
         "minelp_stonemason": "textures/entity/zombie_villager/profession/stonemason",
         "minelp_nitwit": "textures/entity/zombie_villager/profession/nitwit",
         "minelp_unskilled": "textures/entity/zombie_villager/profession/unskilled",
-        // Minelp Profession Skin Plains Layer //
+        // Minelp Profession Skin Plains Layer
         "minelp_plains_armorer": "textures/entity/zombie_villager/zombie_pony/plains/armorer",
         "minelp_plains_butcher": "textures/entity/zombie_villager/zombie_pony/plains/butcher",
         "minelp_plains_cartographer": "textures/entity/zombie_villager/zombie_pony/plains/cartographer",
@@ -81,7 +98,7 @@
         "minelp_plains_stonemason": "textures/entity/zombie_villager/zombie_pony/plains/stonemason",
         "minelp_plains_nitwit": "textures/entity/zombie_villager/zombie_pony/plains/nitwit",
         "minelp_plains_unskilled": "textures/entity/zombie_villager/zombie_pony/plains/unskilled",
-        // Minelp Profession Accessory //
+        // Minelp Profession Accessory
         "minelp_accessory_armorer": "textures/entity/zombie_villager/accessory/armorer",
         "minelp_accessory_butcher": "textures/entity/zombie_villager/accessory/butcher",
         "minelp_accessory_cartographer": "textures/entity/zombie_villager/accessory/cartographer",
@@ -100,20 +117,22 @@
       },
       "geometry": {
         "default": "geometry.zombie.villager_v2",
+        "baby": "geometry.villagerzombie.baby",
         "minelp_default": "geometry.minelp.pony.zombie_villager",
         "minelp_accessory": "geometry.saddlebags"
       },
       "scripts": {
         "variables": {
-          // Minelp //
+          // Minelp
           "variable.minelp_is_pony": "public",
           "variable.minelp_race": "public",
-          // Vanilla //
+          // Vanilla
           "variable.item_use_normalized": "public",
-          "variable.tp_melee_spear_use_attachable_rotation_z": "public"
+          "variable.tp_melee_spear_use_attachable_rotation_z": "public",
+          "variable.use_dedicated_baby_armor": "public"
         },
         "initialize": [
-          // Minelp //
+          // Minelp
           "v.minelp_is_pony = 1;",
           "v.minelp_race = 1;",
           "v.minelp_handedness = 0;",
@@ -127,11 +146,11 @@
           "v.minelp_item_x = 0;",
           "v.minelp_item_y = 0;",
           "v.minelp_item_z = 0;",
-          // Vanilla //
+          // Vanilla
           "v.tp_melee_spear_base_arm_rotation_x = -30.0;"
         ],
         "pre_animation": [
-          // Minelp //
+          // Minelp
           "v.minelp_is_pony = q.property('minelp:is_pony');",
           "v.minelp_race = q.property('minelp:race');",
           "v.minelp_magic_type = v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10;",
@@ -155,6 +174,7 @@
           "v.num_professions = 15;",
           "v.profession_index = ((q.variant < v.num_professions) ? q.variant : 0);",
           // Vanilla Body //
+          "v.use_dedicated_baby_armor = true;",
           "v.tcos0 = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 57.3;",
           // Vanilla Riding //
           "v.riding_y_offset_baby_scaling = q.is_baby ? -3.5 : 0.0;",
@@ -215,7 +235,8 @@
           { "swimming_controller": "!(v.minelp_is_pony ?? 0)" },
           { "melee_spear_controller": "v.melee_spear_equipped" }
         ],
-        "should_update_effects_offscreen": "1.0"
+        "should_update_effects_offscreen": "1.0",
+        "scale": "v.minelp_is_pony ? 1.0 : (q.is_baby ? 2.0 : 1.0)"
       },
       "animations": {
         // Minelp //
@@ -279,8 +300,8 @@
       },
       "render_controllers": [
         // Vanilla //
-        "controller.render.zombie_villager_v2_base",
-        { "controller.render.zombie_villager_v2_masked": "!(v.minelp_is_pony ?? 0)" },
+        "controller.render.zombie_villager_v3_base",
+        { "controller.render.zombie_villager_v3_masked": "!(v.minelp_is_pony ?? 0)" },
         // Minelp //
         { "controller.render.minelp.pony": "(v.minelp_is_pony ?? 0)" },
         { "controller.render.minelp.villager_plains": "(v.minelp_is_pony ?? 0)" },

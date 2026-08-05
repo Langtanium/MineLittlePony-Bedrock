@@ -1,0 +1,37 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.villager_v3_base": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [
+            "Texture.base",
+            "Texture.base2",
+            "Texture.base3",
+            "Texture.base4",
+            "Texture.base5",
+            "Texture.base6"
+          ],
+          "Array.baby_skins": [
+            "Texture.baby_base",
+            "Texture.baby_base2",
+            "Texture.baby_base3",
+            "Texture.baby_base4",
+            "Texture.baby_base5",
+            "Texture.baby_base6"
+          ]
+        }
+      },
+      "geometry": "q.is_baby ? Geometry.baby : Geometry.default",
+      "part_visibility": [
+        { "*": "v.minelp_is_pony == 0.0" }
+      ],
+      "materials": [
+        { "*": "Material.default" }
+      ],
+      "textures": [
+        "q.is_baby ? Array.baby_skins[q.skin_id] : Array.skins[q.skin_id]"
+      ]
+    }
+  }
+}

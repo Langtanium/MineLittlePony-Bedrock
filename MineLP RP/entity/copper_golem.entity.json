@@ -12,7 +12,7 @@
         "minelp_eyes": "copper_golem_eyes"
       },
       "textures": {
-        // Vanilla //
+        // Vanilla
         "default": "textures/entity/copper_golem/copper_golem",
         "exposed": "textures/entity/copper_golem/copper_golem_exposed",
         "weathered": "textures/entity/copper_golem/copper_golem_weathered",
@@ -23,7 +23,7 @@
         "eyes_oxidized": "textures/entity/copper_golem/copper_golem_eyes_oxidized",
         "minelp_default": "textures/entity/copper_golem/copper_golem",
         "flower": "textures/entity/copper_golem/copper_golem_flower",
-        // Minelp //
+        // Minelp
         "minelp_default": "textures/entity/copper_golem/copper_golem_dragon",
         "minelp_exposed": "textures/entity/copper_golem/exposed_copper_golem_dragon",
         "minelp_weathered": "textures/entity/copper_golem/weathered_copper_golem_dragon",
@@ -34,20 +34,20 @@
         "minelp_eyes_oxidized": "textures/entity/copper_golem/oxidized_copper_golem_eyes_dragon"
       },
       "geometry": {
-        // Vanilla //
+        // Vanilla
         "default": "geometry.copper_golem",
         "flower": "geometry.copper_golem.flower",
         "standing": "geometry.copper_golem",
         "sitting": "geometry.copper_golem.sitting",
         "running": "geometry.copper_golem.running",
         "star": "geometry.copper_golem.star",
-        // Minelp //
+        // Minelp
         "minelp_default": "geometry.minelp.pony.copper_golem"
       },
       "animations": {
-        // Minelp //
+        // Minelp
         "arm_fix": "animation.minelp.pony.correct_copper_golem",
-        // Vanilla //
+        // Vanilla
         "look_at_target": "animation.common.look_at_target",
         "walk": "animation.copper_golem.walk",
         "walk_holding_item": "animation.copper_golem.walk_holding_item",
@@ -68,16 +68,16 @@
           "v.minelp_is_pony = 1;"
         ],
         "pre_animation": [
-          // Minelp //
+          // Minelp
           "v.minelp_is_pony = q.property('minelp:is_pony');",
-          // Vanilla //
+          // Vanilla
           "v.oxidation = query.property('minecraft:oxidation_level');",
           "v.index = (v.oxidation == 'unoxidized') ? 0 : ((v.oxidation == 'exposed') ? 1 : ((v.oxidation == 'weathered') ? 2 : 3 ));",
           "v.walking = q.modified_move_speed > 0.01;",
           "v.chest_interaction = q.property('minecraft:chest_interaction');"
         ],
         "animate": [
-          // Minelp //
+          // Minelp
           { "arm_fix": "(v.minelp_is_pony ?? 0)" },
           "look_at_target",
           { "walk_controller": "q.property('minecraft:chest_interaction') == 'none'" },

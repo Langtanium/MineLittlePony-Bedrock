@@ -11,10 +11,12 @@
       },
       "textures": {
         "default": "textures/entity/zombie/drowned",
+        "baby": "textures/entity/zombie/drowned_baby",
         "minelp_default": "textures/entity/zombie/drowned_pony"
       },
       "geometry": {
         "default": "geometry.zombie.drowned.v1.16",
+        "baby": "geometry.zombie.baby",
         "minelp_default": "geometry.minelp.pony.ep.zombie",
         "minelp_earth_pony": "geometry.minelp.pony.ep.zombie",
         "minelp_pegasus": "geometry.minelp.pony.pe.zombie",
@@ -22,6 +24,7 @@
       },
       "scripts": {
         "variables": {
+          "variable.use_dedicated_baby_armor": "public",
           "variable.minelp_is_pony": "public",
           "variable.minelp_race": "public"
         },
@@ -39,7 +42,7 @@
           "v.minelp_item_z = 0;"
         ],
         "pre_animation": [
-          // Minelp //
+          // Minelp
           "v.minelp_is_pony = q.property('minelp:is_pony');",
           "v.minelp_race = q.property('minelp:race');",
           "v.minelp_magic_type = v.minelp_race == 3 || v.minelp_race == 4 || v.minelp_race == 10;",
@@ -54,20 +57,20 @@
           "v.minelp_item_x = q.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:bow')? -1.5 : 0;",
           "v.minelp_item_y = 0;",
           "v.minelp_item_z = 0;",
-          // Vanilla //
+          // Vanilla
+          "v.use_dedicated_baby_armor = true;",
           "v.tcos0 = (Math.cos(q.modified_distance_moved * 38.17) * q.modified_move_speed / v.gliding_speed_value) * 57.3;",
-          "v.riding_y_offset_baby_scaling = q.is_baby ? -5.0 : 0.0;",
+          "v.riding_y_offset_baby_scaling = q.is_baby ? -0.5 : 0.0;",
           "v.riding_y_offset_with_respect_to_player = 1.0;",
           "v.riding_y_offset_on_vehicle_where_other_entites_can_stand = q.is_riding_any_entity_of_type('minecraft:minecart', 'minecraft:boat', 'minecraft:chest_boat') ? -3.0 : 0.0;",
           "v.unscaled_riding_y_offset = v.riding_y_offset_with_respect_to_player + v.riding_y_offset_on_vehicle_where_other_entites_can_stand;",
           "v.riding_y_offset = v.riding_y_offset_baby_scaling * math.abs(v.unscaled_riding_y_offset) + v.unscaled_riding_y_offset + v.riding_y_offset_baby_scaling * 0.2f;"
         ],
         "animate": [
-          // Minelp //
+          // Minelp
           { "default": "(v.minelp_is_pony ?? 0)" },
           { "fly_controller": "(v.minelp_is_pony ?? 0) && (v.minelp_has_wings ?? 0)" },
-          // Vanilla //
-          { "humanoid_big_head": "q.is_baby && !(v.minelp_is_pony ?? 0)" },
+          // Vanilla
           { "look_at_target_controller": "!(v.minelp_is_pony ?? 0)" },
           { "move": "!(v.minelp_is_pony ?? 0)" },
           { "riding.body": "q.is_riding" },
@@ -82,10 +85,11 @@
           { "use_item_progress": "(( v.use_item_interval_progress > 0.0 ) || ( v.use_item_startup_progress > 0.0 )) && !(v.minelp_is_pony ?? 0)" },
           { "swimming": "v.swim_amount > 0.0 && !(v.minelp_is_pony ?? 0)" }
         ],
-        "should_update_effects_offscreen": "1.0"
+        "should_update_effects_offscreen": "1.0",
+        "scale": "v.minelp_is_pony ? 1.0 : (q.is_baby ? 2.0 : 1.0)"
       },
       "animations": {
-        // Minelp //
+        // Minelp
         "default": "controller.animation.minelp.pony.default",
         "arm_fix": "animation.minelp.pony.correct_zombie",
         "arm_fix_magic": "animation.minelp.pony.correct_zombie_magic",
@@ -103,7 +107,7 @@
         "big_head": "animation.minelp.pony.big_head",
         "fly": "animation.minelp.pony.fly",
         "fly_controller": "controller.animation.minelp.pony.fly",
-        // Vanilla //
+        // Vanilla
         "humanoid_big_head": "animation.humanoid.big_head",
         "look_at_target_controller": "controller.animation.humanoid.look_at_target",
         "look_at_target_default": "animation.humanoid.look_at_target.default",
@@ -122,10 +126,12 @@
         "attack_controller": "controller.animation.drowned.attack.rotations",
         "zombie_attack_bare_hand": "animation.zombie.attack_bare_hand",
         "attack_rotations": "animation.drowned.attack.rotations",
-        "swimming": "animation.zombie.swimming"
+        "swimming": "animation.zombie.swimming",
+        "baby_zombie_attack_bare_hand": "animation.zombie.baby_attack_bare_hand",
+        "baby_attack_rotations": "animation.drowned.attack.baby_rotations"
       },
       "render_controllers": [
-        "controller.render.drowned",
+        "controller.render.zombie.v2",
         { "controller.render.minelp.pony_variented": "(v.minelp_is_pony ?? 0)" },
         { "controller.render.minelp.pony.magic": "(v.minelp_is_pony ?? 0) && (v.minelp_magic_type ?? 0)" }
       ],
