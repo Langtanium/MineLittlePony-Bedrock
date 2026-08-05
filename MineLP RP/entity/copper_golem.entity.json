@@ -79,6 +79,7 @@
         "animate": [
           // Minelp
           { "arm_fix": "(v.minelp_is_pony ?? 0)" },
+          // Vanilla
           "look_at_target",
           { "walk_controller": "q.property('minecraft:chest_interaction') == 'none'" },
           { "idle_controller": "q.property('minecraft:chest_interaction') == 'none'" },

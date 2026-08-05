@@ -101,4 +101,3 @@ Things may not work properly and are subject to change.
 - Player's cape does not render (replaced with custom cape)
   - Capes still affect elytra
 - Evoker and Vindicator appear unponified
-- Copper golem eyes render black
