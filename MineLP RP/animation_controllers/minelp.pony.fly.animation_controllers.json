@@ -32,7 +32,7 @@
                     "blend_transition": 0.2,
                     "transitions": [
                         {
-                            "flying": "!q.is_on_ground && !q.is_moving && !q.is_in_water"
+                            "flying": "!q.is_on_ground && (!q.is_moving || q.is_jumping) && !q.is_in_water"
                         },
                         {
                             "flying_moving": "!q.is_on_ground && q.is_moving && !q.is_sprinting && !q.is_jumping && q.vertical_speed == 0 && !q.is_in_water"
@@ -55,7 +55,7 @@
                             "flying_moving": "!q.is_on_ground && q.is_moving && !q.is_sprinting && !q.is_jumping && q.vertical_speed == 0 && !q.is_in_water"
                         },
                         {
-                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting && !q.is_in_water"
+                            "flying_sprinting": "!q.is_on_ground && q.is_sprinting && !q.is_jumping && !q.is_in_water"
                         }
                     ]
                 },
